@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable react/jsx-pascal-case */
+
 import React, { FormEvent } from 'react';
 import { Form, Input, Select } from 'antd';
 import './styles.scss';
@@ -41,7 +40,7 @@ export default Form.create<ISignUpFormProps>()(function SignUpForm(props: ISignU
         <Form onSubmit={onSubmit} className="sign_up-form" layout="horizontal">
             <h3 className="sign_up-title">Sign Up</h3>
             <Form.Item>
-                {props.form.getFieldDecorator('Name', {
+                {props.form.getFieldDecorator('UserName', {
                     rules: [{ required: true, message: 'Please add your Name!' }],
                 })(
                     <div className="input-container">
