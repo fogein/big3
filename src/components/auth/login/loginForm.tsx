@@ -32,31 +32,22 @@ function LoginForm(props: ILoginFormProps) {
         <>
                 <Form onSubmit={onSubmit} className="sign_in-form">
                 <h3 className="sign_in-title">Sign In</h3>
-                <Form.Item>
+                <Form.Item label="Login">
                     {props.form.getFieldDecorator('Login', {
                         rules: [{ required: true, message: 'Please add your Login!' }],
                     })(
-                        <div className="input-container">
-                            <label className="signIn-label">Login
                                 <Input
                                 type="Login"  
                                 />
-                            </label>
-                        </div>
-                        
                     )}
                 </Form.Item>
-                <Form.Item>
+                <Form.Item label="Password">
                     {props.form.getFieldDecorator('password', {
                         rules: [{ required: true, message: 'Please add your Password!' }],
                     })(
-                        <div className="input-container">
-                            <label className="signIn-label">Password
                                 <Input.Password
                                     type="password"
                                     />
-                            </label>
-                        </div>
                         
                         
                     )}

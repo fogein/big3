@@ -66,6 +66,18 @@
 .ant-input:disabled{
   color: #D1D1D1;
 } 
+.ant-checkbox-wrapper{
+  margin-bottom: 8px;
+  left: 18%;
+}
+.ant-checkbox + span{
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #707070;
+}
 @media (max-width:1250px){
   .sign_up-img{
     display: none;

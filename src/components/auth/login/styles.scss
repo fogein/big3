@@ -66,6 +66,34 @@
 .ant-input:disabled{
   color: #D1D1D1;
 } 
+.has-error .ant-input{
+  background: #F6F6F6;
+  border: 1px solid #FF768E;
+  border-radius: 4px;
+}
+
+.has-error .ant-input:hover{background: #D1D1D1;}
+.has-error .ant-input:focus{box-shadow: 0px 0px 5px #D9D9D9;}
+.has-error .ant-input:disabled{color: #D1D1D1;}
+
+.has-error .ant-input-affix-wrapper .ant-input{
+  background: #F6F6F6;
+  border: 1px solid #FF768E;
+  border-radius: 4px;
+}
+
+.has-error .ant-input-affix-wrapper .ant-input:hover{background: #D1D1D1;}
+.has-error .ant-input-affix-wrapper .ant-input:focus{box-shadow: 0px 0px 5px #D9D9D9;}
+.has-error .ant-input-affix-wrapper .ant-input:disabled{color: #D1D1D1;}
+
+.ant-form-explain{
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 150%;
+  color: #FF768E;
+}
 @media (max-width:1250px){
   .sign_in-img{
     display: none;

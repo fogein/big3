@@ -1,6 +1,7 @@
+/* eslint-disable react/jsx-pascal-case */
 
 import React, { FormEvent } from 'react';
-import { Form, Input, Select } from 'antd';
+import { Checkbox, Form, Input, Select } from 'antd';
 import './styles.scss';
 import { Link } from 'react-router-dom';
 import { FormComponentProps } from 'antd/lib/form';
@@ -39,66 +40,55 @@ export default Form.create<ISignUpFormProps>()(function SignUpForm(props: ISignU
         <>
         <Form onSubmit={onSubmit} className="sign_up-form" layout="horizontal">
             <h3 className="sign_up-title">Sign Up</h3>
-            <Form.Item>
+            <Form.Item label="Name">
                 {props.form.getFieldDecorator('UserName', {
                     rules: [{ required: true, message: 'Please add your Name!' }],
                 })(
-                    <div className="input-container">
-                            <label className="signIn-label">Name
+                    
                                 <Input
                                     type="UserName"
                                     />
-                            </label>
-                        </div>
+                            
                 )}
             </Form.Item>
-            <Form.Item>
+            <Form.Item label="Login">
                 {props.form.getFieldDecorator('Login', {
                     rules: [{ required: true, message: 'Please add your Login!' }],
                 })(
-                    <div className="input-container">
-                            <label className="signIn-label">Login
                                 <Input
                                     type="login"
                                     />
-                            </label>
-                        </div>
                 )}
             </Form.Item>
     
-            <Form.Item>
+            <Form.Item label="Password">
                 {props.form.getFieldDecorator('password', {
                     rules: [{ required: true, message: 'Please add your Password!' }],
                 })(
-                    <div className="input-container">
-                            <label className="signIn-label">Password
                                 <Input.Password
                                     type="password"
                                     />
-                            </label>
-                        </div>
                 )}
             </Form.Item>
-            <Form.Item>
+            <Form.Item label="Confirm password">
                 {props.form.getFieldDecorator('confirmPassword', {
                     rules: [{ required: true, message: 'Please confirm your Password!' },
                             { validator: compareToFirstPassword }],
                 })(
-                    <div className="input-container">
-                            <label className="signIn-label">Confirm password
                                 <Input.Password
                                     type="password"
                                     />
-                            </label>
-                        </div>
                 )}
             </Form.Item>
-            <Form.Item>
+            
+            <Checkbox>I accept the agreement</Checkbox>
                     <Sign_In_but 
                     htmlType="submit"
                     label="Sign In"
                     />
-            </Form.Item>
+
+
+
             <span className="sign_up-description">Not a member yet? <Link to="/"  className="link_signUp">Sign in</Link></span>
 
 

@@ -10,6 +10,7 @@ import { Card_teams } from './pages/home/card_teams/card_teams';
 import 'normalize.css'
 import './styles/myNormalize.scss'
 
+
 const app = (<>
     <Provider store={store}>
         <MainRouter/>
