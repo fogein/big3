@@ -1,0 +1,27 @@
+.cancel__button{
+  border: 1px solid #9C9C9C;
+  border-radius: 4px;
+  height: 40px;
+  width: 171px;
+}
+.cancel__button-text{
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: #9C9C9C;
+}
+.cancel__button:hover{
+  background: #D1D1D1;
+}
+.cancel__button:focus{
+  background: #9C9C9C;
+}
+.cancel__button:disabled{
+  background: #F6F6F6;
+}
+.cancel__button-text:focus{
+  color: #707070;
+}
+.cancel__button-text:disabled{
+  color: #D1D1D1;
+}

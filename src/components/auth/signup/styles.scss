@@ -1,0 +1,68 @@
+
+.sign_up-form {
+  background:#fff;
+  display: flex;
+  min-width: 606px;
+  height: 1024px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sign_up-title{
+  font-size: 36px;
+  line-height: 49px;
+  color: #344472;
+}
+.sign_up-description{
+  margin-top: 24px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #707070;
+}
+.link_signIn{
+  color:#E4163A;
+}
+.sign_up-bg{
+  width: 834px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sign_up-img{
+  width: 605px;
+  height: 412px;
+  display: flex;
+
+}
+.ant-input{
+  min-width: 366px;
+  background: #F6F6F6;
+  border-radius: 4px;
+  border:none;
+  height: 40px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #303030;
+}
+.signup-label{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #707070;
+  margin-bottom: 8px;
+}
+.input-container{
+  max-width: 366px;
+  height: 92px;
+}
+.ant-input:hover{
+  background: #D1D1D1;
+}
+.ant-input:focus{
+  box-shadow: 0px 0px 5px #D9D9D9;
+}
+.ant-input:disabled{
+  color: #D1D1D1;
+} 

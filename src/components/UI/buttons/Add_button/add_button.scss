@@ -1,0 +1,25 @@
+.add__button{
+  border: none;
+  width: 104px;
+  height: 40px;
+  background: #E4163A;
+  border-radius: 4px;
+}
+.add__button-text{
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+.add__button:hover{
+  background: #FF5761;
+}
+.add__button:focus{
+  background: #C60E2E;
+}
+.add__button:disabled{
+  background: #F6F6F6;
+}
+.add__button-text:disabled{
+  color: #D1D1D1;
+}

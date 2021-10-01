@@ -1,0 +1,35 @@
+/* Headder  */
+.logo__link{
+  margin-left: 51px;
+}
+header{
+  display: flex;
+  background: #FFFFFF;
+  box-shadow: 0px 1px 10px rgba(209, 209, 209, 0.5);
+  position: relative;
+  width: 100%;
+}
+.header__container{
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.link__user{
+  display: flex;
+  align-items: center;
+  margin-right: 51px;
+  text-decoration: none;
+}
+.user__name{
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #303030;
+  width: 100%;
+  margin-right: 16px;
+}
+
+/* Header end */
