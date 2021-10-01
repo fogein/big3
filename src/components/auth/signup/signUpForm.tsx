@@ -47,7 +47,7 @@ export default Form.create<ISignUpFormProps>()(function SignUpForm(props: ISignU
                     <div className="input-container">
                             <label className="signIn-label">Name
                                 <Input
-                                    type="userName"
+                                    type="UserName"
                                     />
                             </label>
                         </div>
