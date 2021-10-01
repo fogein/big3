@@ -66,3 +66,18 @@
 .ant-input:disabled{
   color: #D1D1D1;
 } 
+@media (max-width:1250px){
+  .sign_in-img{
+    display: none;
+  }
+  .sign_in-bg{
+    background: #fff;
+    display: none;
+  }
+  .sign_in-form{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+}
