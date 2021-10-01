@@ -54,7 +54,7 @@ export default Form.create<ISignUpFormProps>()(function SignUpForm(props: ISignU
             </Form.Item>
             <Form.Item>
                 {props.form.getFieldDecorator('Login', {
-                    rules: [{ required: true, message: 'Please add your Last Name!' }],
+                    rules: [{ required: true, message: 'Please add your Login!' }],
                 })(
                     <div className="input-container">
                             <label className="signIn-label">Login
