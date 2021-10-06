@@ -15,7 +15,7 @@ interface ILoginFormProps extends FormComponentProps {
     handleError(error: any): void,
 }
 
-function LoginForm(props: ILoginFormProps) {
+ function LoginForm(props: ILoginFormProps) {
     function onSubmit(e: FormEvent): void {
         e.preventDefault();
         props.form.validateFields((error, values) => {

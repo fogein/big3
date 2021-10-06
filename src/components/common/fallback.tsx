@@ -3,7 +3,7 @@ import { Spin } from 'antd';
 
 import './styles.scss';
 
-export default function Fallback() {
+export function Fallback() {
     return (
         <div className="router-lazy-spin">
             <Spin tip="Loading..." />

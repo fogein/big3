@@ -7,10 +7,9 @@ import { AuthReducer } from './auth';
 
 // NOTE: current type definition of Reducer in 'redux-actions' module
 // doesn't go well with redux@4
-const rootReducer = combineReducers<IRootState>({
+export const rootReducer = combineReducers<IRootState>({
     router: routerReducer,
     user: UserReducer as any,
     auth: AuthReducer as any,
 });
 
-export default rootReducer;
