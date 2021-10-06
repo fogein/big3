@@ -1,5 +1,5 @@
 import { createAction } from 'redux-actions';
-import { IAuth, ILogin, ISignUp } from '../../types/auth';
+import { IAuth, ILogin, ISignUp } from '../../../types/auth';
 
 enum Type {
     SIGN_IN = 'SIGN_IN',

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import './styles.scss';
 import SignUpForm from '../../../components/auth/signup/signUpForm';
 import {ISignUp} from "../../../types";
-import {AuthActions} from "../../../redux/actions";
+import {AuthActions} from "../../../core/redux/actions";
 
 type ISignUpContainerProps = ReturnType<typeof mapDispatchToProps>;
 

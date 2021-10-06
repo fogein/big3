@@ -2,11 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
-import store from './redux/store';
+import store from './core/redux/store';
 import MainRouter from './router';
 
 import './index.scss';
-import { Card_teams } from './pages/home/card_teams/card_teams';
 import 'normalize.css'
 import './styles/myNormalize.scss'
 

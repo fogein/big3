@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-pascal-case */
-
 import React, { FormEvent } from 'react';
 import { Checkbox, Form, Input, Select } from 'antd';
 import './styles.scss';
@@ -7,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { FormComponentProps } from 'antd/lib/form';
 import { ISignUp } from "../../../types";
 import { Sign_In_but } from '../../UI/buttons/SignIn/Sign_In-but';
-import signUpBg from '../../../assets/signUp.png'
+import signUpBg from '../../../assets/images/signUp.png'
 
 const { Option } = Select;
 

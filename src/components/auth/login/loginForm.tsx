@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable react/jsx-pascal-case */
 import React, { FormEvent } from 'react';
 import { Form, Icon, Input } from 'antd';
 import { FormComponentProps } from 'antd/es/form';
@@ -7,7 +5,7 @@ import { FormComponentProps } from 'antd/es/form';
 import './styles.scss';
 import { Link } from 'react-router-dom';
 import { ILogin } from '../../../types';
-import signInBg from '../../../assets/SignInBg.png'
+import signInBg from '../../../assets/images/SignInBg.png'
 import { Sign_In_but } from '../../UI/buttons/SignIn/Sign_In-but';
 
 

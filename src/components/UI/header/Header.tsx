@@ -1,7 +1,7 @@
 import React from 'react'
 import { Logo } from '../Logo'
-import userImg from '../../../assets/profile.svg'
-import burgerMenu from '../../../assets/burger.svg'
+import userImg from '../../../assets/images/profile.svg'
+import burgerMenu from '../../../assets/images/burger.svg'
 import './header.scss'
 
 export const Header: React.FC = () => {

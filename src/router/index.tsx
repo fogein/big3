@@ -1,9 +1,9 @@
 import React, { Suspense, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Router, Route, Switch, RouteProps } from 'react-router-dom';
-import { history } from '../redux/store';
+import { history } from '../core/redux/store';
 import Fallback from '../components/common/fallback';
-import { IRootState } from '../redux/reducers/state';
+import { IRootState } from '../core/redux/reducers/state';
 import { IAuth } from '../types/auth';
 import 'antd/dist/antd.css';
 import { Card_teams } from '../pages/home/card_teams/card_teams';

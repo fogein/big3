@@ -1,5 +1,5 @@
 import React from 'react'
-import smallCardTeam from '../../../assets/teamSmallCard.svg'
+import smallCardTeam from '../../../assets/images/teamSmallCard.svg'
 import './teamSmallCard.scss'
 
 export const TeamSmallCard:React.FC = ({year}:any) => {

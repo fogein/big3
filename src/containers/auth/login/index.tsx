@@ -3,10 +3,10 @@ import { connect, MapDispatchToProps } from 'react-redux';
 import LoginForm from '../../../components/auth/login/loginForm';
 
 import './styles.scss';
-import { IRootState } from '../../../redux/reducers/state';
+import { IRootState } from '../../../core/redux/reducers/state';
 import { Dispatch } from 'redux';
 import { ILogin } from '../../../types';
-import { AuthActions } from '../../../redux/actions';
+import { AuthActions } from '../../../core/redux/actions';
 
 type ILoginContainerProps = ReturnType<typeof mapDispatchToProps>;
 

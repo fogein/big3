@@ -1,7 +1,7 @@
 import React from 'react'
-import teamsImg from '../../../assets/group_person.svg'
-import playersImg from '../../../assets/person.svg'
-import outImg from '../../../assets/signout.svg'
+import teamsImg from '../../../assets/images/group_person.svg'
+import playersImg from '../../../assets/images/person.svg'
+import outImg from '../../../assets/images/signout.svg'
 import './Navbar.scss'
 
 export const Navbar: React.FC = () => {

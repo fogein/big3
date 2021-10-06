@@ -1,5 +1,5 @@
 import React from 'react'
-import smallCardPlayer from '../../assets/playerSmallCard.png'
+import smallCardPlayer from '../../assets/images/playerSmallCard.png'
 import  './playerSmallCard.scss'
 
 export const PlayerSmallCard:React.FC = () => {

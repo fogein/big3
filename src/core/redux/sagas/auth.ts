@@ -3,7 +3,7 @@ import { push } from 'react-router-redux';
 import { message } from 'antd';
 import { AuthActions, UserActions } from '../actions';
 import { Action } from 'redux-actions';
-import { ILogin, IAuth, IUser, ISignUp } from '../../types';
+import { ILogin, IAuth, IUser, ISignUp } from '../../../types';
 import { signIn, signUp } from './api';
 import * as _ from 'lodash';
 import { signUpSuccessRoute } from "../constants/auth";

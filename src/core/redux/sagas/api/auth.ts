@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {ILogin, IAuth, ISignUp} from '../../../types';
+import {ILogin, IAuth, ISignUp} from '../../../../types';
 import { ContentTypes } from '.';
 import {signInURL, signUpURL} from '../../constants/auth';
 
