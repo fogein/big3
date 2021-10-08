@@ -1,5 +1,5 @@
 
-.sign_up-form {
+.signUpForm {
   background:#fff;
   display: flex;
   min-width: 606px;
@@ -8,34 +8,35 @@
   align-items: center;
   justify-content: center;
 }
-.sign_up-title{
+.signUpTitle{
   font-size: 36px;
   line-height: 49px;
   color: #344472;
 }
-.sign_up-description{
+.signUpDescription{
   margin-top: 24px;
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
   color: #707070;
 }
-.link_signIn{
+.linkSignIn{
   color:#E4163A;
 }
-.sign_up-bg{
+.signUpBg{
   width: 834px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.sign_up-img{
+.signUpImg{
   width: 605px;
   height: 412px;
   display: flex;
 
 }
-.ant-input{
+
+.input{
   min-width: 366px;
   background: #F6F6F6;
   border-radius: 4px;
@@ -46,47 +47,28 @@
   line-height: 24px;
   color: #303030;
 }
-.signup-label{
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
-  color: #707070;
-  margin-bottom: 8px;
-}
-.input-container{
-  max-width: 366px;
-  height: 92px;
-}
-.ant-input:hover{
+.input:hover{
   background: #D1D1D1;
 }
-.ant-input:focus{
+.input:focus{
   box-shadow: 0px 0px 5px #D9D9D9;
 }
-.ant-input:disabled{
+.input:disabled{
   color: #D1D1D1;
 } 
-.ant-checkbox-wrapper{
-  margin-bottom: 8px;
-  left: 18%;
-}
-.ant-checkbox + span{
-  font-family: Avenir;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 24px;
-  color: #707070;
+.linkSignIn{
+  color:#E4163A;
+
 }
 @media (max-width:1250px){
-  .sign_up-img{
+  .signUpImg{
     display: none;
   }
-  .sign_up-bg{
+  .signUpBg{
     background: #fff;
     display: none;
   }
-  .sign_up-form{
+  .signUpForm{
     justify-content: center;
     align-items: center;
     width: 100%;

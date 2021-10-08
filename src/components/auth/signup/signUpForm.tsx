@@ -1,13 +1,16 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
+/* eslint-disable react/jsx-pascal-case */
 import React, { FormEvent } from 'react';
-import { Checkbox, Form, Input, Select } from 'antd';
-import './styles.scss';
+import { Checkbox, Form, Input } from 'antd';
+import classes from './styles.module.scss';
 import { Link } from 'react-router-dom';
 import { FormComponentProps } from 'antd/lib/form';
 import { ISignUp } from "../../../types";
 import { Sign_In_but } from '../../UI/buttons/SignIn/Sign_In-but';
 import signUpBg from '../../../assets/images/signUp.png'
 
-const { Option } = Select;
+let cls:any = classes
+
 
 interface ISignUpFormProps extends FormComponentProps {
     handleSubmit(values: ISignUp): void;
@@ -36,14 +39,15 @@ export default Form.create<ISignUpFormProps>()(function SignUpForm(props: ISignU
 
     return (
         <>
-        <Form onSubmit={onSubmit} className="sign_up-form" layout="horizontal">
-            <h3 className="sign_up-title">Sign Up</h3>
+        <Form onSubmit={onSubmit} className={cls.signUpForm} layout="horizontal">
+            <h3 className={cls.signUpTitle}>Sign Up</h3>
             <Form.Item label="Name">
                 {props.form.getFieldDecorator('UserName', {
                     rules: [{ required: true, message: 'Please add your Name!' }],
                 })(
                     
                                 <Input
+                                className={cls.input}
                                     type="UserName"
                                     />
                             
@@ -54,6 +58,7 @@ export default Form.create<ISignUpFormProps>()(function SignUpForm(props: ISignU
                     rules: [{ required: true, message: 'Please add your Login!' }],
                 })(
                                 <Input
+                                className={cls.input}
                                     type="login"
                                     />
                 )}
@@ -64,6 +69,7 @@ export default Form.create<ISignUpFormProps>()(function SignUpForm(props: ISignU
                     rules: [{ required: true, message: 'Please add your Password!' }],
                 })(
                                 <Input.Password
+                                className={cls.input}
                                     type="password"
                                     />
                 )}
@@ -74,26 +80,27 @@ export default Form.create<ISignUpFormProps>()(function SignUpForm(props: ISignU
                             { validator: compareToFirstPassword }],
                 })(
                                 <Input.Password
+                                className={cls.input}
                                     type="password"
                                     />
                 )}
             </Form.Item>
             
-            <Checkbox>I accept the agreement</Checkbox>
+            <Checkbox className={cls.checkbox}>I accept the agreement</Checkbox>
                     <Sign_In_but 
                     htmlType="submit"
-                    label="Sign In"
+                    label="Sign Up"
                     />
 
 
 
-            <span className="sign_up-description">Not a member yet? <Link to="/"  className="link_signUp">Sign in</Link></span>
+                <span className={cls.signUpDescription}>Not a member yet? <Link to="/"  className={cls.linkSignIn}>Sign in</Link></span>
 
 
         </Form>
-        <div className="sign_up-bg">
-        <img src={signUpBg} alt="Image" className="sign_up-img" />
-          </div>
+                <div className={cls.signUpBg}>
+                <img src={signUpBg} alt="Image" className={cls.signUpImg} />
+                </div>
           </>
     )
 })

@@ -7,32 +7,42 @@
   background: #FFFFFF;
   padding: 0;
 }
-.nav__item{
+.navItem{
   display: flex;
   align-items: center;
   flex-direction: column;
 
 }
-.nav__items{
+.navItems{
   justify-content: end;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 .item1{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   margin-top: 32px;
   margin-bottom: 36px;
 }
+.item2{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 
 .item3 {
-  
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   margin-bottom: 32px;
   padding-top: 754px;
 }
-.item3 > .nav__item-text{
+.item3 > .navItemText{
   color: #FF768E;
 }
-.nav__item-text{
+.navItemText{
   font-weight: 500;
   font-size: 12px;
   line-height: 150%;

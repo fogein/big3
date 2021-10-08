@@ -1,12 +1,13 @@
 import React from 'react'
-import './add_button.scss'
+import classes from  './add_button.module.scss'
 
+let cls:any = classes
 export const Add_button: React.FC = () => {
   return (
     <>
-      <div className="container__add_but">
-          <button className="add__button">
-            <span className="add__button-text">Add +</span>
+      <div className={cls.containerAddBut}>
+          <button className={cls.addButton}>
+            <span className={cls.addButtonText}>Add +</span>
           </button>
         </div>
     </>

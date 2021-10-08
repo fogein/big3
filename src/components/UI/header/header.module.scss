@@ -1,5 +1,5 @@
 /* Headder  */
-.logo__link{
+.logoLink{
   margin-left: 51px;
 }
 header{
@@ -9,20 +9,20 @@ header{
   position: relative;
   width: 100%;
 }
-.header__container{
+.headerContainer{
   height: 80px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.link__user{
+.linkUser{
   display: flex;
   align-items: center;
   margin-right: 51px;
   text-decoration: none;
 }
-.user__name{
+.userName{
 
   font-weight: 500;
   font-size: 14px;

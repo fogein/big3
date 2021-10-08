@@ -2,24 +2,25 @@ import React from 'react'
 import teamsImg from '../../../assets/images/group_person.svg'
 import playersImg from '../../../assets/images/person.svg'
 import outImg from '../../../assets/images/signout.svg'
-import './Navbar.scss'
+import classes from './Navbar.module.scss'
 
+let cls:any = classes
 export const Navbar: React.FC = () => {
   return (
     
-      <nav className='nav'>
-        <ul className='nav__items'>
-          <li className='nav__item item1'>
+      <nav className={cls.nav}>
+        <ul className={cls.navItems}>
+          <li className={cls.item1}>
             <img src={teamsImg} alt="" />
-            <label className='nav__item-text'>Teams</label>
+            <label className={cls.navItemText}>Teams</label>
           </li>
-          <li className='nav__item item2'>
+          <li className={cls.item2}>
             <img src={playersImg} alt="" />
-            <label className='nav__item-text'>Players</label>
+            <label className={cls.navItemText}>Players</label>
           </li>
-          <li className='nav__item item3'>
+          <li className={cls.item3}>
             <img src={outImg} alt="" />
-            <label className='nav__item-text'>Sign out</label>
+            <label className={cls.navItemText}>Sign out</label>
           </li>
         </ul>
       </nav>

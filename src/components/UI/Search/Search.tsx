@@ -1,12 +1,14 @@
 import React from 'react'
 import search from '../../../assets/images/search.svg'
-import './Search.css'
+import classes from './Search.module.scss'
+
+let cls :any = classes
 
 export const Search:React.FC = () => {
   return (
-    <form className="search-form" action="#" method="#">
-        <input className="search-input" type="text" name="search" id="search" placeholder="Search..."/>
-        <button className="search-button" type="submit"><img src={search} alt="search" /></button>
+    <form className={cls.searchForm} action="#" method="#">
+        <input className={cls.searchInput} type="text" name="search" id="search" placeholder="Search..."/>
+        <button className={cls.searchButton} type="submit"><img src={search} alt="search" /></button>
       </form>
   )
 }

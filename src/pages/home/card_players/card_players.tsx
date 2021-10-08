@@ -5,22 +5,22 @@ import { Header } from '../../../components/UI/header/Header'
 import { Navbar } from '../../../components/UI/Navbar/Navbar'
 import { PlayerSmallCard } from '../../../components/UI/PlayerSmallCard/PlayerSmallCard'
 import { Search } from '../../../components/UI/Search/Search'
+import classes from './card_players.module.scss'
 
-
-
+let cls:any = classes
 
 export const Card_players: React.FC = () => {
   return (
     <>
-      <div className="bg">
+      <div className={cls.bg}>
         <Header/>
         <Navbar/>
-        <div className="card_players-container">
-          <div className="upContainer-players">
+        <div className={cls.card_playersContainer}>
+          <div className={cls.upContainerPlayers}>
             <Search/>
             <Add_button/>
           </div>
-          <div className="mainContainer-players">
+          <div className={cls.mainContainerPlayers}>
             <PlayerSmallCard/>
             <PlayerSmallCard/>
             <PlayerSmallCard/>

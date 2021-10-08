@@ -1,19 +1,21 @@
 import React from 'react'
 import { Logo } from '../Logo'
 import userImg from '../../../assets/images/profile.svg'
-import burgerMenu from '../../../assets/images/burger.svg'
-import './header.scss'
+// import burgerMenu from '../../../assets/images/burger.svg'
+import classes from  './header.module.scss'
+
+let cls:any = classes
 
 export const Header: React.FC = () => {
   return (
     
       <header>
-        <div className="header__container">
+        <div className={cls.headerContainer}>
           <Logo/>
-          <div className="user__container">
-            <a href="/" className="link__user">
-            <span className="user__name">John Smith</span>
-            <img src={userImg} alt="" className="user__profile" />
+          <div className={cls.userContainer}>
+            <a href="/" className={cls.linkUser}>
+            <span className={cls.userName}>John Smith</span>
+            <img src={userImg} alt="" className={cls.userProfile} />
             </a>
           </div>
         </div>

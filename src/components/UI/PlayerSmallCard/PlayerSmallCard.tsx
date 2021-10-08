@@ -1,19 +1,20 @@
 import React from 'react'
 import smallCardPlayer from '../../assets/images/playerSmallCard.png'
-import  './playerSmallCard.scss'
+import classes from './playerSmallCard.module.scss'
 
+  let cls:any = classes
 export const PlayerSmallCard:React.FC = () => {
   return (
     // Player card
     <>
-      <button className="small__card-container">
-        <div className="small__cardPayers-top">
+      <button className={cls.smallCardContainer}>
+        <div className={cls.smallCardPayersTop}>
           <img src={smallCardPlayer} alt="img" />
         </div>
-        <div className="small__card-bot">
-          <div className="small__card-deskription">
+        <div className={cls.smallCardBot}>
+          <div className={cls.smallCardDeskription}>
             <h4>Portland trail blazers</h4>
-            <p className='small__card-p'>Year of foundation: 1970</p>
+            <p className={cls.smallCardP}>Year of foundation: 1970</p>
           </div>
         </div>
       </button>

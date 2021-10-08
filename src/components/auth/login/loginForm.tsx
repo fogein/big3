@@ -1,13 +1,16 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
+/* eslint-disable react/jsx-pascal-case */
 import React, { FormEvent } from 'react';
-import { Form, Icon, Input } from 'antd';
+import { Form, Input } from 'antd';
 import { FormComponentProps } from 'antd/es/form';
 
-import './styles.scss';
+import classes from './styles.module.scss';
 import { Link } from 'react-router-dom';
 import { ILogin } from '../../../types';
 import signInBg from '../../../assets/images/SignInBg.png'
 import { Sign_In_but } from '../../UI/buttons/SignIn/Sign_In-but';
 
+let cls:any = classes
 
 
 interface ILoginFormProps extends FormComponentProps {
@@ -28,13 +31,14 @@ interface ILoginFormProps extends FormComponentProps {
 
     return (
         <>
-                <Form onSubmit={onSubmit} className="sign_in-form">
-                <h3 className="sign_in-title">Sign In</h3>
-                <Form.Item label="Login">
+                <Form onSubmit={onSubmit} className={cls.signInForm}>
+                <h3 className={cls.signInTitle}>Sign In</h3>
+                <Form.Item className={cls.control} label="Login">
                     {props.form.getFieldDecorator('Login', {
                         rules: [{ required: true, message: 'Please add your Login!' }],
                     })(
                                 <Input
+                                className={cls.input}
                                 type="Login"  
                                 />
                     )}
@@ -44,8 +48,9 @@ interface ILoginFormProps extends FormComponentProps {
                         rules: [{ required: true, message: 'Please add your Password!' }],
                     })(
                                 <Input.Password
-                                    type="password"
-                                    />
+                                className={cls.input}
+                                type="password"
+                                />
                         
                         
                     )}
@@ -56,11 +61,11 @@ interface ILoginFormProps extends FormComponentProps {
                     label="Sign In"
                     />
                 
-                <span className="sign_in-description">Not a member yet? <Link to="/SignUp"  className="link_signUp">Sign up</Link></span>
+                <span className={cls.signInDescription}>Not a member yet? <Link to="/SignUp"  className={cls.linkSignUp}>Sign up</Link></span>
             </Form>
 
-            <div className="sign_in-bg">
-          <img src={signInBg} alt="Image" className="sign_in-img" />
+            <div className={cls.signInBg}>
+          <img src={signInBg} alt="Image" className={cls.signInImg} />
             </div>
 
 </>

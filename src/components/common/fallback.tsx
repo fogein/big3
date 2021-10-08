@@ -1,11 +1,12 @@
 import React from 'react';
 import { Spin } from 'antd';
 
-import './styles.scss';
+import classes from './styles.module.scss';
+ let cls:any = classes
 
 export function Fallback() {
     return (
-        <div className="router-lazy-spin">
+        <div className={cls.routerLazySpin}>
             <Spin tip="Loading..." />
         </div>
     )

@@ -15,3 +15,46 @@
   from {opacity: 0;}
   to {opacity: 1;}
 }
+
+
+
+// antd
+.ant-checkbox-wrapper{
+  margin-bottom: 8px;
+  left: 18%;
+}
+.ant-checkbox + span{
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #707070;
+}
+.ant-input{
+  background-color: #F6F6F6;
+  border: none;
+}
+.has-error .ant-input{
+  background: #F6F6F6;
+  border: 1px solid #FF768E;
+  border-radius: 4px;
+}
+.has-error .ant-input:hover{background: #D1D1D1;}
+.has-error .ant-input:focus{box-shadow: 0px 0px 5px #D9D9D9;}
+.has-error .ant-input:disabled{color: #D1D1D1;}
+
+
+.has-error .ant-input-affix-wrapper .ant-input:hover{background: #D1D1D1;}
+.has-error .ant-input-affix-wrapper .ant-input:focus{box-shadow: 0px 0px 5px #D9D9D9;}
+.has-error .ant-input-affix-wrapper .ant-input:disabled{color: #D1D1D1;}
+
+.ant-form-explain{
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 150%;
+  color: #FF768E;
+}
+// antd
