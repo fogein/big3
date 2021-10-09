@@ -1,8 +1,8 @@
 import React from 'react'
 import { Logo } from '../Logo'
-import userImg from '../../../assets/images/profile.svg'
+let userImg =require('../../../assets/images/profile.svg')
 // import burgerMenu from '../../../assets/images/burger.svg'
-import classes from  './header.module.scss'
+let classes = require( './header.module.scss')
 
 let cls:any = classes
 

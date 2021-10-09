@@ -1,8 +1,8 @@
 import React from 'react'
-import teamsImg from '../../../assets/images/group_person.svg'
-import playersImg from '../../../assets/images/person.svg'
-import outImg from '../../../assets/images/signout.svg'
-import classes from './Navbar.module.scss'
+let teamsImg = require ('../../../assets/images/group_person.svg')
+let playersImg = require ('../../../assets/images/person.svg')
+let outImg = require ('../../../assets/images/signout.svg')
+let classes = require ('./Navbar.module.scss')
 
 let cls:any = classes
 export const Navbar: React.FC = () => {

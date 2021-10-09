@@ -1,5 +1,5 @@
 import React from 'react'
-import myLogo from '../../assets/images/logo.svg'
+let myLogo = require ('../../assets/images/logo.svg')
 export const Logo: React.FC = () => {
   return (
     <>

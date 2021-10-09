@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect, MapDispatchToProps } from 'react-redux';
 import LoginForm from '../../../components/auth/login/loginForm';
-
-import classes from './styles.module.scss';
 import { IRootState } from '../../../core/redux/reducers/state';
 import { Dispatch } from 'redux';
 import { ILogin } from '../../../types';
 import { AuthActions } from '../../../core/redux/actions';
 
+
+let classes = require('./styles.module.scss');
 let cls:any = classes
 
 type ILoginContainerProps = ReturnType<typeof mapDispatchToProps>;

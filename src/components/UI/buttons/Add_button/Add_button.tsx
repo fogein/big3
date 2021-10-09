@@ -1,5 +1,5 @@
 import React from 'react'
-import classes from  './add_button.module.scss'
+let classes = require('./add_button.module.scss');
 
 let cls:any = classes
 export const Add_button: React.FC = () => {

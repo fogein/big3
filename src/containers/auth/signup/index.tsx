@@ -1,11 +1,12 @@
 import React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-
-import classes from  './styles.module.scss';
 import SignUpForm from '../../../components/auth/signup/signUpForm';
 import {ISignUp} from "../../../types";
 import {AuthActions} from "../../../core/redux/actions";
+
+
+let classes = require('./styles.module.scss');
 let cls:any = classes
 
 
