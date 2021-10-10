@@ -1,5 +1,5 @@
-import React, { Suspense, useCallback } from 'react';
-import { connect, useDispatch } from 'react-redux';
+import React, { Suspense } from 'react';
+import {  useSelector } from 'react-redux';
 import { Router, Route, Switch, RouteProps } from 'react-router-dom';
 import { history } from '../core/redux/store';
 import {Fallback} from '../components/common/fallback';
@@ -14,17 +14,17 @@ import { SignUpSuccess } from '../pages/auth/signUpSuccess';
 
 
 interface IMainRouterProps extends RouteProps {
-    auth: IAuth,
+    auth?: IAuth,
 }
-
-function MainRouter(props: IMainRouterProps) {
-
+// (state: IRootState): IMainRouterProps
+export function MainRouter(props: IMainRouterProps) {
+    const auth = useSelector((state: IRootState) => state.auth )
     return (
         <Router history={history}>
             <Suspense fallback={<Fallback />}>
                 <Switch>
                     {
-                        props.auth
+                        auth
                             ? (
                                 <Route exact path="/" component={Card_teams} />
                             )
@@ -41,11 +41,4 @@ function MainRouter(props: IMainRouterProps) {
         </Router>
     );
 }
-
-const mapStateToProps = (state: IRootState): IMainRouterProps => ({
-    auth: state.auth,
-});
-
-export default connect(mapStateToProps)(MainRouter);
-
 
