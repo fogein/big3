@@ -1,7 +1,7 @@
 import React from 'react'
-import LoginContainer from '../../containers/auth/login'
+import {LoginContainer} from '../../containers/auth/login'
 
-export default function LoginPage() {
+export const LoginPage:React.FC = () => {
     return (
         <LoginContainer />
     )

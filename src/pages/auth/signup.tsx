@@ -1,7 +1,7 @@
 import React from 'react';
-import SignUpContainer from '../../containers/auth/signup';
+import {SignUpContainer} from '../../containers/auth/signup';
 
-export default function SignupPage() {
+export const SignUpPage:React.FC= () => {
     return (
        <SignUpContainer />
     )
