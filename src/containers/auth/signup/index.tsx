@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import SignUpForm from '../../../components/auth/signup/signUpForm';
+import {FormSignUp} from '../../../components/auth/signup/signUpForm';
 import {ISignUp} from "../../../types";
 import {AuthActions} from "../../../core/redux/actions";
 
@@ -16,7 +16,7 @@ export function SignUpContainer(props: any) {
     const signUp = useCallback((payload: ISignUp) => dispatch(AuthActions.signUp(payload)),[dispatch]);
     return (
         <div className={cls.signupFormContainer}>
-            <SignUpForm handleSubmit={signUp} handleError={console.error} />
+            <FormSignUp handleSubmit={signUp} handleError={console.error} />
         </div>
     )
 }

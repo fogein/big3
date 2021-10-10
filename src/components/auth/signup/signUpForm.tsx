@@ -17,7 +17,7 @@ interface ISignUpFormProps extends FormComponentProps {
     handleError(error: any): void;
 }
 
-export default Form.create<ISignUpFormProps>()(function SignUpForm(props: ISignUpFormProps) {
+export const FormSignUp =  Form.create<ISignUpFormProps>()(function SignUpForm(props: ISignUpFormProps) {
     function onSubmit(e: FormEvent): void {
         e.preventDefault();
         props.form.validateFields((error, values) => {

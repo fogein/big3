@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import LoginForm from '../../../components/auth/login/loginForm';
+import {FormLogin} from '../../../components/auth/login/loginForm';
 import { IRootState } from '../../../core/redux/reducers/state';
 import { ILogin } from '../../../types';
 import { AuthActions } from '../../../core/redux/actions';
@@ -19,7 +19,7 @@ export function LoginContainer(props: any) {
     const signIn = useCallback((payload: ILogin) => dispatch(AuthActions.signIn(payload)),[dispatch]);
     return (
         <div className={cls.loginFormContainer}>
-            <LoginForm handleSubmit={signIn} handleError={console.error} />
+            <FormLogin handleSubmit={signIn} handleError={console.error} />
         </div>
     )
 }

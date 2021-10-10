@@ -71,4 +71,4 @@ interface ILoginFormProps extends FormComponentProps {
     )
 }
 
-export default Form.create<ILoginFormProps>({ name: 'LoginForm' })(LoginForm);
+export const FormLogin = Form.create<ILoginFormProps>({ name: 'LoginForm' })(LoginForm);
