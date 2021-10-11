@@ -1,5 +1,5 @@
 import React from 'react'
-let search = require ('../../../assets/images/search.svg')
+import search from '../../../assets/images/search.svg'
 let classes = require('./Search.module.scss')
 
 let cls :any = classes

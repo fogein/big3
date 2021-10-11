@@ -1,6 +1,6 @@
 import React from 'react'
 import { Logo } from '../Logo'
-let userImg =require('../../../assets/images/profile.svg')
+import userImg from'../../../assets/images/profile.svg';
 // import burgerMenu from '../../../assets/images/burger.svg'
 let classes = require( './header.module.scss')
 

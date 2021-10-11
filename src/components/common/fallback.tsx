@@ -1,8 +1,8 @@
 import React from 'react';
 import { Spin } from 'antd';
 
-let classes = require('./styles.module.scss');
- let cls:any = classes
+    let classes = require('./styles.module.scss');
+    let cls:any = classes
 
 export function Fallback() {
     return (

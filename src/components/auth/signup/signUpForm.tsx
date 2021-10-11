@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom';
 import { FormComponentProps } from 'antd/lib/form';
 import { ISignUp } from "../../../types";
 import { Sign_In_but } from '../../UI/buttons/SignIn/Sign_In-but';
+import signUpBg from '../../../assets/images/signUp.png'
 let classes = require ('./styles.module.scss');
-let signUpBg = require ('../../../assets/images/signUp.png')
+
 
 let cls:any = classes
 

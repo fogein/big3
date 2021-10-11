@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import {  useSelector } from 'react-redux';
-import { Router, Route, Switch, RouteProps } from 'react-router-dom';
-import { history } from '../core/redux/store';
+import { BrowserRouter as Router, Route, Switch, RouteProps } from 'react-router-dom';
 import {Fallback} from '../components/common/fallback';
 import { IRootState } from '../core/redux/reducers/state';
 import { IAuth } from '../types/auth';
@@ -20,7 +19,7 @@ interface IMainRouterProps extends RouteProps {
 export function MainRouter(props: IMainRouterProps) {
     const auth = useSelector((state: IRootState) => state.auth )
     return (
-        <Router history={history}>
+        <Router >
             <Suspense fallback={<Fallback />}>
                 <Switch>
                     {

@@ -1,5 +1,5 @@
 import React from 'react'
-let smallCardPlayer = require ('../../assets/images/playerSmallCard.png')
+import smallCardPlayer from '../../assets/images/playerSmallCard.png'
 let classes = require ('./playerSmallCard.module.scss')
 
   let cls:any = classes
