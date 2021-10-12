@@ -15,10 +15,8 @@ const signUp = createAction<ISignUp>(Type.SIGN_UP);
 
 export const AuthActions = {
     Type,
-
+    
     setAuthInfo,
     signIn,
     signUp,
 }
-
-export type AuthActions = Omit<typeof AuthActions, 'Type'>;
