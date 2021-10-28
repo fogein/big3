@@ -1,6 +1,5 @@
-/* eslint-disable react/jsx-pascal-case */
 import React from 'react'
-import { Add_button } from '../../../components/UI/buttons/Add_button/Add_button'
+import { AddButton } from '../../../components/UI/buttons/Add_button/Add_button'
 import { Header } from '../../../components/UI/header/Header'
 import { Navbar } from '../../../components/UI/Navbar/Navbar'
 import { PlayerSmallCard } from '../../../components/UI/PlayerSmallCard/PlayerSmallCard'
@@ -15,10 +14,10 @@ export const Card_players: React.FC = () => {
       <div className={cls.bg}>
         <Header/>
         <Navbar/>
-        <div className={cls.card_playersContainer}>
+        <div className={cls.card_playersContainer}> 
           <div className={cls.upContainerPlayers}>
             <Search/>
-            <Add_button/>
+            <AddButton/>
           </div>
           <div className={cls.mainContainerPlayers}>
             <PlayerSmallCard/>

@@ -1,8 +1,15 @@
 {
     "defaultSeverity": "error",
     "extends": [
-        "tslint-react"
-    ],
+        "plugin:flowtype/recommended",
+        "airbnb",
+        "prettier",
+        "prettier/react"
+      ],
+      "plugins": [
+        "prettier",
+        "flowtype"
+      ],
     "jsRules": {
     },
     "rules": {

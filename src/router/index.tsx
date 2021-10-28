@@ -23,8 +23,9 @@ export function MainRouter(props: IMainRouterProps) {
             <Suspense fallback={<Fallback />}>
                 <Switch>
                     {
-                        auth
-                            ? (
+                        auth 
+                            ?
+                            (
                                 <Route exact path="/" component={Card_teams} />
                             )
                             : (
