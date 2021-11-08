@@ -1,17 +1,41 @@
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { getApiResource } from '../../../api/teamApi'
 import { AddButton } from '../../../components/UI/buttons/Add_button/Add_button'
 import { Header } from '../../../components/UI/header/Header'
 import { Navbar } from '../../../components/UI/Navbar/Navbar'
 import { Search } from '../../../components/UI/Search/Search'
 import { TeamSmallCard } from '../../../components/UI/TeamSmallCard/TeamSmallCard'
+import { GET_TEAM } from '../../../core/redux/constants/Teams'
+import { ITeamData } from '../../../types/teams'
 import classes from './card_team.module.scss'
 
 let cls:any = classes
 
 export const Card_teams: React.FC = () => {
-getApiResource()
+  const [team,setTeam] = useState(null);
+
+
+  const getResource = async (url:any) => {
+    const res = await getApiResource(url);
+
+    const teamList = res.data.map(({name,foundationYear,division,conference,imageUrl,id}:ITeamData) => { 
+      return {
+        name,
+        foundationYear,
+        imageUrl
+
+      }
+    })
+    console.log(teamList);
+    
+    setTeam(teamList)
+  }
+
+  useEffect(() => {
+    getResource(GET_TEAM)
+  }, [])
+
   return (
 
       <div className={cls.bg}>
@@ -23,12 +47,7 @@ getApiResource()
             <AddButton/>
           </div>
           <div className={cls.mainContainer}>
-            <TeamSmallCard />
-            <TeamSmallCard/>
-            <TeamSmallCard/>
-            <TeamSmallCard/>
-            <TeamSmallCard/>
-            <TeamSmallCard/>
+             {team && <TeamSmallCard team={team}/>}
           </div>
         </div>
       </div>
