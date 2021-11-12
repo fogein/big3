@@ -9,7 +9,8 @@ import * as _ from 'lodash';
 import { signUpSuccessRoute } from "../constants/auth";
 
 
-export const savedToken = localStorage.getItem('token')
+
+export const savedToken = localStorage.getItem('token');
 
 
 function* SignInWorker(action: Action<ILogin>) {
@@ -20,6 +21,8 @@ function* SignInWorker(action: Action<ILogin>) {
 
         yield put(AuthActions.setAuthInfo(_.pick(data, ['accessToken']) as IAuth));
         yield put(UserActions.setUser(_.omit(data, 'accessToken') as IUser));
+        
+       
     } catch (error) {
         message.error('Failed to login!');
         console.error(error);

@@ -6,7 +6,7 @@ import { Header } from '../../../components/UI/header/Header'
 import { Navbar } from '../../../components/UI/Navbar/Navbar'
 import { Search } from '../../../components/UI/Search/Search'
 import { TeamSmallCard } from '../../../components/UI/TeamSmallCard/TeamSmallCard'
-import { GET_TEAM } from '../../../core/redux/constants/Teams'
+import { GET_TEAM_URL } from '../../../core/redux/constants/Teams'
 import { ITeamData } from '../../../types/teams'
 import classes from './card_team.module.scss'
 
@@ -27,15 +27,17 @@ export const Card_teams: React.FC = () => {
 
       }
     })
-    console.log(teamList);
+    
     
     setTeam(teamList)
   }
 
   useEffect(() => {
-    getResource(GET_TEAM)
+    getResource(GET_TEAM_URL)
   }, [])
 
+  console.log(team);
+  
   return (
 
       <div className={cls.bg}>

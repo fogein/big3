@@ -1,20 +1,9 @@
+
+import axios from "axios";
 import { ContentTypes } from "../core/redux/sagas/api";
 import { savedToken } from "../core/redux/sagas/auth";
 
 
-
-// export const getApiResource = () => {
-//   fetch(GET_TEAM,{
-//     method: 'GET',
-//         headers: new Headers({
-//           'Authorization': "Bearer " + savedToken,
-//           'Content-Type': ContentTypes.APPLICATION_JSON, 
-//         }), 
-//   })
-//   .then(res => res.json())
-//   .then(body => console.log(body))
-
-// }
 export const getApiResource = async (url:any) => {
 
 
@@ -22,10 +11,11 @@ export const getApiResource = async (url:any) => {
     const res = await fetch(url,{
       method: 'GET',
         headers: new Headers({
-          'Authorization': "Bearer " + savedToken,
+           'Authorization': "Bearer " + savedToken,
           'Content-Type': ContentTypes.APPLICATION_JSON, 
         }),
     });
+    
   
     if (!res.ok) {
       console.error('error', res.status);
@@ -40,3 +30,27 @@ export const getApiResource = async (url:any) => {
     }
   
   }
+
+  
+export function postTeam (){
+
+  return axios({
+      url: "http://dev.trainee.dex-it.ru/api/Team/Add",
+      method: 'POST',
+      headers: {
+          'Authorization': "Bearer " + savedToken,
+          'Content-Type': ContentTypes.APPLICATION_JSON, 
+      },   
+  });
+}
+
+
+//   (function():any {
+
+//     if (savedToken) {
+//       axios.defaults.headers.common['Authorization'] = savedToken;
+//     } else {
+//       axios.defaults.headers.common['Authorization'] = null;
+//     }
+//  })();
+
