@@ -45,12 +45,4 @@ export function postTeam (){
 }
 
 
-//   (function():any {
-
-//     if (savedToken) {
-//       axios.defaults.headers.common['Authorization'] = savedToken;
-//     } else {
-//       axios.defaults.headers.common['Authorization'] = null;
-//     }
-//  })();
 
