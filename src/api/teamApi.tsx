@@ -2,7 +2,7 @@
 import axios from "axios";
 import { ContentTypes } from "../core/redux/sagas/api";
 import { savedToken } from "../core/redux/sagas/auth";
-
+import api from '.';
 
 export const getApiResource = async (url:any) => {
 
@@ -32,16 +32,11 @@ export const getApiResource = async (url:any) => {
   }
 
   
-export function postTeam (){
+export async function addTeam (data: any){
 
-  return axios({
-      url: "http://dev.trainee.dex-it.ru/api/Team/Add",
-      method: 'POST',
-      headers: {
-          'Authorization': "Bearer " + savedToken,
-          'Content-Type': ContentTypes.APPLICATION_JSON, 
-      },   
-  });
+  let response = await api.post('/Team/Add',data);
+
+  return response.data;
 }
 
 
