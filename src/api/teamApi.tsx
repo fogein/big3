@@ -1,5 +1,4 @@
 
-import axios from "axios";
 import { ContentTypes } from "../core/redux/sagas/api";
 import { savedToken } from "../core/redux/sagas/auth";
 import api from '.';
