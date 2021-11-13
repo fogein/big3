@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/nanoid": "^3.0.0",
     "antd": "^3.26.9",
     "axios": "^0.22.0",
     "connected-react-router": "^6.9.1",
