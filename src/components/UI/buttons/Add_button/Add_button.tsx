@@ -5,7 +5,7 @@ let classes = require('./add_button.module.scss');
 let cls:any = classes
 export const AddButton: React.FC = () => {
   const addTeamHandler = () =>{
-    var testObject = {
+    let testObject = {
       name: "Navi",
       foundationYear: 2010,
       division: "3",

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Logo } from '../Logo'
 import userImg from'../../../assets/images/profile.svg';
+import myLogo  from '../../../assets/images/logo.svg'
 // import burgerMenu from '../../../assets/images/burger.svg'
 let classes = require( './header.module.scss')
 
@@ -11,7 +11,9 @@ export const Header: React.FC = () => {
     
       <header>
         <div className={cls.headerContainer}>
-          <Logo/>
+          <a href="/" className={cls.logo}>
+            <img src={myLogo} alt="logo" />
+          </a>
           <div className={cls.userContainer}>
             <a href="/" className={cls.linkUser}>
             <span className={cls.userName}>John Smith</span>
@@ -19,16 +21,6 @@ export const Header: React.FC = () => {
             </a>
           </div>
         </div>
-
-        {/* burger */}
-
-        {/* <button className="burger">
-          <img src={burgerMenu} alt="menu" />
-        </button> */}
-
-
-        {/* burger end */}
-
       </header> 
 
 

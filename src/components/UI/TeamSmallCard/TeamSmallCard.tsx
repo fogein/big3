@@ -32,7 +32,6 @@ export const TeamSmallCard = (props:ITeamData) => {
   useEffect(() => {
     getResource(GET_TEAM_URL)
   }, [])
-  console.log(team)
   
   return (
     // Team card   
