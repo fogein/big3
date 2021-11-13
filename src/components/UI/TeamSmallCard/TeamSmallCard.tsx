@@ -19,7 +19,8 @@ export const TeamSmallCard = (props:ITeamData) => {
       return {
         name,
         foundationYear,
-        imageUrl
+        imageUrl,
+        id
 
       }
     })
@@ -36,8 +37,8 @@ export const TeamSmallCard = (props:ITeamData) => {
   return (
     // Team card   
       <ul className={cls.smallCardContainer}>
-       {team.map(({name,foundationYear,imageUrl}) => 
-        <li key={name}>
+       {team.map(({name,foundationYear,imageUrl,id}) => 
+        <li className={cls.smallCardItem} key={id}>
         <div className={cls.smallCardTop}>
           <img src={imageUrl} alt="img" />
         </div>

@@ -1,14 +1,20 @@
-
+// margin: 32px 24px -8px 0;
+// padding: 0;
+// width: 364px;
+// height: 100%;
+// border:none;
+// display: flex;
+// flex-direction: column;
+// width: 364px;
+// height: 380px;
 .smallCardContainer{
-  margin: 32px 24px -8px 0;
-  padding: 0;
-  width: 364px;
-  height: 100%;
-  border:none;
   display: flex;
-  flex-direction: column;
-  width: 364px;
-  height: 380px;
+  flex-wrap: wrap;
+  width: 1200px;
+  height: 100%;
+}
+.smallCardItem{
+  margin: 32px 24px -12px 0;
 }
 .smallCardTop{
   width: 364px;
