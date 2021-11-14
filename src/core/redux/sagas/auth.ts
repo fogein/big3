@@ -10,7 +10,7 @@ import { signUpSuccessRoute } from "../constants/auth";
 
 
 
-export const savedToken = localStorage.getItem('token');
+
 
 
 function* SignInWorker(action: Action<ILogin>) {

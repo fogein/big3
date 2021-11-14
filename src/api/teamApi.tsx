@@ -1,6 +1,5 @@
 
 import { ContentTypes } from "../core/redux/sagas/api";
-import { savedToken } from "../core/redux/sagas/auth";
 import api from '.';
 
 export const getApiResource = async (url:any) => {
@@ -10,7 +9,7 @@ export const getApiResource = async (url:any) => {
     const res = await fetch(url,{
       method: 'GET',
         headers: new Headers({
-           'Authorization': "Bearer " + savedToken,
+           'Authorization': "Bearer " + localStorage.getItem('token'),
           'Content-Type': ContentTypes.APPLICATION_JSON, 
         }),
     });
