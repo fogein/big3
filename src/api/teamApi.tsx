@@ -34,7 +34,10 @@ export async function addTeam (data: any){
 
   let response = await api.post('/Team/Add',data);
 
+
+  
   return response.data;
+
 }
 
 
