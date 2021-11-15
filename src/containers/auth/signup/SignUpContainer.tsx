@@ -3,12 +3,7 @@ import { useDispatch } from 'react-redux';
 import {FormSignUp} from '../../../components/auth/signup/signUpForm';
 import {ISignUp} from "../../../types";
 import {AuthActions} from "../../../core/redux/actions";
-
-
-
-
-let classes = require('./styles.module.scss');
-let cls:any = classes
+import cls from'./styles.module.scss';
 
 
 export function SignUpContainer(props: any) {

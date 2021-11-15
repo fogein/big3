@@ -4,15 +4,12 @@ import {FormLogin} from '../../../components/auth/login/loginForm';
 import { IRootState } from '../../../core/redux/reducers/state';
 import { ILogin } from '../../../types';
 import { AuthActions } from '../../../core/redux/actions';
-
-
-let classes = require('./styles.module.scss');
-let cls:any = classes
+import cls from'./styles.module.scss';
 
 
 
 export function LoginContainer(props: any) {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
     const useselect = useSelector((state: IRootState) => ({
     }))
     const dispatch = useDispatch();

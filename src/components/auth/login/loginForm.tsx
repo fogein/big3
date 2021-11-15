@@ -1,15 +1,13 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable react/jsx-pascal-case */
+
 import React, { FormEvent } from 'react';
 import { Form, Input } from 'antd';
 import { FormComponentProps } from 'antd/es/form';
 import { Link } from 'react-router-dom';
 import { ILogin } from '../../../types';
-import { Sign_In_but } from '../../UI/buttons/SignIn/Sign_In-but';
+import { SignInbut } from '../../UI/buttons/SignIn/Sign_In-but';
 import signInBg from '../../../assets/images/SignInBg.png';
+import cls from './styles.module.scss'
 
-let classes = require('./styles.module.scss');
-let cls:any = classes
 
 
 interface ILoginFormProps extends FormComponentProps {
@@ -55,7 +53,7 @@ interface ILoginFormProps extends FormComponentProps {
                     )}
                 </Form.Item>
                 
-                    <Sign_In_but 
+                    <SignInbut 
                     htmlType="submit"
                     label="Sign In"
                     />

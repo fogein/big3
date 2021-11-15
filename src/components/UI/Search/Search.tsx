@@ -1,8 +1,8 @@
 import React from 'react'
 import search from '../../../assets/images/search.svg'
-let classes = require('./Search.module.scss')
+import cls from './Search.module.scss'
 
-let cls :any = classes
+
 
 export const Search = (props:any) => {
 

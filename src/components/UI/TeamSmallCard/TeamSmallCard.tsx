@@ -1,6 +1,5 @@
 import cls from './teamSmallCard.module.scss'
 import { ITeamData } from '../../../types/teams' 
-// import smallCardTeam from '../../../assets/images/teamSmallCard.svg'
 
 
 

@@ -6,9 +6,9 @@ import { IRootState } from '../core/redux/reducers/state';
 import { IAuth } from '../types/auth';
 import 'antd/dist/antd.css';
 import { Card_teams } from '../pages/home/card_teams/card_teams';
-import { LoginPage } from '../pages/auth/login';
-import { SignUpPage } from '../pages/auth/signup';
 import { SignUpSuccess } from '../pages/auth/signUpSuccess';
+import { LoginContainer } from '../containers/auth/login/LoginContainer';
+import { SignUpContainer } from '../containers/auth/signup/SignUpContainer';
 
 
 
@@ -30,8 +30,8 @@ export function MainRouter(props: IMainRouterProps) {
                             )
                             : (
                                 <>
-                                    <Route exact path="/" component={LoginPage} />
-                                    <Route exact path="/signup" component={SignUpPage} />
+                                    <Route exact path="/" component={LoginContainer} />
+                                    <Route exact path="/signup" component={SignUpContainer} />
                                     <Route exact path="/signup/success" component={SignUpSuccess} />
                                 </>
                             )

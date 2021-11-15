@@ -2,10 +2,8 @@ import React from 'react'
 import userImg from'../../../assets/images/profile.svg';
 import myLogo  from '../../../assets/images/logo.svg'
 import { Link } from 'react-router-dom';
-// import burgerMenu from '../../../assets/images/burger.svg'
-let classes = require( './header.module.scss')
+import cls from  './header.module.scss'
 
-let cls:any = classes
 
 export const Header: React.FC = () => {
   return (

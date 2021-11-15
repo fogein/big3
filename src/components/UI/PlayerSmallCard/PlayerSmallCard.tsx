@@ -1,8 +1,8 @@
 import React from 'react'
 import smallCardPlayer from '../../assets/images/playerSmallCard.png'
-let classes = require ('./playerSmallCard.module.scss')
+import cls from 'playerSmallCard.module.scss'
 
-  let cls:any = classes
+
 export const PlayerSmallCard:React.FC = () => {
   return (
     // Player card

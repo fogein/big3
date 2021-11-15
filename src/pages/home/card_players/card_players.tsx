@@ -4,9 +4,9 @@ import { Header } from '../../../components/UI/header/Header'
 import { Navbar } from '../../../components/UI/Navbar/Navbar'
 import { PlayerSmallCard } from '../../../components/UI/PlayerSmallCard/PlayerSmallCard'
 import { Search } from '../../../components/UI/Search/Search'
-import classes from './card_players.module.scss'
+import cls from './card_players.module.scss'
 
-let cls:any = classes
+
 
 export const Card_players: React.FC = () => {
   return (

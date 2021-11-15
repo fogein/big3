@@ -1,8 +1,7 @@
 import { addTeam } from "../../../../api/teamApi";
 
-let classes = require('./add_button.module.scss');
+import cls from './add_button.module.scss';
 
-let cls:any = classes
 export const AddButton = (props:any) => {
 
 

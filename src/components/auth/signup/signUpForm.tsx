@@ -5,12 +5,10 @@ import { Checkbox, Form, Input } from 'antd';
 import { Link } from 'react-router-dom';
 import { FormComponentProps } from 'antd/lib/form';
 import { ISignUp } from "../../../types";
-import { Sign_In_but } from '../../UI/buttons/SignIn/Sign_In-but';
+import { SignInbut } from '../../UI/buttons/SignIn/Sign_In-but';
 import signUpBg from '../../../assets/images/signUp.png'
-let classes = require ('./styles.module.scss');
+import cls from  './styles.module.scss';
 
-
-let cls:any = classes
 
 
 interface ISignUpFormProps extends FormComponentProps {
@@ -88,7 +86,7 @@ export const FormSignUp =  Form.create<ISignUpFormProps>()(function SignUpForm(p
             </Form.Item>
             
             <Checkbox className={cls.checkbox}>I accept the agreement</Checkbox>
-                    <Sign_In_but 
+                    <SignInbut 
                     htmlType="submit"
                     label="Sign Up"
                     />

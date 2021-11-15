@@ -14,4 +14,3 @@ export const UserActions = {
     setUser,
 }
 
-export type UserActions = Omit<typeof UserActions, 'Type'>;

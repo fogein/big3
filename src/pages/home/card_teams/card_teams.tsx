@@ -9,9 +9,9 @@ import { Search } from '../../../components/UI/Search/Search'
 import { TeamSmallCard } from '../../../components/UI/TeamSmallCard/TeamSmallCard'
 import { GET_TEAM_URL } from '../../../core/redux/constants/Teams'
 import { ITeamData } from '../../../types/teams'
-import classes from './card_team.module.scss'
+import cls from './card_team.module.scss'
 
-let cls:any = classes
+
 
 export const Card_teams: React.FC = () => {
  
