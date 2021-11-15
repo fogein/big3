@@ -9,7 +9,7 @@ export const AddButton = (props:any) => {
 // Add team
 const addTeamHandler = async () =>{
   let testObject = {
-    name: "kif",
+    name: "kifer",
     foundationYear: 2010,
     division: "3",
     conference: "qwerty",

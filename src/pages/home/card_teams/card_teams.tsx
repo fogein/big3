@@ -4,6 +4,7 @@ import { getApiResource } from '../../../api/teamApi'
 import { AddButton } from '../../../components/UI/buttons/Add_button/Add_button'
 import { Header } from '../../../components/UI/header/Header'
 import { Navbar } from '../../../components/UI/Navbar/Navbar'
+import { Pagination } from '../../../components/UI/Pagination/Pagination'
 import { Search } from '../../../components/UI/Search/Search'
 import { TeamSmallCard } from '../../../components/UI/TeamSmallCard/TeamSmallCard'
 import { GET_TEAM_URL } from '../../../core/redux/constants/Teams'
@@ -15,7 +16,8 @@ let cls:any = classes
 export const Card_teams: React.FC = () => {
  
   const [team,setTeam] = useState([]);
-
+  const [currentPage,setCurrentPage] = useState(1)
+  const [teamPerPage] = useState(6)
 
   const getResource = async (url:any) => {
     const res = await getApiResource(url);
@@ -48,6 +50,16 @@ export const Card_teams: React.FC = () => {
 
 // Search
 
+// Pagination
+
+const lastTeamIndex = currentPage*teamPerPage
+const firstTeamIndex = lastTeamIndex-teamPerPage
+const currentTeam = filteredTeams.slice(firstTeamIndex, lastTeamIndex)
+
+const paginate = (pageNumber:any) => setCurrentPage(pageNumber)
+
+
+// Pagination
 
 
   return (
@@ -67,7 +79,7 @@ export const Card_teams: React.FC = () => {
           </div>
           <div className={cls.mainContainer}>
           <ul className={cls.smallCardContainer}>
-          {filteredTeams.map(({name,foundationYear,imageUrl,id}) =>
+          {currentTeam.map(({name,foundationYear,imageUrl,id}) =>
             <TeamSmallCard 
             name={name}
             foundationYear={foundationYear}
@@ -77,6 +89,12 @@ export const Card_teams: React.FC = () => {
           )}
           </ul>
           </div>
+          <Pagination
+          curretPage={currentTeam}
+          teamPerPage={teamPerPage}
+          totalTeams={filteredTeams.length}
+          paginate={paginate}
+          />
         </div>
       </div>
   )
