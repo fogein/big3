@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react'
-import {  addTeam, getApiResource } from '../../../api/teamApi'
+import { getApiResource } from '../../../api/teamApi'
 import { AddButton } from '../../../components/UI/buttons/Add_button/Add_button'
 import { Header } from '../../../components/UI/header/Header'
 import { Navbar } from '../../../components/UI/Navbar/Navbar'
@@ -14,7 +14,7 @@ let cls:any = classes
 
 export const Card_teams: React.FC = () => {
  
-  const [team,setTeam] = useState(Array());
+  const [team,setTeam] = useState([]);
 
 
   const getResource = async (url:any) => {
@@ -48,21 +48,7 @@ export const Card_teams: React.FC = () => {
 
 // Search
 
-// Add team
-const addTeamHandler = async () =>{
-  let testObject = {
-    name: "kif",
-    foundationYear: 2010,
-    division: "3",
-    conference: "qwerty",
-    imageUrl: "https://cdn1.dotesports.com/wp-content/uploads/2019/07/24154332/navi.jpg"
-  }
-  let card = await addTeam(testObject)
-  filteredTeams.push(card)
-  let newTeam = filteredTeams
-  setTeam(newTeam)
-}
-// Add team
+
 
   return (
 
@@ -75,7 +61,8 @@ const addTeamHandler = async () =>{
             state={setValue}
             />
             <AddButton
-            addTeamHandler={addTeamHandler}
+            filteredTeams={filteredTeams}
+            setTeam={setTeam}
             />
           </div>
           <div className={cls.mainContainer}>
