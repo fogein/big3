@@ -1,43 +1,48 @@
-import React, { Suspense } from 'react';
-import {  useSelector } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch, RouteProps } from 'react-router-dom';
+import React, { Suspense, Fragment } from 'react';
+
+import { Router, Route, Switch, RouteProps } from 'react-router-dom';
+import { history } from '../core/redux/store';
 import {Fallback} from '../components/common/fallback';
 import { IRootState } from '../core/redux/reducers/state';
 import { IAuth } from '../types/auth';
 import 'antd/dist/antd.css';
-import { CardTeams } from '../pages/home/card_teams/card_teams';
-import { SignUpSuccess } from '../pages/auth/signUpSuccess';
-import { LoginContainer } from '../containers/auth/login/LoginContainer';
-import { SignUpContainer } from '../containers/auth/signup/SignUpContainer';
+import { useSelector } from 'react-redux';
 
+
+
+
+const CardTeams = React.lazy(() => import('../pages/home/card_teams/card_teams'));
+const LoginContainer = React.lazy(() => import('../containers/auth/login/LoginContainer'));
+const SignUpContainer = React.lazy(() => import('../containers/auth/signup/SignUpContainer'));
+const SignUpSuccess = React.lazy(() => import('../pages/auth/signUpSuccess'));
+const Card_players = React.lazy(() => import('../pages/home/card_players/card_players'));
 
 
 interface IMainRouterProps extends RouteProps {
     auth?: IAuth,
 }
-// (state: IRootState): IMainRouterProps
 export function MainRouter(props: IMainRouterProps) {
-    const auth = useSelector((state: IRootState) => state.auth )
+    const auth:IAuth = useSelector((state: IRootState) => state.auth )
     return (
-        <Router >
-            <Suspense fallback={<Fallback />}>
-                <Switch>
-                    {
-                        auth 
-                            ?
-                            (
-                                <Route exact path="/" component={CardTeams} />
-                            )
-                            : (
-                                <>
-                                    <Route exact path="/" component={LoginContainer} />
-                                    <Route exact path="/signup" component={SignUpContainer} />
-                                    <Route exact path="/signup/success" component={SignUpSuccess} />
-                                </>
-                            )
-                    }
-                </Switch>
-            </Suspense>
-        </Router>
-    );
+        <Router history={history}>
+        <Suspense fallback={<Fallback />}>
+            <Switch>
+                {
+                        auth
+                        ? (
+                            <Route exact path="/" component={CardTeams} />
+                        )
+                        : (
+                            <>
+                                <Route exact path="/" component={LoginContainer} />
+                                <Route exact path="/signup" component={SignUpContainer} />
+                                <Route exact path="/signup/success" component={SignUpSuccess} />
+                                <Route exact path="/players" component={Card_players} />
+                            </>
+                        )
+                }
+            </Switch>
+        </Suspense>
+    </Router>
+);
 }

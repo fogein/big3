@@ -8,7 +8,7 @@ import cls from './card_players.module.scss'
 
 
 
-export const Card_players: React.FC = () => {
+ const Card_players: React.FC = () => {
   return (
     <>
       <div className={cls.bg}>
@@ -21,11 +21,7 @@ export const Card_players: React.FC = () => {
           </div>
           <div className={cls.mainContainerPlayers}>
             <PlayerSmallCard/>
-            <PlayerSmallCard/>
-            <PlayerSmallCard/>
-            <PlayerSmallCard/>
-            <PlayerSmallCard/>
-            <PlayerSmallCard/>
+           
             
             
           </div>
@@ -34,3 +30,4 @@ export const Card_players: React.FC = () => {
     </>
   )
 }
+export default Card_players

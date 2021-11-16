@@ -8,7 +8,7 @@ import cls from'./styles.module.scss';
 
 
 
-export function LoginContainer(props: any) {
+export default function LoginContainer(props: any) {
 
     const useselect = useSelector((state: IRootState) => ({
     }))

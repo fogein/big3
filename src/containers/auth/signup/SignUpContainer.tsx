@@ -6,7 +6,7 @@ import {AuthActions} from "../../../core/redux/actions";
 import cls from'./styles.module.scss';
 
 
-export function SignUpContainer(props: any) {
+export default function SignUpContainer(props: any) {
     const dispatch = useDispatch();
     const signUp = useCallback((payload: ISignUp) => dispatch(AuthActions.signUp(payload)),[dispatch]);
     return (

@@ -1,6 +1,6 @@
 import React from 'react'
-import smallCardPlayer from '../../assets/images/playerSmallCard.png'
-import cls from 'playerSmallCard.module.scss'
+import smallCardPlayer from '../../../assets/images/playerSmallCard.png'
+import cls from './playerSmallCard.module.scss'
 
 
 export const PlayerSmallCard:React.FC = () => {
