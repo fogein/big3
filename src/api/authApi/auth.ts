@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {ILogin, ISignUp} from '../../../../types';
+import {ILogin, ISignUp} from '../../types';
 import { ContentTypes } from '.';
 
 

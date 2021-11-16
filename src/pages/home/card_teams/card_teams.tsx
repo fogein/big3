@@ -89,13 +89,14 @@ const paginate = (pageNumber:any) => setCurrentPage(pageNumber)
           )}
           </ul>
           </div>
-          <Pagination
+         <div className={cls.paginationContainer}> <Pagination
           curretPage={currentTeam}
           teamPerPage={teamPerPage}
           totalTeams={filteredTeams.length}
           paginate={paginate}
-          />
+          /></div>
         </div>
+        
       </div>
   )
 }

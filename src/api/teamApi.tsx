@@ -1,5 +1,5 @@
 
-import { ContentTypes } from "../core/redux/sagas/api";
+import { ContentTypes } from "./authApi";
 import api from '.';
 
 export const getApiResource = async (url:any) => {
