@@ -5,7 +5,7 @@ import {Fallback} from '../components/common/fallback';
 import { IRootState } from '../core/redux/reducers/state';
 import { IAuth } from '../types/auth';
 import 'antd/dist/antd.css';
-import { Card_teams } from '../pages/home/card_teams/card_teams';
+import { CardTeams } from '../pages/home/card_teams/card_teams';
 import { SignUpSuccess } from '../pages/auth/signUpSuccess';
 import { LoginContainer } from '../containers/auth/login/LoginContainer';
 import { SignUpContainer } from '../containers/auth/signup/SignUpContainer';
@@ -26,7 +26,7 @@ export function MainRouter(props: IMainRouterProps) {
                         auth 
                             ?
                             (
-                                <Route exact path="/" component={Card_teams} />
+                                <Route exact path="/" component={CardTeams} />
                             )
                             : (
                                 <>

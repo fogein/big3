@@ -13,7 +13,7 @@ import cls from './card_team.module.scss'
 
 
 
-export const Card_teams: React.FC = () => {
+export const CardTeams: React.FC = () => {
  
   const [team,setTeam] = useState([]);
   const [currentPage,setCurrentPage] = useState(1)
