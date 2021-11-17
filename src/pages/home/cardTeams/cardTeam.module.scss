@@ -1,0 +1,38 @@
+
+  .bg{
+    background: #F6F6F6;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+  }
+
+  .upContainer{
+    flex-wrap: wrap;
+    height: 40px;
+    width: 1140px;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 32px;
+    justify-content: space-between;
+  }
+  
+  .mainContainer{
+    padding-left: 80px;
+    justify-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    
+    width: 1300px;
+  }
+  .smallCardContainer{
+ 
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    height: 100%;
+  }
+  .paginationContainer{
+    position: absolute;
+    bottom: -10%;
+  }

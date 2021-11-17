@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {FormLogin} from '../../../components/auth/login/loginForm';
-import { IRootState } from '../../../core/redux/reducers/state';
-import { ILogin } from '../../../types';
-import { AuthActions } from '../../../core/redux/actions';
+import { IRootState } from '../../../modules/reducers/state'; 
+import { ILogin } from '../../../api/dto'; 
+import { AuthActions } from '../../../modules/actions';
 import cls from'./styles.module.scss';
 
 
