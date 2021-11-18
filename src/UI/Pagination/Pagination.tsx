@@ -5,7 +5,7 @@ export const Pagination = (props:any) => {
 
   const pageNumbers = []
 
-  for (let i = 1; i <= Math.ceil(props.totalTeams / props.teamPerPage);i++){
+  for (let i = 1; i <= Math.ceil(props.totalPages / props.PerPage);i++){
     pageNumbers.push(i)
   }
 

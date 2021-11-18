@@ -1,14 +1,14 @@
 
 import React, { useEffect, useState } from 'react'
-import { getApiResource } from '../../../api/request/teamApi'
+import { getApiResource } from '../../../api/request/teamAndPlayersApi'
 import { AddButton } from '../../../UI/buttons/Add_button/Add_button'
 import { Header } from '../../../UI/header/Header'
 import { Navbar } from '../../../UI/Navbar/Navbar'
 import { Pagination } from '../../../UI/Pagination/Pagination'
 import { Search } from '../../../UI/Search/Search'
 import { TeamSmallCard } from '../../../UI/TeamSmallCard/TeamSmallCard'
-import { GET_TEAM_URL } from '../../../modules/constants/Teams'
-import { ITeamData } from '../../../api/dto/teams'
+import { GET_TEAM_URL } from '../../../modules/constants/TeamsAndPlayers'
+import { ITeamData } from '../../../api/dto/teamsAndPlayers'
 import cls from './cardTeam.module.scss'
 
 
@@ -91,8 +91,8 @@ const paginate = (pageNumber:any) => setCurrentPage(pageNumber)
           </div>
          <div className={cls.paginationContainer}> <Pagination
           curretPage={currentTeam}
-          teamPerPage={teamPerPage}
-          totalTeams={filteredTeams.length}
+          PerPage={teamPerPage}
+          totalPages={filteredTeams.length}
           paginate={paginate}
           /></div>
         </div>

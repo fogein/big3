@@ -1,5 +1,5 @@
 import cls from './teamSmallCard.module.scss'
-import { ITeamData } from '../../api/dto/teams'  
+import { ITeamData } from '../../api/dto/teamsAndPlayers'  
 
 
 

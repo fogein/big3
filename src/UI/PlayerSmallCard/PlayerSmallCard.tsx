@@ -1,24 +1,26 @@
-import React from 'react'
-import smallCardPlayer from '../../assets/images/playerSmallCard.png'
+
+import { IPlayerData } from '../../api/dto/teamsAndPlayers'
+
 import cls from './playerSmallCard.module.scss'
 
 
-export const PlayerSmallCard:React.FC = () => {
+export const PlayerSmallCard = (props:IPlayerData) => {
   return (
     // Player card
-    <>
-      <button className={cls.smallCardContainer}>
-        <div className={cls.smallCardPayersTop}>
-          <img src={smallCardPlayer} alt="img" />
+    
+      <li className={cls.smallCardItem} key={props.id}>
+        <div className={cls.smallCardPlayersTop}>
+          <img src={props.avatarUrl} alt="img" />
         </div>
         <div className={cls.smallCardBot}>
-          <div className={cls.smallCardDeskription}>
-            <h4>Portland trail blazers</h4>
-            <p className={cls.smallCardP}>Year of foundation: 1970</p>
+          <div className={cls.smallCardDescription}>
+            <h4>props.name <span>props.number</span></h4>
+            <p className={cls.smallCardP}>props.team</p>
           </div>
         </div>
-      </button>
-    </>
+      </li>
+  
     // Player card
   )
 }
+

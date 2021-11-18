@@ -1,4 +1,4 @@
-import { addTeam } from '../../../api/request/teamApi'; 
+import { addTeam } from '../../../api/request/teamAndPlayersApi'; 
 
 import cls from './add_button.module.scss';
 
@@ -8,7 +8,7 @@ export const AddButton = (props:any) => {
 // Add team
 const addTeamHandler = async () =>{
   let testObject = {
-    name: "kifer",
+    name: "kife2r",
     foundationYear: 2010,
     division: "3",
     conference: "qwerty",

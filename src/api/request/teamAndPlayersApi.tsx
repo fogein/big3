@@ -40,5 +40,15 @@ export async function addTeam (data: any){
 
 }
 
+export async function addPlayer (data: any){
 
+  let response = await api.post('/Player/Add',data);
+
+
+  
+  return response.data;
+
+}
+
+ 
 
