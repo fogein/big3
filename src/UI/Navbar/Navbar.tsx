@@ -18,10 +18,10 @@ export const Navbar: React.FC = () => {
             <img src={playersImg} alt="" />
             <label className={cls.navItemText}>Players</label>
           </Link>
-          <li className={cls.item3}>
+          <Link to='/login' className={cls.item3}>
             <img src={outImg} alt="" />
             <label className={cls.navItemText}>Sign out</label>
-          </li>
+          </Link>
         </ul>
       </nav>
   )
