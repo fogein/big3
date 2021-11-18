@@ -6,6 +6,8 @@ import outImg  from '../../assets/images/signout.svg'
 import cls from './Navbar.module.scss'
 
 export const Navbar: React.FC = () => {
+  
+
   return (
     
       <nav className={cls.nav}>
@@ -18,10 +20,12 @@ export const Navbar: React.FC = () => {
             <img src={playersImg} alt="" />
             <label className={cls.navItemText}>Players</label>
           </Link>
-          <Link to='/login' className={cls.item3}>
-            <img src={outImg} alt="" />
-            <label className={cls.navItemText}>Sign out</label>
-          </Link>
+          <li className={cls.item3}>
+            <button onClick={()=>{localStorage.removeItem('token');window.location.reload()}} className={cls.exitBut}>
+              <img src={outImg} alt="" />
+              <label className={cls.navItemText}>Sign out</label>
+            </button>
+          </li>
         </ul>
       </nav>
   )
