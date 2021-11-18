@@ -18,6 +18,8 @@ function* SignInWorker(action: Action<ILogin>) {
         const token = data.token;
         localStorage.setItem('token', token);
 
+       
+        
         yield put(AuthActions.setAuthInfo(_.pick(data, ['accessToken']) as IAuth));
         yield put(UserActions.setUser(_.omit(data, 'accessToken') as IUser));
         
