@@ -93,7 +93,7 @@ export const FormSignUp =  Form.create<ISignUpFormProps>()(function SignUpForm(p
 
 
 
-                <span className={cls.signUpDescription}>Not a member yet? <Link to="/"  className={cls.linkSignIn}>Sign in</Link></span>
+                <span className={cls.signUpDescription}>Not a member yet? <Link to={"/"}  className={cls.linkSignIn}>Sign in</Link></span>
 
 
         </Form>

@@ -13,7 +13,7 @@ import cls from './cardTeam.module.scss'
 
 
 
- const CardTeams: React.FC = () => {
+ export const CardTeams: React.FC = () => {
  
   const [team,setTeam] = useState([]);
   const [currentPage,setCurrentPage] = useState(1)
@@ -100,4 +100,4 @@ const paginate = (pageNumber:any) => setCurrentPage(pageNumber)
       </div>
   )
 }
-export default CardTeams;
+

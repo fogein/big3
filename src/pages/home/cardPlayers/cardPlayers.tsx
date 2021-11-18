@@ -8,7 +8,7 @@ import cls from './cardPlayers.module.scss'
 
 
 
- const Card_players: React.FC = () => {
+export const CardPlayers: React.FC = () => {
   return (
     <>
       <div className={cls.bg}>
@@ -30,4 +30,4 @@ import cls from './cardPlayers.module.scss'
     </>
   )
 }
-export default Card_players
+

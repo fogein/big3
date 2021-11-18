@@ -58,7 +58,7 @@ interface ILoginFormProps extends FormComponentProps {
                     label="Sign In"
                     />
                 
-                <span className={cls.signInDescription}>Not a member yet? <Link to="/SignUp"  className={cls.linkSignUp}>Sign up</Link></span>
+                <span className={cls.signInDescription}>Not a member yet? <Link to={"/signup"}  className={cls.linkSignUp}>Sign up</Link></span>
             </Form>
 
             <div className={cls.signInBg}>

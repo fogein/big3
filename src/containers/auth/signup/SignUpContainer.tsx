@@ -6,7 +6,7 @@ import {AuthActions} from "../../../modules/actions";
 import cls from'./styles.module.scss';
 
 
-export default function SignUpContainer(props: any) {
+export const SignUpContainer = (props: any) => {
     const dispatch = useDispatch();
     const signUp = useCallback((payload: ISignUp) => dispatch(AuthActions.signUp(payload)),[dispatch]);
     return (

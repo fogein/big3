@@ -3,7 +3,7 @@ import { Result, Button } from 'antd';
 import { push } from 'react-router-redux'
 import {  useDispatch } from "react-redux";
 
- const  SignUpSuccess:React.FC = (props: any) => {
+ export const  SignUpSuccess:React.FC = (props: any) => {
     const dispatch = useDispatch();
     const forwardTo = useCallback(() => dispatch(push('/')),[dispatch]);
     return <Result
@@ -20,4 +20,4 @@ import {  useDispatch } from "react-redux";
                 ]}
     />;
 }
-export default SignUpSuccess
+

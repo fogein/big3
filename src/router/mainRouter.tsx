@@ -7,21 +7,25 @@ import { IRootState } from '../modules/reducers/state';
 import { IAuth } from '../api/dto/auth';
 import 'antd/dist/antd.css';
 import { useSelector } from 'react-redux';
+import { CardTeams } from '../pages/home/cardTeams/cardTeams';
+import { CardPlayers } from '../pages/home/cardPlayers/cardPlayers';
+import { SignUpContainer } from '../containers/auth/signup/SignUpContainer';
+import { SignUpSuccess } from '../pages/auth/signUpSuccess';
+import { LoginContainer } from '../containers/auth/login/LoginContainer';
 
 
 
-
-const CardTeams = React.lazy(() => import('../pages/home/cardTeams/cardTeams'));
-const LoginContainer = React.lazy(() => import('../containers/auth/login/LoginContainer'));
-const SignUpContainer = React.lazy(() => import('../containers/auth/signup/SignUpContainer'));
-const SignUpSuccess = React.lazy(() => import('../pages/auth/signUpSuccess'));
-const Card_players = React.lazy(() => import('../pages/home/cardPlayers/cardPlayers'));
+// const CardTeams = React.lazy(() => import('../pages/home/cardTeams/cardTeams'));
+// const LoginContainer = React.lazy(() => import('../containers/auth/login/LoginContainer'));
+// const SignUpContainer = React.lazy(() => import('../containers/auth/signup/SignUpContainer'));
+// const SignUpSuccess = React.lazy(() => import('../pages/auth/signUpSuccess'));
+// const Card_players = React.lazy(() => import('../pages/home/cardPlayers/cardPlayers'));
 
 
 interface IMainRouterProps extends RouteProps {
     auth?: IAuth,
 }
-export function MainRouter(props: IMainRouterProps) {
+export const  MainRouter = (props: IMainRouterProps) => {
     const auth:IAuth = useSelector((state: IRootState) => state.auth )
     return (
         <Router history={history}>
@@ -37,7 +41,7 @@ export function MainRouter(props: IMainRouterProps) {
                                 <Route exact path="/" component={LoginContainer} />
                                 <Route exact path="/signup" component={SignUpContainer} />
                                 <Route exact path="/signup/success" component={SignUpSuccess} />
-                                <Route exact path="/players" component={Card_players} />
+                                <Route exact path="/players" component={CardPlayers} />
                             </>
                         )
                 }
