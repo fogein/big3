@@ -5,7 +5,7 @@ import { IRootState } from '../../../modules/reducers/state';
 import { ILogin } from '../../../api/dto'; 
 import { AuthActions } from '../../../modules/actions';
 import cls from'./styles.module.scss';
-import { Redirect, useHistory } from 'react-router-dom';
+import {  useHistory } from 'react-router-dom';
 
 
 
