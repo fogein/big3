@@ -29,7 +29,11 @@ export const CardPlayers: React.FC = () => {
           team,
           number,
           avatarUrl,
-          id
+          id,
+          position,
+          birthday,
+          height,
+          weight
   
         }
       })
@@ -57,7 +61,11 @@ const addPlayerHandler = async () =>{
     name: "player",
     team: "navi",
     number: "3",
-    imageUrl: "https://cdn1.dotesports.com/wp-content/uploads/2019/07/24154332/navi.jpg"
+    imageUrl: "https://cdn1.dotesports.com/wp-content/uploads/2019/07/24154332/navi.jpg",
+    position:"forward",
+    birthday:"10-10-2010",
+    height:220,
+    weight:100
   }
   let card = await addPlayer(testObject)
   filteredPlayers.push(card)
