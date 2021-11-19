@@ -1,19 +1,19 @@
 
 export interface ITeamData{
-  name?: string,
+  name: string,
   foundationYear?: number,
   division?: string,
   conference?: string,
   imageUrl?: string,
-  id?: number
+  id?:number
 
 }
 export interface IPlayerData{
   name?: string,
-  number?: number,
+  number?: number, 
   position?: string,
-  team?: BigInteger,
-  birthday?: string,
+  team?: any,
+  birthday?: string, 
   height?: number,
   weight?: number,
   avatarUrl?: string,

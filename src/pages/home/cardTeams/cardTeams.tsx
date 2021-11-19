@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-array-constructor */
 
 import React, { useEffect, useState } from 'react'
-import { getApiResource } from '../../../api/request/teamAndPlayersApi'
+import { addTeam, getApiResource } from '../../../api/request/teamAndPlayersApi'
 import { AddButton } from '../../../UI/buttons/Add_button/Add_button'
 import { Header } from '../../../UI/header/Header'
 import { Navbar } from '../../../UI/Navbar/Navbar'
@@ -15,7 +16,7 @@ import cls from './cardTeam.module.scss'
 
  export const CardTeams: React.FC = () => {
  
-  const [team,setTeam] = useState([]);
+  const [team,setTeam] = useState(Array());
   const [currentPage,setCurrentPage] = useState(1)
   const [teamPerPage] = useState(6)
 
@@ -50,6 +51,22 @@ import cls from './cardTeam.module.scss'
 
 // Search
 
+// Add team
+const addTeamHandler = async () =>{
+  let testObject = {
+    name: "kife2r",
+    foundationYear: 2010,
+    division: "3",
+    conference: "qwerty",
+    imageUrl: "https://cdn1.dotesports.com/wp-content/uploads/2019/07/24154332/navi.jpg"
+  }
+  let card = await addTeam(testObject)
+  filteredTeams.push(card)
+  let newTeam = filteredTeams
+  setTeam(newTeam)
+}
+// Add team
+
 // Pagination
 
 const lastTeamIndex = currentPage*teamPerPage
@@ -73,8 +90,7 @@ const paginate = (pageNumber:any) => setCurrentPage(pageNumber)
             state={setValue}
             />
             <AddButton
-            filteredTeams={filteredTeams}
-            setTeam={setTeam}
+            handler={addTeamHandler}
             />
           </div>
           <div className={cls.mainContainer}>

@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-array-constructor */
 import React, { useEffect, useState } from 'react'
 import { IPlayerData } from '../../../api/dto/teamsAndPlayers'
-import { getApiResource } from '../../../api/request/teamAndPlayersApi'
+import { addPlayer, getApiResource } from '../../../api/request/teamAndPlayersApi'
 import { GET_PLAYER_URL } from '../../../modules/constants/TeamsAndPlayers'
-import { AddButton } from '../../../UI/buttons/Add_button/Add_buttonPlayers'
+import { AddButton } from '../../../UI/buttons/Add_button/Add_button'
 import { Header } from '../../../UI/header/Header'
 import { Navbar } from '../../../UI/Navbar/Navbar'
 import { Pagination } from '../../../UI/Pagination/Pagination'
@@ -14,7 +15,7 @@ import cls from './cardPlayers.module.scss'
 
 export const CardPlayers: React.FC = () => {
  
-    const [player,setPlayer] = useState([]);
+    const [player,setPlayer] = useState(Array());
     const [currentPage,setCurrentPage] = useState(1)
     const [playerPerPage] = useState(6)
   
@@ -32,7 +33,6 @@ export const CardPlayers: React.FC = () => {
   
         }
       })
-      console.log(playerList)
   
       setPlayer(playerList)
     }
@@ -42,7 +42,7 @@ export const CardPlayers: React.FC = () => {
       getResource(GET_PLAYER_URL)
     }, [])
     
-  
+
   
   // Search
     const [value, setValue]=useState("");
@@ -50,6 +50,21 @@ export const CardPlayers: React.FC = () => {
    
   
   // Search
+
+    // Add player
+const addPlayerHandler = async () =>{
+  let testObject = {
+    name: "player",
+    team: "navi",
+    number: "3",
+    imageUrl: "https://cdn1.dotesports.com/wp-content/uploads/2019/07/24154332/navi.jpg"
+  }
+  let card = await addPlayer(testObject)
+  filteredPlayers.push(card)
+  let newPlayer = filteredPlayers
+  setPlayer(newPlayer)
+}
+// Add player
   
   // Pagination
   
@@ -74,8 +89,7 @@ export const CardPlayers: React.FC = () => {
               state={setValue}
               />
               <AddButton
-              filteredPlayers={filteredPlayers}
-              setPlayer={setPlayer}
+              handler={addPlayerHandler}
               />
             </div>
             <div className={cls.mainContainer}>
@@ -101,5 +115,5 @@ export const CardPlayers: React.FC = () => {
           
         </div>
     )
-  }
   
+    }
