@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-array-constructor */
 import React, { useEffect, useState } from 'react'
 import { IPlayerData } from '../../../api/dto/teamsAndPlayers'
-import { addPlayer, getApiResource } from '../../../api/request/teamAndPlayersApi'
+import { addPlayer } from '../../../api/request/teamAndPlayersApi'
 import { GET_PLAYER_URL } from '../../../modules/constants/TeamsAndPlayers'
 import { AddButton } from '../../../UI/buttons/Add_button/Add_button'
 import { Header } from '../../../UI/header/Header'
@@ -19,32 +19,32 @@ export const CardPlayers: React.FC = () => {
     const [currentPage,setCurrentPage] = useState(1)
     const [playerPerPage] = useState(6)
   
-    const getResource = async (url:any) => {
-      const res = await getApiResource(url);
+    // const getResource = async (url:any) => {
+    //   const res = await getApiResource(url);
   
   
-      const playerList = res.data.map(({name,position,birthday,height,weight,avatarUrl,team,number,id}:IPlayerData) => { 
-        return {
-          name,
-          team,
-          number,
-          avatarUrl,
-          id,
-          position,
-          birthday,
-          height,
-          weight
+    //   const playerList = res.data.map(({name,position,birthday,height,weight,avatarUrl,team,number,id}:IPlayerData) => { 
+    //     return {
+    //       name,
+    //       team,
+    //       number,
+    //       avatarUrl,
+    //       id,
+    //       position,
+    //       birthday,
+    //       height,
+    //       weight
   
-        }
-      })
+    //     }
+    //   })
   
-      setPlayer(playerList)
-    }
+    //   setPlayer(playerList)
+    // }
     
   
-    useEffect(() => {
-      getResource(GET_PLAYER_URL)
-    }, [])
+    // useEffect(() => {
+    //   getResource(GET_PLAYER_URL)
+    // }, [])
     
 
   

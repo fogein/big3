@@ -1,6 +1,12 @@
 
 import { ContentTypes } from "../../api/request";
 
+export function update (card:any) {
+  return {
+    type: "UPDATE",
+   card
+  }
+}
 export function teamsFetchDataSuccess(data:any) {
   return {
       type: "TEAMS_FETCH_DATA_SUCCES",
