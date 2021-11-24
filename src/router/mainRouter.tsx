@@ -18,7 +18,7 @@ export function MainRouter() {
       <Suspense fallback={<Fallback />}>
         <Switch>
           <PrivateRouter exact path="/team" component={CardTeams} />
-          <Route exact path="/login" component={LoginContainer} />
+          <Route exact path="/" component={LoginContainer} />
           <Route exact path="/signup" component={SignUpContainer} />
           <PrivateRouter exact path="/signup/success" component={SignUpSuccess} />
           <PrivateRouter exact path="/players" component={CardPlayers} />

@@ -11,42 +11,29 @@ import { TeamSmallCard } from '../../../UI/TeamSmallCard/TeamSmallCard'
 import { GET_TEAM_URL } from '../../../modules/constants/TeamsAndPlayers'
 import { ITeamData } from '../../../api/dto/teamsAndPlayers'
 import cls from './cardTeam.module.scss'
+import { teamsFetchData } from '../../../modules/actions/teams'
+import { useDispatch, useSelector } from 'react-redux'
 
 
 
  export const CardTeams: React.FC = () => {
  
-  const [team,setTeam] = useState(Array());
   const [currentPage,setCurrentPage] = useState(1)
   const [teamPerPage] = useState(6)
 
-  const getResource = async (url:any) => {
-    const res = await getApiResource(url);
 
-
-    const teamList = res.data.map(({name,foundationYear,division,conference,imageUrl,id}:ITeamData) => { 
-      return {
-        name,
-        foundationYear,
-        imageUrl,
-        id
-
-      }
-    })
-
-    setTeam(teamList)
-  }
-  
-
+  const dispatch = useDispatch()
   useEffect(() => {
-    getResource(GET_TEAM_URL)
-  }, [])
-  
+    dispatch(teamsFetchData(GET_TEAM_URL));
+ }, [dispatch]);
+ const teams  = useSelector<any, Array<ITeamData>>(state => state.teams )
+
+
 
 
 // Search
   const [value, setValue]=useState("");
-  const filteredTeams = team.filter((e:any) => e.name.toLowerCase().includes(value.toLowerCase()))
+  const filteredTeams = teams.filter((e:any) => e.name.toLowerCase().includes(value.toLowerCase()))
  
 
 // Search
@@ -54,16 +41,14 @@ import cls from './cardTeam.module.scss'
 // Add team
 const addTeamHandler = async () =>{
   let testObject = {
-    name: "kife2r",
+    name: "kife2r32",
     foundationYear: 2010,
     division: "3",
     conference: "qwerty",
     imageUrl: "https://cdn1.dotesports.com/wp-content/uploads/2019/07/24154332/navi.jpg"
   }
-  let card = await addTeam(testObject)
-  filteredTeams.push(card)
-  let newTeam = filteredTeams
-  setTeam(newTeam)
+  addTeam(testObject)
+  
 }
 // Add team
 
