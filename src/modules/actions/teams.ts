@@ -2,6 +2,7 @@
 import { ContentTypes } from "../../api/request";
 
 export function update (card:any) {
+  
   return {
     type: "UPDATE",
     payload:card

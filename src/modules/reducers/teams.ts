@@ -4,12 +4,11 @@
 export const teams = (state=[],action:any) => {
   switch (action.type) {
     case "TEAMS_FETCH_DATA_SUCCES":
-      let teams = action.data.data
-      return  teams
+      return   action.data.data
       
       case "UPDATE":
-        console.log(action)
-      return  action
+        
+      return [...state]
 
        default:
         return state;

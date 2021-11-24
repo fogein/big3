@@ -41,7 +41,7 @@ import { update } from '../../../modules/actions/teams'
 // Add team
 const addTeamHandler = async () =>{
   let testObject = {
-    name: "sadaaa3",
+    name: "sasssds13sssssaaa3",
     foundationYear: 2020,
     division: "3",
     conference: "qwerty",
