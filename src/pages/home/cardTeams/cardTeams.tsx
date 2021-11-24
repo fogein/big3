@@ -41,17 +41,16 @@ import { update } from '../../../modules/actions/teams'
 // Add team
 const addTeamHandler = async () =>{
   let testObject = {
-    name: "wqedddd31322233312dsa21w2",
-    foundationYear: 2010,
+    name: "sadaaa3",
+    foundationYear: 2020,
     division: "3",
     conference: "qwerty",
     imageUrl: "https://cdn1.dotesports.com/wp-content/uploads/2019/07/24154332/navi.jpg"
   }
-  // addTeam(testObject)
-  // filteredTeams.push(card)
-  // let newTeam = filteredTeams
-  dispatch(update(addTeam(testObject)))
-  // setTeam(newTeam)
+  let card = await addTeam(testObject)
+  teams.push(card)
+  dispatch(update(teams))
+ 
   
 }
 // Add team

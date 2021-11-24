@@ -7,12 +7,9 @@ export const teams = (state=[],action:any) => {
       let teams = action.data.data
       return  teams
       
-
-    
-
-    case "UPDATE":
-   
-       
+      case "UPDATE":
+        console.log(action)
+      return  action
 
        default:
         return state;
@@ -20,6 +17,4 @@ export const teams = (state=[],action:any) => {
         
   
 }
-// console.log(Object.assign(state, 
-//   action.data.data
-// ));
+
