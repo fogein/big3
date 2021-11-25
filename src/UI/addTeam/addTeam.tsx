@@ -1,11 +1,19 @@
 
 import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from 'react-router-dom'
+import { ITeamData } from "../../api/dto/teamsAndPlayers";
+import { addTeam } from "../../api/request/teamAndPlayersApi";
 import addPhotoTeam from '../../assets/images/addPhotoTeam.svg'
+import { update } from "../../modules/actions/teams";
 import cls from './addTeam.module.scss'
 
 export const AddTeam = () => {
+
   const history=useHistory()
+  const dispatch = useDispatch()
+  const teams  = useSelector<any, Array<ITeamData>>(state => state.teams )
+
   const {
     register,
     formState: { errors },
@@ -13,8 +21,18 @@ export const AddTeam = () => {
   } = useForm({
     mode: "onChange"
   });
-  const onSubmit = (data:any) => {
-    console.log(data);
+  
+  const onSubmit = async (data:any) => {
+    let testObject = {
+      name: data.Name,
+      foundationYear: data.YearOfFoundation,
+      division: data.Division,
+      conference: data.Conference,
+      imageUrl: "https://cdn1.dotesports.com/wp-content/uploads/2019/07/24154332/navi.jpg"
+    }
+    let card = await addTeam(testObject)
+    teams.push(card)
+    dispatch(update())
     history.push('/team')
   };
   return (
