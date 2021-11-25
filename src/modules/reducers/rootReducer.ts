@@ -12,6 +12,6 @@ export const rootReducer = combineReducers<IRootState>({
     router: routerReducer,
     user: UserReducer as any,
     auth: AuthReducer as any,
-    teams
+    teams:teams as any,
 });
 

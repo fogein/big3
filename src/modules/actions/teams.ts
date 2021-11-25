@@ -1,11 +1,11 @@
 
 import { ContentTypes } from "../../api/request";
 
-export function update (card:any) {
+export function update () {
   
   return {
     type: "UPDATE",
-    payload:card
+
   }
 }
 export function teamsFetchDataSuccess(data:any) {

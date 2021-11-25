@@ -41,7 +41,7 @@ import { update } from '../../../modules/actions/teams'
 // Add team
 const addTeamHandler = async () =>{
   let testObject = {
-    name: "sasssds13sssssaaa3",
+    name: "cards",
     foundationYear: 2020,
     division: "3",
     conference: "qwerty",
@@ -49,8 +49,7 @@ const addTeamHandler = async () =>{
   }
   let card = await addTeam(testObject)
   teams.push(card)
-  dispatch(update(teams))
- 
+  dispatch(update())
   
 }
 // Add team
