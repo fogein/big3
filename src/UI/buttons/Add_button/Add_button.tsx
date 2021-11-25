@@ -1,4 +1,5 @@
-import { addTeam } from '../../../api/request/teamAndPlayersApi'; 
+import { Link } from 'react-router-dom';
+
 
 import cls from './add_button.module.scss';
 
@@ -9,9 +10,9 @@ export const AddButton = (props:any) => {
 
 
   return (
-          <button onClick={props.handler} className={cls.addButton}>
+          <Link to='/team/addTeam' className={cls.addButton}>
             <span className={cls.addButtonText}>Add +</span>
-          </button>
+          </Link>
 
   )
 }
