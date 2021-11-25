@@ -27,46 +27,61 @@ export const AddTeam = () => {
         </button>
         </div>
               <form className={cls.inputsContainer} onSubmit={handleSubmit(onSubmit)}>
-            <label htmlFor="firstName">First Name</label>
-            <input
-              placeholder="Bill"
-              {...register("firstName", {
-                required: "this is a required",
-                maxLength: {
-                  value: 2,
-                  message: "Max length is 2"
+            <label htmlFor="Name">Name</label>
+            <input className={cls.addTeamInput}
+              
+              {...register("Name", {
+                required: "Please write name",
+                minLength: {
+                  value: 4,
+                  message: "Min length is 4"
                 }
               })}
             />
-            {errors.firstName && <p>{errors.firstName.message}</p>}
+            {errors.Name && <p>{errors.Name.message}</p>}
 
-            <label htmlFor="lastName">Last Name</label>
-            <input
-              placeholder="Luo"
-              {...register("lastName", {
-                required: "this is required",
+            <label htmlFor="Division">Division</label>
+            <input className={cls.addTeamInput}
+              
+              {...register("Division", {
+                required: "Please write Division",
                 minLength: {
                   value: 2,
                   message: "Min length is 2"
                 }
               })}
             />
-            {errors.lastName && <p>{errors.lastName.message}</p>}
+            {errors.Division && <p>{errors.Division.message}</p>}
 
-            <label htmlFor="email">Email</label>
-            <input
-              placeholder="bluebill1049@hotmail.com"
-              type="text"
-              {...register("email", {
-                required: "this is required",
-                pattern: {
-                  value: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                  message: "Invalid email address"
+            <label htmlFor="Conference">Conference</label>
+            <input className={cls.addTeamInput}
+              
+              {...register("Conference", {
+                required: "Please write Conference",
+                minLength: {
+                  value: 2,
+                  message: "Min length is 2"
                 }
               })}
             />
-            {errors.email && <p>{errors.email.message}</p>}
-            <input type="submit" />
+            {errors.Conference && <p>{errors.Conference.message}</p>}
+
+            <label htmlFor="Year of foundation">Year of foundation</label>
+            <input className={cls.addTeamInput}
+              
+              {...register("YearOfFoundation", {
+                required: "Please write Year of foundation",
+                minLength: {
+                  value: 4,
+                  message: "Min length is 4"
+                }
+              })}
+            />
+            {errors.YearOfFoundation && <p>{errors.YearOfFoundation.message}</p>}
+            <div className="buttons">
+            <Link to='/team'>Cancel</Link>
+            <button type="submit" >Save</button>
+            </div>
           </form>
       </div>
     </div>
