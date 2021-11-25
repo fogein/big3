@@ -1,10 +1,11 @@
 
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import addPhotoTeam from '../../assets/images/addPhotoTeam.svg'
 import cls from './addTeam.module.scss'
 
 export const AddTeam = () => {
+  const history=useHistory()
   const {
     register,
     formState: { errors },
@@ -14,6 +15,7 @@ export const AddTeam = () => {
   });
   const onSubmit = (data:any) => {
     console.log(data);
+    history.push('/team')
   };
   return (
       <div className={cls.mainContainer}  >
@@ -38,7 +40,7 @@ export const AddTeam = () => {
                 }
               })}
             />
-            {errors.Name && <p>{errors.Name.message}</p>}
+            {errors.Name && <p className={cls.errorMessage}>{errors.Name.message}</p>}
 
             <label htmlFor="Division">Division</label>
             <input className={cls.addTeamInput}
@@ -51,7 +53,7 @@ export const AddTeam = () => {
                 }
               })}
             />
-            {errors.Division && <p>{errors.Division.message}</p>}
+            {errors.Division && <p className={cls.errorMessage}>{errors.Division.message}</p>}
 
             <label htmlFor="Conference">Conference</label>
             <input className={cls.addTeamInput}
@@ -64,7 +66,7 @@ export const AddTeam = () => {
                 }
               })}
             />
-            {errors.Conference && <p>{errors.Conference.message}</p>}
+            {errors.Conference && <p className={cls.errorMessage}>{errors.Conference.message}</p>}
 
             <label htmlFor="Year of foundation">Year of foundation</label>
             <input className={cls.addTeamInput}
@@ -77,10 +79,10 @@ export const AddTeam = () => {
                 }
               })}
             />
-            {errors.YearOfFoundation && <p>{errors.YearOfFoundation.message}</p>}
-            <div className="buttons">
-            <Link to='/team'>Cancel</Link>
-            <button type="submit" >Save</button>
+            {errors.YearOfFoundation && <p className={cls.errorMessage}>{errors.YearOfFoundation.message}</p>}
+            <div className={cls.buttons}>
+            <Link className={cls.cancelButton} to='/team'>Cancel</Link>
+            <button className={cls.saveButton} type="submit" >Save</button>
             </div>
           </form>
       </div>

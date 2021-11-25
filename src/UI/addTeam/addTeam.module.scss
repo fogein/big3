@@ -48,3 +48,42 @@ margin-top: 24px;
   height: 40px;
   margin-bottom: 24px;
 }
+.buttons{
+  display: flex;
+  justify-content: space-between;
+}
+.cancelButton{
+  display: flex;
+  border: 1px solid #9C9C9C;
+  width: 171px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: #9C9C9C;
+}
+.saveButton{
+  border:none;
+  cursor: pointer;
+  background: #E4163A;
+  border-radius: 4px;
+  width: 171px;
+  height: 40px;
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+.errorMessage{
+  margin-top: -20px;
+  margin-bottom: 5px;
+  color: #FF768E;
+}
+
