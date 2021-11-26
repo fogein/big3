@@ -7,6 +7,7 @@ import { ISignUp,ILogin, IAuth, IUser } from '../../api/dto';
 import { signIn,signUp } from '../../api/request'; 
 import * as _ from 'lodash';
 import { signUpSuccessRoute } from "../constants/auth";
+import { useHistory } from 'react-router-dom';
 
 
 
@@ -32,9 +33,10 @@ function* SignInWorker(action: Action<ILogin>) {
 
 function* SignUpWorker(action: Action<ISignUp>) {
     try {
+        const history = useHistory()
         const { data } = yield call(signUp, action.payload);
 
-        yield put(push(signUpSuccessRoute));
+        history.push(signUpSuccessRoute);
     } catch (error) {
         message.error('Failed to sign up!');
         console.error(error);

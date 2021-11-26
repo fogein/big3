@@ -22,7 +22,7 @@ export function MainRouter() {
           <PrivateRouter exact path="/team/addTeam" component={AddTeamPage} />
           <Route exact path="/" component={LoginContainer} />
           <Route exact path="/signup" component={SignUpContainer} />
-          <PrivateRouter exact path="/signup/success" component={SignUpSuccess} />
+          <Route path="/signup/success" component={SignUpSuccess} />
           <PrivateRouter exact path="/players" component={CardPlayers} />
         </Switch>
       </Suspense>
