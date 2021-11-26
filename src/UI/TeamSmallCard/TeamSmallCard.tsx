@@ -11,7 +11,7 @@ export const TeamSmallCard = (props:ITeamData) => {
        
         <li className={cls.smallCardItem} key={props.id}>
         <div className={cls.smallCardTop}>
-          <img src={props.imageUrl} alt="img" />
+          <img className={cls.cardImg} src={props.imageUrl} alt="img" />
         </div>
         <div className={cls.smallCardBot}>
           <div className={cls.smallCardDeskription}>

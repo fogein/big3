@@ -1,10 +1,12 @@
 
+
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from 'react-router-dom'
 import { ITeamData } from "../../api/dto/teamsAndPlayers";
 import { addTeam } from "../../api/request/teamAndPlayersApi";
 import addPhotoTeam from '../../assets/images/addPhotoTeam.svg'
+import { saveImage } from "../../modules/actions/saveImage";
 import { update } from "../../modules/actions/teams";
 import cls from './addTeam.module.scss'
 
@@ -13,6 +15,7 @@ export const AddTeam = () => {
   const history=useHistory()
   const dispatch = useDispatch()
   const teams  = useSelector<any, Array<ITeamData>>(state => state.teams )
+  const imageUrl = useSelector<any, any>(state => state.imageUrl)
 
   const {
     register,
@@ -22,13 +25,19 @@ export const AddTeam = () => {
     mode: "onChange"
   });
   
+  const handleChange = (e:any) => {
+    const image =(e.target.files[0])
+    dispatch(saveImage(image))
+  }
+  
+  
   const onSubmit = async (data:any) => {
     let testObject = {
       name: data.Name,
       foundationYear: data.YearOfFoundation,
       division: data.Division,
       conference: data.Conference,
-      imageUrl: "https://cdn1.dotesports.com/wp-content/uploads/2019/07/24154332/navi.jpg"
+      imageUrl: `http://dev.trainee.dex-it.ru${imageUrl}`
     }
     let card = await addTeam(testObject)
     teams.push(card)
@@ -43,7 +52,12 @@ export const AddTeam = () => {
       <div className={cls.contentContainer}>
         <div className={cls.addImageContainer}>
         <button className={cls.addPhotoButton}>
-          <img src={addPhotoTeam} alt="" />
+          <div className={cls.imageUpload}>
+            <label htmlFor="file-input">
+              <img src={addPhotoTeam} alt='imageUpload'/>
+            </label>
+            <input id="file-input" type="file" onChange={handleChange} />
+          </div>
         </button>
         </div>
               <form className={cls.inputsContainer} onSubmit={handleSubmit(onSubmit)}>

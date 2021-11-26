@@ -6,6 +6,7 @@ export interface IRootState {
     router: any,
     user: IUser,
     auth: IAuth,
-    teams:ITeamData
+    teams:ITeamData,
+    imageUrl:any
 }
  

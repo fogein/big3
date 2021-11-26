@@ -86,4 +86,9 @@ margin-top: 24px;
   margin-bottom: 5px;
   color: #FF768E;
 }
-
+.imageUpload>input {
+  display: none;
+}
+.imageUpload>label>img{
+  cursor: pointer;
+}

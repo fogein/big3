@@ -5,6 +5,7 @@ import { UserReducer } from './user';
 import { IRootState } from './state';
 import { AuthReducer } from './auth';
 import { teams } from './teams';
+import { imageUrl } from './saveImage';
 
 // NOTE: current type definition of Reducer in 'redux-actions' module
 // doesn't go well with redux@4
@@ -13,5 +14,6 @@ export const rootReducer = combineReducers<IRootState>({
     user: UserReducer as any,
     auth: AuthReducer as any,
     teams:teams as any,
+    imageUrl:imageUrl as any,
 });
 

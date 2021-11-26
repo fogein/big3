@@ -23,5 +23,4 @@ export async function addPlayer (data: any){
 
 }
 
- 
 
