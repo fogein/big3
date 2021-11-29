@@ -1,3 +1,12 @@
+.containerCardTeam{
+  margin: 32px 0 24px 80px;
+  width: 1140px;
+  height: 473px;
+  list-style: none;
+  display: flex;
+  flex-direction:column ;
+  flex-wrap:wrap ;
+}
 button{
   padding: 0;
   margin: 0;
@@ -5,12 +14,7 @@ button{
   border: none;
   cursor: pointer;
 }
-.container__cardTeam{
-  margin: 32px 0 24px 80px;
-  width: 1140px;
-  height: 473px;
-}
-.top__cardTeam{
+.topCardTeam{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,44 +24,52 @@ button{
   border-radius: 10px 10px 0px 0px;
 }
 
-.about__cardTeam{
+.aboutCardTeam{
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
-  color: #E4163A;
   margin-left: 32px;
 }
-.about__cardTeam > span > span{
+.link {
+  color: #E4163A;
+}
+.aboutСardTeam > span > span{
   color: #9C9C9C;
 }
-.edit__cardTeam{
+.editCardTeam{   
   margin-right: 32px;
   display: flex;
 }
-.edit__cardTeam > button{
+.createBut{
   margin-right: 16px;
 }
-.main__cardTeam{
+.mainCardTeam{
   color: #fff;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-between;
   display: flex;
   background: linear-gradient(276.45deg, #707070 0%, #393939 100.28%);
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 0px 0px 10px 10px;
   height: 404px;
 }
-.description__cardTeam{
+.descriptionCardTeam{
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  height: 336px;
+  width: 450px;
+  margin-right: 200px;
 }
-.name__cardTeam > h2{
+.nameCardTeam > h2{
+  color: #fff;
   font-weight: 800;
   font-size: 36px;
   line-height: 49px;
   margin-top: 65px;
   margin-bottom: 40px;
 }
-.foundation__cardTeam > h3{
+.foundationCardTeam > h3{
+  color: #fff;
   margin-bottom: 8px;
   font-weight: 800;
   font-size: 24px;
@@ -69,22 +81,30 @@ button{
   line-height: 25px;
 
 }
-.conference__cardTeam{
+.conferenceCardTeam{
   margin-top: 54px;
 }
-.conference__cardTeam > h3{
+.conferenceCardTeam > h3{
+  color: #fff;
   margin-bottom: 8px;
   font-weight: 800;
   font-size: 24px;
   line-height: 33px
 }
-.division__cardTeam > h3{
+
+.divisionCardTeam > h3{
+  color: #fff;
   margin-bottom: 8px;
   font-weight: 800;
   font-size: 24px;
   line-height: 33px;
   margin-top: 154px;
 }
-.logo__cardTeam{
-  margin: 97px 146px 0 0;
+.logoCardTeam{
+  display: flex;
+  margin-left: 146px;
+  margin-top: 97px;
+  width: 210px;
+  height: 210px;
 }
+
