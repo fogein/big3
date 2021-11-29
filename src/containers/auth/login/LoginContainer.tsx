@@ -11,11 +11,12 @@ import {  useHistory } from 'react-router-dom';
 
 export const LoginContainer = (props: any) => {
     const history = useHistory()
+    let isAuthenticated = localStorage.getItem('token')
     const auth = useSelector((state: IRootState) => state.auth)
     const dispatch = useDispatch();
     const signIn = useCallback((payload: ILogin) => dispatch(AuthActions.signIn(payload)),[dispatch]);
 
-    if(auth)
+    if(isAuthenticated)
     history.push('/teams')
 
     return (
