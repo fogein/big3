@@ -12,7 +12,7 @@ export const Navbar: React.FC = () => {
     
       <nav className={cls.nav}>
         <ul className={cls.navItems}>
-          <Link to="/team" className={cls.item1}>
+          <Link to="/teams" className={cls.item1}>
             <img src={teamsImg} alt="" />
             <label className={cls.navItemText}>Teams</label>
           </Link>

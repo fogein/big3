@@ -1,0 +1,90 @@
+button{
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+}
+.container__cardTeam{
+  margin: 32px 0 24px 80px;
+  width: 1140px;
+  height: 473px;
+}
+.top__cardTeam{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 69px;
+  background: #FFFFFF;
+  border: 0.5px solid #9C9C9C;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.about__cardTeam{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #E4163A;
+  margin-left: 32px;
+}
+.about__cardTeam > span > span{
+  color: #9C9C9C;
+}
+.edit__cardTeam{
+  margin-right: 32px;
+  display: flex;
+}
+.edit__cardTeam > button{
+  margin-right: 16px;
+}
+.main__cardTeam{
+  color: #fff;
+  align-items: flex-start;
+  justify-content: center;
+  display: flex;
+  background: linear-gradient(276.45deg, #707070 0%, #393939 100.28%);
+  border-radius: 10px 10px 0px 0px;
+  height: 404px;
+}
+.description__cardTeam{
+  display: flex;
+  flex-direction: column;
+}
+.name__cardTeam > h2{
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 49px;
+  margin-top: 65px;
+  margin-bottom: 40px;
+}
+.foundation__cardTeam > h3{
+  margin-bottom: 8px;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px
+}
+.text{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+
+}
+.conference__cardTeam{
+  margin-top: 54px;
+}
+.conference__cardTeam > h3{
+  margin-bottom: 8px;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px
+}
+.division__cardTeam > h3{
+  margin-bottom: 8px;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  margin-top: 154px;
+}
+.logo__cardTeam{
+  margin: 97px 146px 0 0;
+}

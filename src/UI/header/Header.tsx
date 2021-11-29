@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
     
       <header>
         <div className={cls.headerContainer}>
-          <Link to='/team' className={cls.logo}>
+          <Link to='/teams' className={cls.logo}>
             <img src={myLogo} alt="logo" />
           </Link>
           <div className={cls.userContainer}>

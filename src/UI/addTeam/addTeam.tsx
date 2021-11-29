@@ -42,12 +42,12 @@ export const AddTeam = () => {
     let card = await addTeam(testObject)
     teams.push(card)
     dispatch(update())
-    history.push('/team')
+    history.push('/teams')
   };
   return (
       <div className={cls.mainContainer}  >
       <div className={cls.topConttainer}>
-    <Link to='/team' className={cls.tabs} >Teams </Link><span>/</span><a className={cls.tabs} href="/"> Add new team</a>
+    <Link to='/teams' className={cls.tabs} >Teams </Link><span>/</span><Link to="/teams/addTeam" className={cls.tabs}> Add new team</Link>
       </div>
       <div className={cls.contentContainer}>
         <div className={cls.addImageContainer}>

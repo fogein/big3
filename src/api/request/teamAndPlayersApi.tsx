@@ -1,4 +1,6 @@
 
+import axios from 'axios';
+import { ContentTypes } from '.';
 import api from './addTeam';
 
 
@@ -22,5 +24,15 @@ export async function addPlayer (data: any){
   return response.data;
 
 }
+
+export async function getTeamId (id:any){
+
+
+  let response = await api.get(`/Team/Get?id=${id}`);
+ 
+
+  
+  return response;
+  }
 
 

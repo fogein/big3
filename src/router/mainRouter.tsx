@@ -9,6 +9,7 @@ import { SignUpSuccess } from '../pages/auth/signUpSuccess';
 import PrivateRouter from './Auth/privateRouter'
 import { CardPlayers } from '../pages/home/cardPlayers/cardPlayers';
 import { AddTeamPage } from '../pages/home/addTeamPage/addTeamPage';
+import { TeamInfo } from '../pages/home/cardTeams copy/teamInfo';
 
 
 
@@ -18,12 +19,13 @@ export function MainRouter() {
     <Router >
       <Suspense fallback={<Fallback />}>
         <Switch>
-          <PrivateRouter exact path="/team" component={CardTeams} />
-          <PrivateRouter exact path="/team/addTeam" component={AddTeamPage} />
+          <PrivateRouter exact path="/teams" component={CardTeams} />
+          <PrivateRouter exact path="/teams/addTeam" component={AddTeamPage} />
           <Route exact path="/" component={LoginContainer} />
           <Route exact path="/signup" component={SignUpContainer} />
           <Route path="/signup/success" component={SignUpSuccess} />
           <PrivateRouter exact path="/players" component={CardPlayers} />
+          <PrivateRouter exact path="/team/:id" component={TeamInfo} />
         </Switch>
       </Suspense>
     </Router>

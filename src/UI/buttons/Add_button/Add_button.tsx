@@ -10,7 +10,7 @@ export const AddButton = (props:any) => {
 
 
   return (
-          <Link to='/team/addTeam' className={cls.addButton}>
+          <Link to='/teams/addTeam' className={cls.addButton}>
             <span className={cls.addButtonText}>Add +</span>
           </Link>
 

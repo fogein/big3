@@ -16,7 +16,7 @@ export const LoginContainer = (props: any) => {
     const signIn = useCallback((payload: ILogin) => dispatch(AuthActions.signIn(payload)),[dispatch]);
 
     if(auth)
-    history.push('/team')
+    history.push('/teams')
 
     return (
         <div className={cls.loginFormContainer}>
