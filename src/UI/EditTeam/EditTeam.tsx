@@ -13,8 +13,19 @@ export const EditTeam = (props:any) => {
   } = useForm({
     mode: "onChange"
   });
+
+
+
   const onSubmit = async (data:any) => {
- console.log(data);
+    let editTeam = {
+    name: data.Name,
+    foundationYear: data.YearOfFoundation,
+    division: data.Division,
+    conference: data.Conference,
+    // imageUrl: `http://dev.trainee.dex-it.ru${imageUrl}`
+    }
+    console.log(editTeam);
+    
  
   }
   
@@ -42,7 +53,7 @@ export const EditTeam = (props:any) => {
         <div className={cls.descriptionCardTeam}>
               
               <label htmlFor="Name">Name:{props.name}</label>
-            <input className={cls.nameCardTeam}
+            <input defaultValue={props.name} className={cls.nameCardTeam}
               
               {...register("Name", {
                 minLength: {
@@ -54,7 +65,7 @@ export const EditTeam = (props:any) => {
             {errors.Name && <p className={cls.errorMessage}>{errors.Name.message}</p>}
 
             <label htmlFor="Year of foundation">Year of foundation:{props.foundationYear}</label>
-            <input className={cls.foundationCardTeam}
+            <input defaultValue={props.foundationYear} className={cls.foundationCardTeam}
               
               {...register("YearOfFoundation", {
                 minLength: {
@@ -66,7 +77,7 @@ export const EditTeam = (props:any) => {
             {errors.YearOfFoundation && <p className={cls.errorMessage}>{errors.YearOfFoundation.message}</p>}
 
             <label htmlFor="Conference">Conference:{props.conference}</label>
-            <input className={cls.conferenceCardTeam}
+            <input defaultValue={props.conference} className={cls.conferenceCardTeam}
               
               {...register("Conference", {
                 minLength: {
@@ -78,7 +89,7 @@ export const EditTeam = (props:any) => {
             {errors.Conference && <p className={cls.errorMessage}>{errors.Conference.message}</p>}
 
             <label htmlFor="Division">Division:{props.division}</label>
-            <input className={cls.divisionCardTeam}
+            <input defaultValue={props.division} className={cls.divisionCardTeam}
               
               {...register("Division", {
                 minLength: {
