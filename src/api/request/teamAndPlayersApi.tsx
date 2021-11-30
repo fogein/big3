@@ -1,6 +1,3 @@
-
-import axios from 'axios';
-import { ContentTypes } from '.';
 import api from './addTeam';
 
 
@@ -35,4 +32,21 @@ export async function getTeamId (id:any){
   return response;
   }
 
+  export async function deleteTeam (id: any){
 
+    let response = await api.delete(`/Team/Delete?id=${id}`);
+  
+  
+    
+    return response;
+  
+  }
+  export async function deleteimage (fileName: any){
+
+    let response = await api.delete(`/Team/DeleteImage?${fileName}`);
+    
+  
+    
+    return response;
+  
+  }

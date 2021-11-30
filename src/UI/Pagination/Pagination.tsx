@@ -11,7 +11,7 @@ export const Pagination = (props:any) => {
 
 
   return (
-    <div className={cls.paginationContainer}>
+   
       <ul className={cls.pagination}>
         {
           pageNumbers.map((number:any) => (
@@ -24,6 +24,6 @@ export const Pagination = (props:any) => {
 
         }
       </ul>
-    </div>
+
   )
 }

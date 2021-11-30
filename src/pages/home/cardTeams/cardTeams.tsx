@@ -60,19 +60,22 @@ const paginate = (pageNumber:any) => setCurrentPage(pageNumber)
             />
             <AddButton/>
           </div>
-          <div className={cls.mainContainer}>
-          <ul className={cls.smallCardContainer}>
-          {currentTeam.map(({name,foundationYear,imageUrl,id}) =>
-            <TeamSmallCard 
-            name={name}
-            foundationYear={foundationYear}
-            imageUrl={imageUrl}
-            id={id}
-            />
-          )}
-          </ul>
+          <div>
+              <div className={cls.mainContainer}>
+              <ul className={cls.smallCardContainer}>
+              {currentTeam.map(({name,foundationYear,imageUrl,id}) =>
+                <TeamSmallCard 
+                name={name}
+                foundationYear={foundationYear}
+                imageUrl={imageUrl}
+                id={id}
+                />
+              )}
+              </ul>
+              </div>
           </div>
-         <div className={cls.paginationContainer}> <Pagination
+          <div className={cls.paginationContainer}> 
+          <Pagination
           curretPage={currentTeam}
           PerPage={teamPerPage}
           totalPages={filteredTeams.length}

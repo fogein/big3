@@ -6,7 +6,7 @@ import { Link, useHistory } from 'react-router-dom'
 import { ITeamData } from "../../api/dto/teamsAndPlayers";
 import { addTeam } from "../../api/request/teamAndPlayersApi";
 import addPhotoTeam from '../../assets/images/addPhotoTeam.svg'
-import { saveImage } from "../../modules/actions/saveImage";
+import { saveImage, updateImage } from "../../modules/actions/saveImage";
 import { update } from "../../modules/actions/teams";
 import cls from './addTeam.module.scss'
 
@@ -43,7 +43,8 @@ export const AddTeam = () => {
     teams.push(card)
     dispatch(update())
     history.push('/teams')
-  };
+    dispatch(updateImage())
+  };  
   return (
       <div className={cls.mainContainer}  >
       <div className={cls.topConttainer}>
@@ -52,11 +53,14 @@ export const AddTeam = () => {
       <div className={cls.contentContainer}>
         <div className={cls.addImageContainer}>
         <button className={cls.addPhotoButton}>
+        <img className={cls.imageUploaded} src={`http://dev.trainee.dex-it.ru${imageUrl}`} alt="" />
           <div className={cls.imageUpload}>
-            <label htmlFor="file-input">
-              <img src={addPhotoTeam} alt='imageUpload'/>
-            </label>
-            <input id="file-input" type="file" onChange={handleChange} />
+            
+              <label htmlFor="file-input">
+                <img  src={addPhotoTeam} alt='imageUpload'/>
+              </label>
+              <input id="file-input" type="file" onChange={handleChange} />
+            
           </div>
         </button>
         </div>
@@ -113,7 +117,7 @@ export const AddTeam = () => {
             />
             {errors.YearOfFoundation && <p className={cls.errorMessage}>{errors.YearOfFoundation.message}</p>}
             <div className={cls.buttons}>
-            <Link className={cls.cancelButton} to='/team'>Cancel</Link>
+            <Link className={cls.cancelButton} to='/teams'>Cancel</Link>
             <button className={cls.saveButton} type="submit" >Save</button>
             </div>
           </form>

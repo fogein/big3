@@ -2,6 +2,14 @@ import axios from "axios";
 
 
 
+export function updateImage () {
+  
+  return {
+    type: "UPDATE_IMAGE",
+
+  }
+}
+
 export function saveImageSuccess(data:any) {
   return {
       type: "SAVE_IMAGE",

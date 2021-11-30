@@ -9,7 +9,7 @@ import { SignUpSuccess } from '../pages/auth/signUpSuccess';
 import PrivateRouter from './Auth/privateRouter'
 import { CardPlayers } from '../pages/home/cardPlayers/cardPlayers';
 import { AddTeamPage } from '../pages/home/addTeamPage/addTeamPage';
-import { TeamInfo } from '../pages/home/cardTeams copy/teamInfo';
+import { TeamInfo } from '../pages/home/teamInfo/teamInfo';
 
 
 

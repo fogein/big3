@@ -1,29 +1,45 @@
 
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import { ITeamData } from '../../../api/dto/teamsAndPlayers'
+import {  deleteTeam } from '../../../api/request/teamAndPlayersApi'
 import { getTeamInfo } from '../../../modules/actions/getTeamInfo'
-import { CardTeam } from '../../../UI/Card_team/CardTeam'
+import { update } from '../../../modules/actions/teams'
+import { CardTeamInfo } from '../../../UI/Card_team/CardTeam'
 import { Header } from '../../../UI/header/Header'
 import { Navbar } from '../../../UI/Navbar/Navbar'
-import { TeamSmallCard } from '../../../UI/TeamSmallCard/TeamSmallCard'
 
 import cls from './teamInfo.module.scss'
 
  export const TeamInfo = ({match}:any) => {
 
   const dispatch = useDispatch()
+  const history = useHistory()
+   const id = match.params.id
 
   useEffect( () => {
    
-      const id = match.params.id
       dispatch(getTeamInfo(id));
    
- }, [dispatch, match.params.id]);
+ }, [dispatch,id]);
 
-    const teamInfo  = useSelector<any, Array<ITeamData>>(state => state.getTeamInfo )
+    
+ const teamInfo  = useSelector<any, Array<ITeamData>>(state => state.getTeamInfo )
 
-    console.log(teamInfo)
+
+
+
+
+
+ const deleteHamdler = () => {
+  deleteTeam(match.params.id);
+  dispatch(update())
+
+   setTimeout(() => {
+    history.push('/teams')
+   }, 500);
+ }
 
   return (
 
@@ -39,7 +55,8 @@ import cls from './teamInfo.module.scss'
             <ul>
               {teamInfo.map(({name,conference,division,foundationYear,imageUrl,id}) =>
               
-               <CardTeam
+               <CardTeamInfo
+               deleteHandler={deleteHamdler}
                name={name}
                conference={conference}
                division={division}

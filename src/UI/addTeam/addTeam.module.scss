@@ -92,3 +92,12 @@ margin-top: 24px;
 .imageUpload>label>img{
   cursor: pointer;
 }
+.imageUpload{
+  position: absolute;
+}
+.imageUploaded{
+  height: 100%;
+  width: 100%;
+  opacity: .5;
+}
+

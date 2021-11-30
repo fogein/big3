@@ -4,7 +4,7 @@ import create from '../../assets/images/create.svg';
 import deleteimg from '../../assets/images/delete.svg';
 import { Link } from 'react-router-dom';
 
-export const CardTeam = (props:any) => {
+export const CardTeamInfo = (props:any) => {
 
 
   return (
@@ -17,7 +17,7 @@ export const CardTeam = (props:any) => {
             </div>
             <div className={cls.editCardTeam}>
               <button className={cls.createBut}><img src={create} alt="create" /></button>
-              <button><img src={deleteimg} alt="delete"  /></button>
+              <button onClick={props.deleteHandler}><img src={deleteimg} alt="delete"  /></button>
             </div>
         </div>
         {/* top end */}
