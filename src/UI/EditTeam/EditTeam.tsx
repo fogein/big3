@@ -3,9 +3,21 @@ import cls from './EditTeam.module.scss'
 import create from '../../assets/images/create.svg';
 import deleteimg from '../../assets/images/delete.svg';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 export const EditTeam = (props:any) => {
-
+  const {
+    register,
+    formState: { errors },
+    handleSubmit
+  } = useForm({
+    mode: "onChange"
+  });
+  const onSubmit = async (data:any) => {
+ console.log(data);
+ 
+  }
+  
 
   return (
     
@@ -23,12 +35,62 @@ export const EditTeam = (props:any) => {
         {/* top end */}
 
         {/* main */}
-      <div className={cls.mainCardTeam}>
+      <form onSubmit={handleSubmit(onSubmit)} className={cls.mainCardTeam}>
           <div className={cls.logoCardTeam}>
             <img className={cls.teamLogo} src={props.imageUrl} alt="logo" />
           </div>
         <div className={cls.descriptionCardTeam}>
-          edit team {props.id}
+              
+              <label htmlFor="Name">Name:{props.name}</label>
+            <input className={cls.nameCardTeam}
+              
+              {...register("Name", {
+                minLength: {
+                  value: 4,
+                  message: "Min length is 4"
+                }
+              })}
+            />
+            {errors.Name && <p className={cls.errorMessage}>{errors.Name.message}</p>}
+
+            <label htmlFor="Year of foundation">Year of foundation:{props.foundationYear}</label>
+            <input className={cls.foundationCardTeam}
+              
+              {...register("YearOfFoundation", {
+                minLength: {
+                  value: 4,
+                  message: "Min length is 4"
+                }
+              })}
+            />
+            {errors.YearOfFoundation && <p className={cls.errorMessage}>{errors.YearOfFoundation.message}</p>}
+
+            <label htmlFor="Conference">Conference:{props.conference}</label>
+            <input className={cls.conferenceCardTeam}
+              
+              {...register("Conference", {
+                minLength: {
+                  value: 2,
+                  message: "Min length is 2"
+                }
+              })}
+            />
+            {errors.Conference && <p className={cls.errorMessage}>{errors.Conference.message}</p>}
+
+            <label htmlFor="Division">Division:{props.division}</label>
+            <input className={cls.divisionCardTeam}
+              
+              {...register("Division", {
+                minLength: {
+                  value: 2,
+                  message: "Min length is 2"
+                }
+              })}
+            />
+            {errors.Division && <p className={cls.errorMessage}>{errors.Division.message}</p>}
+
+            <button className={cls.saveButton} type="submit" >Save</button>
+
               {/* <div className={cls.nameCardTeam}>
                 <h2>{props.name}</h2>
               </div>
@@ -45,7 +107,7 @@ export const EditTeam = (props:any) => {
               <span className={cls.text}>{props.division}</span>
           </div> */}
         </div>
-      </div>
+      </form>
         {/* main end */}
       </li>
     
