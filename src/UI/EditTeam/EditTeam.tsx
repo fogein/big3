@@ -1,10 +1,10 @@
 import React from 'react'
-import cls from './cardTeam.module.scss'
+import cls from './EditTeam.module.scss'
 import create from '../../assets/images/create.svg';
 import deleteimg from '../../assets/images/delete.svg';
 import { Link } from 'react-router-dom';
 
-export const CardTeamInfo = (props:any) => {
+export const EditTeam = (props:any) => {
 
 
   return (
@@ -14,9 +14,9 @@ export const CardTeamInfo = (props:any) => {
         <div className={cls.topCardTeam}>
             <div className={cls.aboutCardTeam}>
               <Link className={cls.link} to='/teams'>Teams </Link>/<span className={cls.link} > Denver Nuggets</span>
-            </div> 
+            </div>
             <div className={cls.editCardTeam}>
-              <Link to={`/team/edit/${props.id}`}  className={cls.createBut}><img src={create} alt="create" /></Link>
+              <button className={cls.createBut}><img src={create} alt="create" /></button>
               <button onClick={props.deleteHandler}><img src={deleteimg} alt="delete"  /></button>
             </div>
         </div>
@@ -28,7 +28,8 @@ export const CardTeamInfo = (props:any) => {
             <img className={cls.teamLogo} src={props.imageUrl} alt="logo" />
           </div>
         <div className={cls.descriptionCardTeam}>
-              <div className={cls.nameCardTeam}>
+          edit team {props.id}
+              {/* <div className={cls.nameCardTeam}>
                 <h2>{props.name}</h2>
               </div>
               <div className={cls.foundationCardTeam}>
@@ -42,7 +43,7 @@ export const CardTeamInfo = (props:any) => {
             <div className={cls.divisionCardTeam}>
               <h3>Division</h3>
               <span className={cls.text}>{props.division}</span>
-          </div>
+          </div> */}
         </div>
       </div>
         {/* main end */}

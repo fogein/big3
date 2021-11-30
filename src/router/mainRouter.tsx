@@ -10,6 +10,7 @@ import PrivateRouter from './Auth/privateRouter'
 import { CardPlayers } from '../pages/home/cardPlayers/cardPlayers';
 import { AddTeamPage } from '../pages/home/addTeamPage/addTeamPage';
 import { TeamInfo } from '../pages/home/teamInfo/teamInfo';
+import { EditTeamPage } from '../pages/home/EditTeamPage/EditTeamPage';
 
 
 
@@ -26,6 +27,7 @@ export function MainRouter() {
           <Route path="/signup/success" component={SignUpSuccess} />
           <PrivateRouter exact path="/players" component={CardPlayers} />
           <PrivateRouter exact path="/team/:id" component={TeamInfo} />
+          <PrivateRouter exact path="/team/edit/:id" component={EditTeamPage} />
         </Switch>
       </Suspense>
     </Router>
