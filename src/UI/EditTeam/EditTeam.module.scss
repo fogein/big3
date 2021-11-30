@@ -52,7 +52,38 @@ button{
   border-radius: 0px 0px 10px 10px;
   height: 404px;
 }
+.text{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.logoCardTeam{
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 251px;
+  margin-top: 97px;
+  width: 210px;
+  height: 210px;
+}
+.saveButton{
+  margin-left: 250px;
+  margin-top: 90px;
+  border:none;
+  cursor: pointer;
+  background: #E4163A;
+  border-radius: 4px;
+  width: 171px;
+  height: 40px;
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
 .descriptionCardTeam{
+  margin-top: 55px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -60,51 +91,97 @@ button{
   width: 450px;
   margin-right: 200px;
 }
-.nameCardTeam > h2{
+.conferenceCardTeam{
+  height: 35px;
+  background:transparent ;
+  border: 1px solid rgb(117, 116, 116);
   color: #fff;
-  font-weight: 800;
-  font-size: 36px;
-  line-height: 49px;
-  margin-top: 65px;
+  width: 150px;
+
+}
+.nameCardTeam{
+  height: 35px;
+  background:transparent ;
+  border: 1px solid rgb(117, 116, 116);
+  color: #fff;
+  width: 150px;
   margin-bottom: 40px;
 }
-.foundationCardTeam > h3{
+.divisionCardTeam{
+  margin-left: 84px;
+  height: 35px;
+  background:transparent ;
+  border: 1px solid rgb(117, 116, 116);
   color: #fff;
-  margin-bottom: 8px;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 33px
-}
-.text{
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 25px;
+  width: 150px;
 
 }
-.conferenceCardTeam{
-  
-}
-.conferenceCardTeam > h3{
+.foundationCardTeam{
+  height: 35px;
+  background:transparent ;
+  border: 1px solid rgb(117, 116, 116);
   color: #fff;
-  margin-bottom: 8px;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 33px
-}
+  width: 150px;
 
-.divisionCardTeam > h3{
-  color: #fff;
-  margin-bottom: 8px;
+  margin-bottom: 54px;
+}
+.conferenceTitle{
+  margin-bottom: 5px;
+  font-family: Avenir;
+  font-style: normal;
   font-weight: 800;
   font-size: 24px;
   line-height: 33px;
-  margin-top: 154px;
+  color: #FFFFFF;
 }
-.logoCardTeam{
-  display: flex;
-  margin-left: 146px;
-  margin-top: 97px;
+.nameTitle{
+  margin-bottom: 5px;
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 49px;
+  color: #FFFFFF;
+}
+.divisionTitle{
+  margin-left: 84px;
+  margin-top: 130px;
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  color: #FFFFFF;
+  margin-bottom: 5px;
+}
+.foundationYearTitle{
+  margin-bottom: 5px;
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  color: #FFFFFF;
+}
+.imageUpload>input {
+  display: none;
+}
+.imageUpload>label>img{
+  cursor: pointer;
+}
+.imageUpload{
+  position: absolute;
+}
+.image{
   width: 210px;
   height: 210px;
 }
+.addPhotoButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #9C9C9C;
+  border-radius: 10px;
+  opacity: 0.9;
 
+}

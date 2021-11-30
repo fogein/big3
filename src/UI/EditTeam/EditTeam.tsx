@@ -2,10 +2,17 @@ import React from 'react'
 import cls from './EditTeam.module.scss'
 import create from '../../assets/images/create.svg';
 import deleteimg from '../../assets/images/delete.svg';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { updateTeam } from '../../api/request/teamAndPlayersApi';
+import { update } from '../../modules/actions/teams';
+import { useDispatch } from 'react-redux';
+
+
 
 export const EditTeam = (props:any) => {
+  const history = useHistory()
+  const dispatch = useDispatch()
   const {
     register,
     formState: { errors },
@@ -13,8 +20,7 @@ export const EditTeam = (props:any) => {
   } = useForm({
     mode: "onChange"
   });
-
-
+  
 
   const onSubmit = async (data:any) => {
     let editTeam = {
@@ -22,11 +28,15 @@ export const EditTeam = (props:any) => {
     foundationYear: data.YearOfFoundation,
     division: data.Division,
     conference: data.Conference,
-    // imageUrl: `http://dev.trainee.dex-it.ru${imageUrl}`
-    }
-    console.log(editTeam);
+    id:props.id,
+    imageUrl:props.imageUrl
+  
     
- 
+    }
+    updateTeam(editTeam);
+    dispatch(update())
+    history.push('/teams')
+    
   }
   
 
@@ -36,7 +46,7 @@ export const EditTeam = (props:any) => {
         {/* top */}
         <div className={cls.topCardTeam}>
             <div className={cls.aboutCardTeam}>
-              <Link className={cls.link} to='/teams'>Teams </Link>/<span className={cls.link} > Denver Nuggets</span>
+              <Link className={cls.link} to='/teams'>Teams </Link>/<Link to={`/team/${props.id}`}   className={cls.link} > Denver Nuggets</Link>
             </div>
             <div className={cls.editCardTeam}>
               <button className={cls.createBut}><img src={create} alt="create" /></button>
@@ -46,13 +56,25 @@ export const EditTeam = (props:any) => {
         {/* top end */}
 
         {/* main */}
-      <form onSubmit={handleSubmit(onSubmit)} className={cls.mainCardTeam}>
-          <div className={cls.logoCardTeam}>
-            <img className={cls.teamLogo} src={props.imageUrl} alt="logo" />
+        <div className={cls.mainCardTeam}>
+
+        <div className={cls.logoCardTeam}>
+        <button className={cls.addPhotoButton}>
+          <div className={cls.imageUpload}>
+            
+              <label htmlFor="file-input">
+                <img className={cls.image} src={props.imageUrl}alt=''/>
+              </label>
+              <input  id="file-input" type="file"  />
+            
           </div>
+        </button>
+            </div>
+      <form onSubmit={handleSubmit(onSubmit)}>
+          
         <div className={cls.descriptionCardTeam}>
               
-              <label htmlFor="Name">Name:{props.name}</label>
+              <label className={cls.nameTitle} htmlFor="Name">Name</label>
             <input defaultValue={props.name} className={cls.nameCardTeam}
               
               {...register("Name", {
@@ -64,7 +86,7 @@ export const EditTeam = (props:any) => {
             />
             {errors.Name && <p className={cls.errorMessage}>{errors.Name.message}</p>}
 
-            <label htmlFor="Year of foundation">Year of foundation:{props.foundationYear}</label>
+            <label className={cls.foundationYearTitle} htmlFor="Year of foundation">Year of foundation</label>
             <input defaultValue={props.foundationYear} className={cls.foundationCardTeam}
               
               {...register("YearOfFoundation", {
@@ -76,7 +98,7 @@ export const EditTeam = (props:any) => {
             />
             {errors.YearOfFoundation && <p className={cls.errorMessage}>{errors.YearOfFoundation.message}</p>}
 
-            <label htmlFor="Conference">Conference:{props.conference}</label>
+            <label className={cls.conferenceTitle} htmlFor="Conference">Conference</label>
             <input defaultValue={props.conference} className={cls.conferenceCardTeam}
               
               {...register("Conference", {
@@ -88,7 +110,7 @@ export const EditTeam = (props:any) => {
             />
             {errors.Conference && <p className={cls.errorMessage}>{errors.Conference.message}</p>}
 
-            <label htmlFor="Division">Division:{props.division}</label>
+            <label className={cls.divisionTitle} htmlFor="Division">Division</label>
             <input defaultValue={props.division} className={cls.divisionCardTeam}
               
               {...register("Division", {
@@ -101,24 +123,9 @@ export const EditTeam = (props:any) => {
             {errors.Division && <p className={cls.errorMessage}>{errors.Division.message}</p>}
 
             <button className={cls.saveButton} type="submit" >Save</button>
-
-              {/* <div className={cls.nameCardTeam}>
-                <h2>{props.name}</h2>
-              </div>
-              <div className={cls.foundationCardTeam}>
-                <h3>Year of foundation</h3>
-                <span className={cls.text}>{props.foundationYear}</span>
-              </div>
-              <div className={cls.conferenceCardTeam}>
-                <h3>Conference</h3>
-                <span className='text'>{props.conference}</span>
-              </div>
-            <div className={cls.divisionCardTeam}>
-              <h3>Division</h3>
-              <span className={cls.text}>{props.division}</span>
-          </div> */}
         </div>
       </form>
+      </div>
         {/* main end */}
       </li>
     

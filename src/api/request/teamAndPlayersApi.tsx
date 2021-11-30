@@ -50,3 +50,14 @@ export async function getTeamId (id:any){
     return response;
   
   }
+
+
+  export async function updateTeam (data: any){
+
+    let response = await api.put('/Team/Update',data);
+  
+  
+    
+    return response.data;
+  
+  }
