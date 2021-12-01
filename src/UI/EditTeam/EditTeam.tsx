@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import cls from './EditTeam.module.scss'
 import create from '../../assets/images/create.svg';
 import deleteimg from '../../assets/images/delete.svg';
@@ -6,7 +6,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { updateTeam } from '../../api/request/teamAndPlayersApi';
 import { update } from '../../modules/actions/teams';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { saveImage, updateImage } from '../../modules/actions/saveImage';
 
 
 
@@ -21,7 +22,28 @@ export const EditTeam = (props:any) => {
     mode: "onChange"
   });
   
+ let  imageProps =props.imageUrl
+  const imageUrl = useSelector<any, any>(state => state.imageUrl)
+  
 
+  
+
+  const handleChange = async (e:any) => {
+    
+      const image =(e.target.files[0])
+      dispatch(saveImage(image))
+      
+  }
+
+  if (!!imageUrl)
+  {
+    imageProps=imageUrl;
+  }
+  
+
+
+
+  
   const onSubmit = async (data:any) => {
     let editTeam = {
     name: data.Name,
@@ -29,13 +51,17 @@ export const EditTeam = (props:any) => {
     division: data.Division,
     conference: data.Conference,
     id:props.id,
-    imageUrl:props.imageUrl
+    imageUrl:imageProps
   
     
     }
     updateTeam(editTeam);
     dispatch(update())
-    history.push('/teams')
+    dispatch(updateImage())
+    setTimeout(() => {
+      history.push('/teams')
+    }, 100);
+    
     
   }
   
@@ -60,12 +86,13 @@ export const EditTeam = (props:any) => {
 
         <div className={cls.logoCardTeam}>
         <button className={cls.addPhotoButton}>
+          <img className={cls.imageUploaded} src={props.imageUrl} alt="" />
           <div className={cls.imageUpload}>
             
               <label htmlFor="file-input">
-                <img className={cls.image} src={props.imageUrl}alt=''/>
+                <img className={cls.image} src={imageProps}  alt=''/>
               </label>
-              <input  id="file-input" type="file"  />
+              <input  id="file-input" type="file"  onChange={handleChange} />
             
           </div>
         </button>
@@ -84,7 +111,7 @@ export const EditTeam = (props:any) => {
                 }
               })}
             />
-            {errors.Name && <p className={cls.errorMessage}>{errors.Name.message}</p>}
+            {errors.Name && <p className={cls.errorMessageName}>{errors.Name.message}</p>}
 
             <label className={cls.foundationYearTitle} htmlFor="Year of foundation">Year of foundation</label>
             <input defaultValue={props.foundationYear} className={cls.foundationCardTeam}
@@ -96,7 +123,7 @@ export const EditTeam = (props:any) => {
                 }
               })}
             />
-            {errors.YearOfFoundation && <p className={cls.errorMessage}>{errors.YearOfFoundation.message}</p>}
+            {errors.YearOfFoundation && <p className={cls.errorMessageYear}>{errors.YearOfFoundation.message}</p>}
 
             <label className={cls.conferenceTitle} htmlFor="Conference">Conference</label>
             <input defaultValue={props.conference} className={cls.conferenceCardTeam}
@@ -108,7 +135,7 @@ export const EditTeam = (props:any) => {
                 }
               })}
             />
-            {errors.Conference && <p className={cls.errorMessage}>{errors.Conference.message}</p>}
+            {errors.Conference && <p className={cls.errorMessageConference}>{errors.Conference.message}</p>}
 
             <label className={cls.divisionTitle} htmlFor="Division">Division</label>
             <input defaultValue={props.division} className={cls.divisionCardTeam}
@@ -120,7 +147,7 @@ export const EditTeam = (props:any) => {
                 }
               })}
             />
-            {errors.Division && <p className={cls.errorMessage}>{errors.Division.message}</p>}
+            {errors.Division && <p className={cls.errorMessageDivision}>{errors.Division.message}</p>}
 
             <button className={cls.saveButton} type="submit" >Save</button>
         </div>

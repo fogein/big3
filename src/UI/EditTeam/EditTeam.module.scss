@@ -61,14 +61,14 @@ button{
 .logoCardTeam{
   display: flex;
   justify-content: flex-start;
-  margin-left: 251px;
+  margin-left: 146px;
   margin-top: 97px;
   width: 210px;
   height: 210px;
 }
 .saveButton{
-  margin-left: 250px;
-  margin-top: 90px;
+  margin-left: 20px;
+  margin-top: 295px;
   border:none;
   cursor: pointer;
   background: #E4163A;
@@ -123,7 +123,7 @@ button{
   color: #fff;
   width: 150px;
 
-  margin-bottom: 54px;
+  margin-bottom: 40px;
 }
 .conferenceTitle{
   margin-bottom: 5px;
@@ -172,6 +172,11 @@ button{
 .imageUpload{
   position: absolute;
 }
+.imageUploaded{
+  width: 100%;
+  height: 100%;
+}
+
 .image{
   width: 210px;
   height: 210px;
@@ -180,8 +185,25 @@ button{
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #9C9C9C;
+  background: transparent;
   border-radius: 10px;
-  opacity: 0.9;
-
 }
+.errorMessageName{
+  margin-top: -38px;
+  margin-bottom: 17px;
+  color: #FF768E;
+}
+.errorMessageYear{
+  margin-top: -37px;
+  margin-bottom: 16px;
+  color: #FF768E;
+}
+
+.errorMessageDivision{
+  margin-left: 84px;
+  color: #FF768E;
+}
+.errorMessageConference{
+ color: #FF768E;
+}
+
