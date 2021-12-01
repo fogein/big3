@@ -18,12 +18,12 @@
   }
   
   .mainContainer{
-    padding-left: 80px;
+    margin-left: 80px;
     justify-content: flex-start;
     display: flex;
     flex-wrap: wrap;
-    
-    width: 1300px;
+    height: 810px;
+    width: 100%;
   }
   .smallCardContainer{
  
@@ -32,8 +32,110 @@
     width: 1200px;
     height: 100%;
   }
-  .paginationContainer{
-    position: absolute;
-    bottom: -10%;
-    margin-left: 80px;
+  .container{
+    height: 100%;
   }
+  @media(max-width: 1420px){
+    .smallCardContainer{
+      width: 980px;
+    }
+    .upContainer{
+      width: 900px;
+    }
+  }
+  @media(max-width: 1200px){
+    .smallCardContainer{
+      width: 680px;
+    }
+    .mainContainer{
+      height: 650px;
+    }
+    .upContainer{
+      justify-content:center;
+      width: 500px;
+    }
+  }
+  @media(max-width: 900px){
+    .smallCardContainer{
+      width: 520px;
+    }
+    .upContainer{
+      justify-content:center;
+      width: 500px;
+    }
+   .mainContainer{
+     height: 500px;
+     margin-left: 40px;
+   }
+  }
+  @media(max-width: 740px){
+    .smallCardContainer{
+      width: 430px;
+      height: 340px;
+    }
+    .upContainer{
+      flex-direction:column;
+      justify-content: center;
+      align-items: center;
+      height: 80px;
+      width: 500px;
+    }
+   .mainContainer{
+     height: 350px;
+   }
+  }
+  @media(max-width: 650px){
+    .smallCardContainer{
+      width: 310px;
+      height: 340px;
+    }
+    .upContainer{
+      flex-direction:column;
+      justify-content: center;
+      align-items: center;
+      height: 80px;
+      margin: 0;
+      margin-right: 38px;
+      width: 250px;
+    }
+   .mainContainer{
+     height: 600px;
+  
+     margin-left: 40px;
+   }
+   .container{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+   }
+  }
+  @media(max-width: 490px){
+    .smallCardContainer{
+      width: 242px;
+      height: 100px;
+    }
+    .upContainer{
+      flex-direction:column;
+      justify-content: center;
+      align-items: center;
+      height: 80px;
+      margin: 0;
+      margin-right: 12px;
+      width: 200px;
+    }
+   .mainContainer{
+     height: 450px;
+     margin-left: 10px;
+   }
+   .container{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+   }
+  }
+
+
+
+

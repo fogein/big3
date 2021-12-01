@@ -1,19 +1,13 @@
-// margin: 32px 24px -8px 0;
-// padding: 0;
-// width: 364px;
-// height: 100%;
-// border:none;
-// display: flex;
-// flex-direction: column;
-// width: 364px;
-// height: 380px;
 
 .smallCardItem{
   list-style: none;
   margin: 32px 24px -8px 0;
 }
 .cardImg{
+  min-width: 200px;
+  min-height: 200px;
   max-width: 200px;
+  max-height: 200px;
 }
 .smallCardTop{
   width: 364px;
@@ -46,4 +40,129 @@
   line-height: 24px;
   text-align: center;
   color: #9C9C9C;
+}
+
+@media(max-width: 1420px){
+  .smallCardBot{
+    width: 300px;
+  }
+  .smallCardTop{
+    width: 300px;
+  }
+}
+@media(max-width: 1200px){
+  .smallCardBot{
+    width: 200px;
+    height: 80px;
+  }
+  .smallCardTop{
+    width: 200px;
+    height: 180px;
+  }
+  .cardImg{
+    min-width: 120px;
+    min-height: 120px;
+    max-width: 120px;
+    max-height: 120px;
+  }
+}
+@media(max-width: 900px){
+  .link{
+    height: 200px;
+  }
+  .smallCardItem{
+    margin: 16px 12px -4px 0;
+  }
+  .smallCardDeskription > h4{
+    font-size: 14px;
+  }
+  .smallCardP{
+    font-size: 10px;
+  }
+  .smallCardBot{
+    width: 160px;
+    height: 80px;
+  }
+  .smallCardTop{
+    width: 160px;
+    height: 120px;
+  }
+  .cardImg{
+    min-width: 70px;
+    min-height: 70px;
+    max-width: 70px;
+    max-height: 70px;
+  }
+
+}
+@media(max-width: 740px){
+  .link{
+    height: 100px;
+  }
+  .smallCardItem{
+    margin: 12px 12px 0px 0;
+  }
+  .smallCardDeskription > h4{
+    font-size: 10px;
+  }
+  .smallCardP{
+    font-size: 8px;
+  }
+  .smallCardBot{
+    width: 130px;
+    height: 60px;
+  }
+  .smallCardTop{
+    width: 130px;
+    height: 90px;
+  }
+  .cardImg{
+    min-width: 70px;
+    min-height: 70px;
+    max-width: 70px;
+    max-height: 70px;
+  }
+
+}
+@media(max-width: 650px){
+  .link{
+    height: 180px;
+  }
+  .smallCardItem{
+    margin: 12px 12px 0px 12px;
+  }
+  .smallCardDeskription > h4{
+    font-size: 10px;
+    margin-bottom: 0;
+  }
+}
+@media(max-width: 490px){
+  .link{
+    height: 140px;
+  }
+  .smallCardItem{
+    margin: 12px 4px 0px 12px;
+  }
+  .smallCardDeskription > h4{
+    font-size: 10px;
+    margin: 0;
+  }
+  .smallCardP{
+    font-size: 8px;
+  }
+  .smallCardBot{
+    width: 105px;
+    height: 50px;
+  }
+  .smallCardTop{
+    width: 105px;
+    height: 70px;
+  }
+  .cardImg{
+    min-width: 60px;
+    min-height: 60px;
+    max-width: 60px;
+    max-height:60px;
+  }
+
 }

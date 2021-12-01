@@ -37,7 +37,7 @@ export const AddTeam = () => {
       foundationYear: data.YearOfFoundation,
       division: data.Division,
       conference: data.Conference,
-      imageUrl: `http://dev.trainee.dex-it.ru${imageUrl}`
+      imageUrl: imageUrl
     }
     let card = await addTeam(testObject)
     teams.push(card)
@@ -53,7 +53,7 @@ export const AddTeam = () => {
       <div className={cls.contentContainer}>
         <div className={cls.addImageContainer}>
         <button className={cls.addPhotoButton}>
-        <img className={cls.imageUploaded} src={`http://dev.trainee.dex-it.ru${imageUrl}`} alt="" />
+        <img className={cls.imageUploaded} src={imageUrl} alt="" />
           <div className={cls.imageUpload}>
             
               <label htmlFor="file-input">

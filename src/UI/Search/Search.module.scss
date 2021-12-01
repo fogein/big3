@@ -45,3 +45,23 @@
       font-size: 14px;
       font-weight: 500;;
     }
+
+    @media(max-width: 1200px){
+      .searchForm{
+        margin-right: 50px;
+        width: 250px;
+      }
+    }
+    @media(max-width: 740px){
+      .searchForm{
+        margin-right: 0;
+        width: 220px;
+      }
+    }
+    @media(max-width: 650px){
+      .searchForm{
+        margin-right: 0;
+        width: 220px;
+      }
+    }
+    

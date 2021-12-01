@@ -11,19 +11,22 @@ export const Pagination = (props:any) => {
 
 
   return (
-   
-      <ul className={cls.pagination}>
-        {
-          pageNumbers.map((number:any) => (
-            <li className={cls.pageItem} key={number}>
-              <button className={cls.pageButton} onClick={() => {props.paginate(number);}} >
-                {number}
-              </button>
-            </li>
-          ))
+    <div className={cls.paginationContainer}>
 
-        }
-      </ul>
+        <ul className={cls.pagination}>
+                {
+                  pageNumbers.map((number:any) => (
+                    <li className={cls.pageItem} key={number}>
+                      <button className={cls.pageButton} onClick={() => {props.paginate(number);}} >
+                        {number}
+                      </button>
+                    </li>
+                  ))
+
+                }
+              </ul>
+
+    </div>
 
   )
 }

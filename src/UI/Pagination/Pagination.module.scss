@@ -1,8 +1,9 @@
+
 .paginationContainer{
-
+  margin: 32px 0 0 80px;
 }
-
 .pagination{
+
 
   display: flex;
 }
@@ -27,3 +28,23 @@
   background: #000;
 }
 
+@media(max-width: 1200px){
+  .paginationContainer{
+    margin: -20px 0 0 70px;
+  }
+}
+@media(max-width: 900px){
+  .paginationContainer{
+    margin: 0px 0 0 70px;
+  }
+}
+@media(max-width: 650px){
+  .paginationContainer{
+    margin: -20px 0 0 -250px;
+  }
+}
+@media(max-width: 490px){
+  .paginationContainer{
+    margin: -20px 0 0 -150px;
+  }
+}

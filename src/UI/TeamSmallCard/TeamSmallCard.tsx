@@ -11,7 +11,7 @@ export const TeamSmallCard = (props:ITeamData) => {
       return (
     // Team card   
       
-       <Link to={`/team/${props.id}`}  >
+       <Link className={cls.link} to={`/team/${props.id}`}  >
           <li className={cls.smallCardItem} key={props.id}>
           <div className={cls.smallCardTop}>
             <img className={cls.cardImg} src={props.imageUrl} alt="img" />

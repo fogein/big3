@@ -26,3 +26,9 @@
 .addButtonText:disabled{
   color: #D1D1D1;
 }
+
+@media(max-width: 650px){
+  .addButton{
+    width: 220px;
+  }
+}

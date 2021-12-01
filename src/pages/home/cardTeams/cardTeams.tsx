@@ -52,16 +52,17 @@ const paginate = (pageNumber:any) => setCurrentPage(pageNumber)
 
       <div className={cls.bg}>
         <Header/>
+        
         <Navbar/>
-        <div>
+        <div  className={cls.container}>
           <div className={cls.upContainer}>
             <Search
             state={setValue}
             />
             <AddButton/>
           </div>
-          <div>
-              <div className={cls.mainContainer}>
+          <div className={cls.mainContainer} >
+              <div >
               <ul className={cls.smallCardContainer}>
               {currentTeam.map(({name,foundationYear,imageUrl,id}) =>
                 <TeamSmallCard 
@@ -74,15 +75,14 @@ const paginate = (pageNumber:any) => setCurrentPage(pageNumber)
               </ul>
               </div>
           </div>
-          <div className={cls.paginationContainer}> 
           <Pagination
           curretPage={currentTeam}
           PerPage={teamPerPage}
           totalPages={filteredTeams.length}
           paginate={paginate}
-          /></div>
+          />
         </div>
-        
+         
       </div>
   )
 }
