@@ -2,9 +2,10 @@ import React from 'react'
 import './burgerMenu.scss'
 import { slide as Menu } from "react-burger-menu";
 
-export const burgerMenuSidebar = (props:any) => {
+export const BurgerMenuSidebar = (props:any) => {
   return (
-    <Menu {...props}>
+    <div className="containerBurgerMenu">
+      <Menu {...props}>
     <a className="menu-item" href="/">
       Home
     </a>
@@ -21,5 +22,6 @@ export const burgerMenuSidebar = (props:any) => {
       Desserts
     </a>
   </Menu>
+    </div>
   )
 }

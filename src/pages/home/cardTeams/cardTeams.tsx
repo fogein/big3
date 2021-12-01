@@ -11,6 +11,7 @@ import { ITeamData } from '../../../api/dto/teamsAndPlayers'
 import cls from './cardTeam.module.scss'
 import { teamsFetchData } from '../../../modules/actions/teams'
 import { useDispatch, useSelector } from 'react-redux'
+import { BurgerMenuSidebar } from '../../../UI/BurgerMenu/burgerMenuSidebar'
 
 
  export const CardTeams: React.FC = () => {
@@ -52,9 +53,11 @@ const paginate = (pageNumber:any) => setCurrentPage(pageNumber)
 
       <div className={cls.bg}>
         <Header/>
-        
+        <BurgerMenuSidebar pageWrapId={"page-wrap"}/>
         <Navbar/>
+        
         <div  className={cls.container}>
+        
           <div className={cls.upContainer}>
             <Search
             state={setValue}
