@@ -86,7 +86,8 @@
   }
   @media(max-width: 650px){
     .smallCardContainer{
-      width: 310px;
+      justify-content: space-between;
+      width: 390px;
       height: 340px;
     }
     .upContainer{
@@ -95,13 +96,12 @@
       align-items: center;
       height: 80px;
       margin: 0;
-      margin-right: 38px;
-      width: 250px;
+      
+      width: 351px;
     }
    .mainContainer{
      height: 600px;
-  
-     margin-left: 40px;
+     margin-left: 80px;
    }
    .container{
      display: flex;
@@ -112,8 +112,9 @@
   }
   @media(max-width: 490px){
     .smallCardContainer{
-      width: 242px;
-      height: 100px;
+      justify-content: space-between;
+      width: 330px;
+      height: 340px;
     }
     .upContainer{
       flex-direction:column;
@@ -121,19 +122,47 @@
       align-items: center;
       height: 80px;
       margin: 0;
-      margin-right: 12px;
-      width: 200px;
+      margin-left: 78px;
+      width: 330px;
     }
    .mainContainer{
-     height: 450px;
-     margin-left: 10px;
+     height: 600px;
+     margin-left: 80px;
    }
    .container{
-     display: flex;
+    width: 330px;
+    display: flex;
      flex-direction: column;
      justify-content: center;
      align-items: center;
+  }
+  }
+  @media(max-width: 400px){
+    .smallCardContainer{
+      justify-content: space-between;
+      width: 290px;
+      height: 340px;
+    }
+    .upContainer{
+      flex-direction:column;
+      justify-content: center;
+      align-items: center;
+      height: 80px;
+      margin: 0;
+   margin-left: 20px;
+      width: 330px;
+    }
+   .mainContainer{
+     height: 600px;
+     margin-left: 20px;
    }
+   .container{
+    width: 290px;
+    display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+  }
   }
 
 

@@ -61,7 +61,18 @@
     @media(max-width: 650px){
       .searchForm{
         margin-right: 0;
-        width: 220px;
+         width: 351px;
       }
+    }
+    @media(max-width: 490px){
+      .searchForm{
+        margin-right: 0;
+         width: 310px;
+      }}
+      @media(max-width: 400px){
+        .searchForm{
+          margin-right: 0;
+           width: 260px;
+        }
     }
     
