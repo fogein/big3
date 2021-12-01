@@ -1,4 +1,5 @@
 .containerBurgerMenu{
+  display: none;
   height: 100%;
   position: absolute;
 }
@@ -22,8 +23,8 @@
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
-  width: 36px;
-  height: 30px;
+  width: 18px;
+  height: 12px;
   left: 36px;
   top: 36px;
 }
@@ -42,6 +43,9 @@
 /* Color/shape of close button cross */
 .bm-cross {
   background: #bdc3c7;
+}
+#react-burger-menu-btn{
+  background: rgba(0, 0, 0, 0.54)!important;
 }
 
 /* General sidebar styles */
@@ -64,4 +68,8 @@
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+}
+@media(max-width: 650px){
+  .containerBurgerMenu{
+    display: block;}
 }
