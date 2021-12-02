@@ -1,12 +1,10 @@
 import { put, call, takeLatest, } from 'redux-saga/effects';
-import { push } from 'react-router-redux';
 import { message } from 'antd';
 import { AuthActions, UserActions } from '../actions';
 import { Action } from 'redux-actions';
 import { ISignUp,ILogin, IAuth, IUser } from '../../api/dto';
 import { signIn,signUp } from '../../api/request'; 
 import * as _ from 'lodash';
-import { signUpSuccessRoute } from "../constants/auth";
 import { useHistory } from 'react-router-dom';
 
 
@@ -36,7 +34,7 @@ function* SignUpWorker(action: Action<ISignUp>) {
         const history = useHistory()
         const { data } = yield call(signUp, action.payload);
 
-        history.push(signUpSuccessRoute);
+        history.push("/signup/success");
     } catch (error) {
         message.error('Failed to sign up!');
         console.error(error);

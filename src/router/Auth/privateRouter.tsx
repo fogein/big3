@@ -5,7 +5,7 @@ import { Redirect, Route, RouteProps } from 'react-router-dom';
 
 
 
-const PrivateRouter = ({ component: Component, path }: RouteProps) => {
+export const PrivateRouter = ({ component: Component, path }: RouteProps) => {
   let isAuthenticated = localStorage.getItem('token')
   if ( !isAuthenticated ) {
     return <Redirect to="/" />;
@@ -14,4 +14,3 @@ const PrivateRouter = ({ component: Component, path }: RouteProps) => {
   return <Route component={Component} path={path} />;
 };
 
-export default PrivateRouter;

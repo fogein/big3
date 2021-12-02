@@ -6,7 +6,7 @@ import { CardTeams } from '../pages/home/cardTeams/cardTeams';
 import { LoginContainer } from '../containers/auth/login/LoginContainer'; 
 import { SignUpContainer } from '../containers/auth/signup/SignUpContainer'; 
 import { SignUpSuccess } from '../pages/auth/signUpSuccess';
-import PrivateRouter from './Auth/privateRouter'
+import {PrivateRouter} from './Auth/privateRouter'
 import { CardPlayers } from '../pages/home/cardPlayers/cardPlayers';
 import { AddTeamPage } from '../pages/home/addTeamPage/addTeamPage';
 import { TeamInfo } from '../pages/home/teamInfo/teamInfo';
