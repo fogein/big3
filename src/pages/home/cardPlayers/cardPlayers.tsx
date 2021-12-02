@@ -1,13 +1,8 @@
 /* eslint-disable @typescript-eslint/no-array-constructor */
-import React, { useEffect, useState } from 'react'
-import { IPlayerData } from '../../../api/dto/teamsAndPlayers'
-import { addPlayer } from '../../../api/request/teamAndPlayersApi'
-import { GET_PLAYER_URL } from '../../../modules/constants/TeamsAndPlayers'
+import React from 'react'
 import { AddButton } from '../../../UI/buttons/Add_button/Add_button'
 import { Header } from '../../../UI/header/Header'
 import { Navbar } from '../../../UI/Navbar/Navbar'
-import { Pagination } from '../../../UI/Pagination/Pagination'
-import { PlayerSmallCard } from '../../../UI/PlayerSmallCard/PlayerSmallCard'
 import { Search } from '../../../UI/Search/Search'
 import cls from './cardPlayers.module.scss'
 
@@ -15,75 +10,75 @@ import cls from './cardPlayers.module.scss'
 
 export const CardPlayers: React.FC = () => {
  
-    const [player,setPlayer] = useState(Array());
-    const [currentPage,setCurrentPage] = useState(1)
-    const [playerPerPage] = useState(6)
+//     const [player,setPlayer] = useState(Array());
+//     const [currentPage,setCurrentPage] = useState(1)
+//     const [playerPerPage] = useState(6)
   
-    // const getResource = async (url:any) => {
-    //   const res = await getApiResource(url);
+//     // const getResource = async (url:any) => {
+//     //   const res = await getApiResource(url);
   
   
-    //   const playerList = res.data.map(({name,position,birthday,height,weight,avatarUrl,team,number,id}:IPlayerData) => { 
-    //     return {
-    //       name,
-    //       team,
-    //       number,
-    //       avatarUrl,
-    //       id,
-    //       position,
-    //       birthday,
-    //       height,
-    //       weight
+//     //   const playerList = res.data.map(({name,position,birthday,height,weight,avatarUrl,team,number,id}:IPlayerData) => { 
+//     //     return {
+//     //       name,
+//     //       team,
+//     //       number,
+//     //       avatarUrl,
+//     //       id,
+//     //       position,
+//     //       birthday,
+//     //       height,
+//     //       weight
   
-    //     }
-    //   })
+//     //     }
+//     //   })
   
-    //   setPlayer(playerList)
-    // }
+//     //   setPlayer(playerList)
+//     // }
     
   
-    // useEffect(() => {
-    //   getResource(GET_PLAYER_URL)
-    // }, [])
+//     // useEffect(() => {
+//     //   getResource(GET_PLAYER_URL)
+//     // }, [])
     
 
   
-  // Search
-    const [value, setValue]=useState("");
-    const filteredPlayers = player.filter((e:any) => e.name.toLowerCase().includes(value.toLowerCase()))
+//   // Search
+//     const [value, setValue]=useState("");
+//     const filteredPlayers = player.filter((e:any) => e.name.toLowerCase().includes(value.toLowerCase()))
    
   
-  // Search
+//   // Search
 
-    // Add player
-const addPlayerHandler = async () =>{
-  let testObject = {
-    name: "player",
-    team: "navi",
-    number: "3",
-    imageUrl: "https://cdn1.dotesports.com/wp-content/uploads/2019/07/24154332/navi.jpg",
-    position:"forward",
-    birthday:"10-10-2010",
-    height:220,
-    weight:100
-  }
-  let card = await addPlayer(testObject)
-  filteredPlayers.push(card)
-  let newPlayer = filteredPlayers
-  setPlayer(newPlayer)
-}
-// Add player
+//     // Add player
+// const addPlayerHandler = async () =>{
+//   let testObject = {
+//     name: "player",
+//     team: "navi",
+//     number: "3",
+//     imageUrl: "https://cdn1.dotesports.com/wp-content/uploads/2019/07/24154332/navi.jpg",
+//     position:"forward",
+//     birthday:"10-10-2010",
+//     height:220,
+//     weight:100
+//   }
+//   let card = await addPlayer(testObject)
+//   filteredPlayers.push(card)
+//   let newPlayer = filteredPlayers
+//   setPlayer(newPlayer)
+// }
+// // Add player
   
-  // Pagination
+//   // Pagination
   
-  const lastPlayerIndex = currentPage*playerPerPage
-  const firstPlayerIndex = lastPlayerIndex-playerPerPage
-  const currentPlayers = filteredPlayers.slice(firstPlayerIndex, lastPlayerIndex)
+//   const lastPlayerIndex = currentPage*playerPerPage
+//   const firstPlayerIndex = lastPlayerIndex-playerPerPage
+//   const currentPlayers = filteredPlayers.slice(firstPlayerIndex, lastPlayerIndex)
   
-  const paginate = (pageNumber:any) => setCurrentPage(pageNumber)
+//   const paginate = (pageNumber:any) => setCurrentPage(pageNumber)
   
   
-  // Pagination
+//   // Pagination
   
   
     return (
@@ -94,31 +89,16 @@ const addPlayerHandler = async () =>{
           <div>
             <div className={cls.upContainer}>
               <Search
-              state={setValue}
+            
               />
               <AddButton
-              handler={addPlayerHandler}
+              
               />
             </div>
             <div className={cls.mainContainer}>
-            <ul className={cls.smallCardContainer}>
-            {currentPlayers.map(({name,number,team,avatarUrl,id}) =>
-              <PlayerSmallCard 
-              name={name}
-              team={team}
-              number={number}
-              avatarUrl={avatarUrl}
-              id={id}
-              />
-            )}
-            </ul>
+           PlayerPage
             </div>
-           <div className={cls.paginationContainer}> <Pagination
-            curretPage={currentPlayers}
-            PerPage={playerPerPage}
-            totalPages={filteredPlayers.length}
-            paginate={paginate}
-            /></div>
+           
           </div>
           
         </div>
