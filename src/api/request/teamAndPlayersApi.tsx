@@ -61,3 +61,12 @@ export async function getTeamId (id:any){
     return response.data;
   
   }
+  export async function getTeamSearch (name:string,PageSize:number){
+
+
+    let response = await api.get(`/Team/GetTeams?Name=${name}&Page=${1}&PageSize=${PageSize}`);
+   
+  
+    
+    return response;
+    }

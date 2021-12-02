@@ -8,6 +8,7 @@ export interface IRootState {
     auth: IAuth,
     teams:ITeamData,
     imageUrl:any,
-    getTeamInfo:any
+    getTeamInfo:any,
+
 }
  

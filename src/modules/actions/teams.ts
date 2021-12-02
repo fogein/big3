@@ -1,6 +1,23 @@
 
 import { ContentTypes } from "../../api/request";
+import { getTeamSearch } from "../../api/request/teamAndPlayersApi";
 
+
+
+export function updateSeacrh(data:any) {
+  
+  return {
+      type: "UPDATE_SEACRH",
+      data
+  }
+}
+export function teamSeacrh(data:any) {
+  
+  return {
+      type: "TEAMS_SEARCH",
+      data
+  }
+}
 export function update () {
   
   return {
@@ -8,7 +25,10 @@ export function update () {
 
   }
 }
+
 export function teamsFetchDataSuccess(data:any) {
+  console.log(data);
+  
   return {
       type: "TEAMS_FETCH_DATA_SUCCES",
       data

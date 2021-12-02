@@ -1,0 +1,64 @@
+.containerBurgerMenu{
+  display: none;
+  height: 100%;
+  position: absolute;
+}
+
+@media(max-width: 650px){
+  .containerBurgerMenu{
+    min-height: 100%;
+    display: flex;
+  }
+  .item1{
+    display: flex!important;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+
+  }
+  .item2{
+    display: flex!important;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+
+  }
+  .exitBut{
+    display: flex!important;
+    flex: 1 0 auto;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+
+    margin-top: 600px;
+  }
+  .exitBut>.navItemText{
+    color: #FF768E!important;
+  }
+  .navItemText{
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+    color: #9C9C9C;
+  }
+  .userContainer{
+    border-bottom: 0.5px solid #9C9C9C ;
+    width: 176px;
+    height: 40px;
+  }
+  .linkUser{
+    text-align: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    display: flex;
+
+  }
+  .linkUser>span{
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #303030;
+  }
+}

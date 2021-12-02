@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { BurgerMenuSidebar } from '../../../UI/BurgerMenu/burgerMenuSidebar'
 
 
+
  export const CardTeams: React.FC = () => {
  
   const [currentPage,setCurrentPage] = useState(1)
@@ -29,21 +30,14 @@ import { BurgerMenuSidebar } from '../../../UI/BurgerMenu/burgerMenuSidebar'
 
 
 
-
-// Search
-  const [value, setValue]=useState("");
-  const filteredTeams = teams.filter((e:any) => e.name.toLowerCase().includes(value.toLowerCase()))
- 
-
-// Search
-
 // Pagination
 
 const lastTeamIndex = currentPage*teamPerPage
 const firstTeamIndex = lastTeamIndex-teamPerPage
-const currentTeam = filteredTeams.slice(firstTeamIndex, lastTeamIndex)
+const currentTeam = teams.slice(firstTeamIndex, lastTeamIndex)
 
 const paginate = (pageNumber:any) => setCurrentPage(pageNumber)
+
 
 
 // Pagination
@@ -60,13 +54,16 @@ const paginate = (pageNumber:any) => setCurrentPage(pageNumber)
         
           <div className={cls.upContainer}>
             <Search
-            state={setValue}
+            PageSize={teams.length}
             />
             <AddButton/>
           </div>
           <div className={cls.mainContainer} >
               <div >
               <ul className={cls.smallCardContainer}>
+
+
+
               {currentTeam.map(({name,foundationYear,imageUrl,id}) =>
                 <TeamSmallCard 
                 name={name}
@@ -75,17 +72,21 @@ const paginate = (pageNumber:any) => setCurrentPage(pageNumber)
                 id={id}
                 />
               )}
+
+
+
+
+              
               </ul>
               </div>
           </div>
           <Pagination
           curretPage={currentTeam}
           PerPage={teamPerPage}
-          totalPages={filteredTeams.length}
+          totalPages={teams.length}
           paginate={paginate}
           />
         </div>
-         
       </div>
   )
 }
