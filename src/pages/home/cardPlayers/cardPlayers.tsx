@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-array-constructor */
 import React from 'react'
+import { BurgerMenuSidebar } from '../../../UI/BurgerMenu/burgerMenuSidebar'
 import { AddButton } from '../../../UI/buttons/Add_button/Add_button'
 import { Header } from '../../../UI/header/Header'
 import { Navbar } from '../../../UI/Navbar/Navbar'
@@ -86,6 +87,7 @@ export const CardPlayers: React.FC = () => {
         <div className={cls.bg}>
           <Header/>
           <Navbar/>
+          <BurgerMenuSidebar/>
           <div>
             <div className={cls.upContainer}>
               <Search 

@@ -207,3 +207,212 @@ button{
  color: #FF768E;
 }
 
+
+@media(max-width: 1450px){
+  .containerCardTeam{
+    margin: 32px 0 24px 0px;
+    width: 1050px;
+    height: 473px;
+    list-style: none;
+    display: flex;
+    flex-direction:column ;
+    flex-wrap:wrap ;
+  }
+
+}
+@media(max-width: 1280px){
+.saveButton{
+  margin: 0;
+  width: 100px;
+  margin-top: 10px;
+}
+  .containerCardTeam{
+
+    width: 500px;
+    height: 703px;
+    list-style: none;
+    display: flex;
+
+  }
+  .topCardTeam{
+    width: 300px;
+  }
+.mainCardTeam{
+  flex-direction: column;
+  height: 500px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+}
+.logoCardTeam{
+  margin: 0;
+ 
+}
+.descriptionCardTeam{
+  display: flex;
+  flex-direction: column;
+  height: 650px;
+  margin: 0;
+  width: 250px;
+}
+.conferenceCardTeam{
+  margin: 0;
+  height: 35px;
+  background:transparent ;
+  border: 1px solid rgb(117, 116, 116);
+  color: #fff;
+  width: 150px;
+
+}
+.nameCardTeam{
+  margin: 0;
+  height: 35px;
+  background:transparent ;
+  border: 1px solid rgb(117, 116, 116);
+  color: #fff;
+  width: 150px;
+}
+.divisionCardTeam{
+  margin: 0;
+  height: 35px;
+  background:transparent ;
+  border: 1px solid rgb(117, 116, 116);
+  color: #fff;
+  width: 150px;
+
+}
+.foundationCardTeam{
+  margin: 0;
+  height: 35px;
+  background:transparent ;
+  border: 1px solid rgb(117, 116, 116);
+  color: #fff;
+  width: 150px;
+
+}
+.conferenceTitle{
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 33px
+}
+.nameTitle{
+  color: #fff;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 49px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.divisionTitle{
+  margin: 0;
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 33px;
+  margin-top: 0px;
+}
+.foundationYearTitle{
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 33px
+}
+.imageUpload>input {
+  display: none;
+}
+.imageUpload>label>img{
+  cursor: pointer;
+}
+.imageUpload{
+
+  position: absolute;
+}
+.imageUploaded{
+  width: 100px;
+  height: 100px;
+
+}
+.image{
+  width: 100px!important;
+  height: 100px!important;
+}
+}
+@media(max-width: 900px){
+
+  .containerCardTeam{
+
+    width: 380px;
+    height: 703px;
+    list-style: none;
+    display: flex;
+
+  }
+.mainCardTeam{
+  flex-direction: column;
+  height: 500px;
+  width: 300px;
+}
+.topCardTeam{
+  width: 300px;
+}
+.logoCardTeam{
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.descriptionCardTeam{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  height: 376px;
+  width: 250px;
+}
+.nameCardTeam > h2{
+  color: #fff;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 49px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.foundationCardTeam > h3{
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 33px
+}
+.text{
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 25px;
+
+}
+.conferenceCardTeam{
+  margin-top: 0px;
+}
+.conferenceCardTeam > h3{
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 33px
+}
+
+.divisionCardTeam > h3{
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 33px;
+  margin-top: 0px;
+}
+}
+
+

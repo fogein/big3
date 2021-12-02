@@ -6,6 +6,7 @@ import { ITeamData } from '../../../api/dto/teamsAndPlayers'
 import {  deleteTeam } from '../../../api/request/teamAndPlayersApi'
 import { getTeamInfo } from '../../../modules/actions/getTeamInfo'
 import { update } from '../../../modules/actions/teams'
+import { BurgerMenuSidebar } from '../../../UI/BurgerMenu/burgerMenuSidebar'
 import { CardTeamInfo } from '../../../UI/CardTeamInfo/CardTeam'
 import { Header } from '../../../UI/header/Header'
 import { Navbar } from '../../../UI/Navbar/Navbar'
@@ -46,9 +47,8 @@ import cls from './teamInfo.module.scss'
       <div className={cls.bg}>
         <Header/>
         <Navbar/>
+        <BurgerMenuSidebar/>
         <div>
-          <div className={cls.upContainer}>
-          </div>
           <div className={cls.mainContainer}>
 {teamInfo &&
           (
