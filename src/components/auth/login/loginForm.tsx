@@ -62,7 +62,7 @@ interface ILoginFormProps extends FormComponentProps {
             </Form>
 
             <div className={cls.signInBg}>
-          <img src={signInBg} alt="Image" className={cls.signInImg} />
+          <img src={signInBg} alt="SignInimg" className={cls.signInImg} />
             </div>
 
 </>

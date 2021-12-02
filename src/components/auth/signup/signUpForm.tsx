@@ -98,7 +98,7 @@ export const FormSignUp =  Form.create<ISignUpFormProps>()(function SignUpForm(p
 
         </Form>
                 <div className={cls.signUpBg}>
-                <img src={signUpBg} alt="Image" className={cls.signUpImg} />
+                <img src={signUpBg} alt="SignUpimg" className={cls.signUpImg} />
                 </div>
           </>
     )
