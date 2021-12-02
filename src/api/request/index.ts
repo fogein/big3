@@ -3,4 +3,3 @@ export enum ContentTypes {
     MULTIPART_FORM_DATA = 'multipart/form-data',
 }
 
-export * from './auth';

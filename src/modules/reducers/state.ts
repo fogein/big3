@@ -1,5 +1,5 @@
-import { IUser } from "../../api/dto" 
-import { IAuth } from "../../api/dto"
+import { IUser } from "../../api/dto/user" 
+import { IAuth } from "../../api/dto/auth"
 import { ITeamData } from "../../api/dto/teamsAndPlayers"
 
 export interface IRootState {
@@ -11,4 +11,3 @@ export interface IRootState {
     getTeamInfo:ITeamData,
 
 }
- 

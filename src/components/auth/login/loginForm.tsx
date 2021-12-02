@@ -3,7 +3,7 @@ import React, { FormEvent } from 'react';
 import { Form, Input } from 'antd';
 import { FormComponentProps } from 'antd/es/form';
 import { Link } from 'react-router-dom';
-import { ILogin } from '../../../api/dto'; 
+import { ILogin } from '../../../api/dto/auth'; 
 import { SignInbut } from '../../../UI/buttons/SignIn/Sign_In-but';
 import signInBg from '../../../assets/images/SignInBg.png';
 import cls from './styles.module.scss'

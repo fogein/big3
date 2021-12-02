@@ -2,8 +2,9 @@ import { put, call, takeLatest, } from 'redux-saga/effects';
 import { message } from 'antd';
 import { AuthActions, UserActions } from '../actions';
 import { Action } from 'redux-actions';
-import { ISignUp,ILogin, IAuth, IUser } from '../../api/dto';
-import { signIn,signUp } from '../../api/request'; 
+import { ISignUp,ILogin, IAuth } from '../../api/dto/auth';
+import { IUser } from '../../api/dto/user';
+import { signIn,signUp } from '../../api/request/auth'; 
 import * as _ from 'lodash';
 import { useHistory } from 'react-router-dom';
 

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ILogin,ISignUp } from '../dto';
+import { ILogin,ISignUp } from '../dto/auth';
 import { ContentTypes } from '.';
 
 
