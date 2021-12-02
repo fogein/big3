@@ -1,6 +1,6 @@
 import { handleActions } from "redux-actions";
 import { IAuth } from "../../api/dto/auth"; 
-import { AuthActions } from "../actions";
+import { AuthActions } from "../actions/auth";
 
 const initialState = null;
 

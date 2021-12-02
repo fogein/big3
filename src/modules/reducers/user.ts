@@ -1,6 +1,6 @@
 import { handleActions } from 'redux-actions';
 import { IUser } from '../../api/dto/user';
-import { UserActions } from '../actions';
+import { UserActions } from '../actions/user';
 
 const initialState = null;
 

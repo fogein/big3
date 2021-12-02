@@ -4,7 +4,7 @@ import axios from "axios";
 
 export function updateImage () {
   
-  return {
+  return { 
     type: "UPDATE_IMAGE",
 
   }
@@ -17,7 +17,7 @@ export function saveImageSuccess(data:any) {
   }
 }
 
-export function saveImage(file:any) {
+export function saveImage(file:string) {
   const formData = new FormData(); 
   formData.append("file",file );
   return (dispatch:any) => {

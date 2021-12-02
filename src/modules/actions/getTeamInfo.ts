@@ -1,3 +1,4 @@
+
 import { getTeamId } from "../../api/request/teamAndPlayersApi";
 
 export function getTeamInfoSucces(data:any) {
@@ -8,7 +9,7 @@ export function getTeamInfoSucces(data:any) {
   }
 }
 
-export function getTeamInfo(id:any) {
+export function getTeamInfo(id:number) {
   return (dispatch:any) => {
     getTeamId(id)
         .then(response => {

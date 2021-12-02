@@ -1,6 +1,7 @@
 
 
 
+
 export const getTeamInfo = (state=[],action:any) => {
   
   switch (action.type) {

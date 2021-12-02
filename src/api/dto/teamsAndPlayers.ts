@@ -1,6 +1,6 @@
 
 export interface ITeamData{
-  name: string,
+  name?: string,
   foundationYear?: number,
   division?: string,
   conference?: string,

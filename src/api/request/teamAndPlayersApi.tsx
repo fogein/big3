@@ -1,8 +1,9 @@
-import api from './baseApi';
+import { ITeamData } from '../dto/teamsAndPlayers';
+import {api} from './baseApi';
 
 
   
-export async function addTeam (data: any){
+export async function addTeam (data: ITeamData){
 
   let response = await api.post('/Team/Add',data);
 
@@ -12,17 +13,17 @@ export async function addTeam (data: any){
 
 }
 
-export async function addPlayer (data: any){
+// export async function addPlayer (data: any){
 
-  let response = await api.post('/Player/Add',data);
+//   let response = await api.post('/Player/Add',data);
 
 
   
-  return response.data;
+//   return response.data;
 
-}
+// }
 
-export async function getTeamId (id:any){
+export async function getTeamId (id:number){
 
 
   let response = await api.get(`/Team/Get?id=${id}`);
@@ -32,7 +33,7 @@ export async function getTeamId (id:any){
   return response;
   }
 
-  export async function deleteTeam (id: any){
+  export async function deleteTeam (id: number){
 
     let response = await api.delete(`/Team/Delete?id=${id}`);
   
@@ -41,7 +42,7 @@ export async function getTeamId (id:any){
     return response;
   
   }
-  export async function deleteimage (fileName: any){
+  export async function deleteimage (fileName: string){
 
     let response = await api.delete(`/Team/DeleteImage?${fileName}`);
     
@@ -52,7 +53,7 @@ export async function getTeamId (id:any){
   }
 
 
-  export async function updateTeam (data: any){
+  export async function updateTeam (data: ITeamData){
 
     let response = await api.put('/Team/Update',data);
   

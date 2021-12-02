@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {FormLogin} from '../../../components/auth/login/loginForm';
 import { IRootState } from '../../../modules/reducers/state'; 
 import { ILogin } from '../../../api/dto/auth'; 
-import { AuthActions } from '../../../modules/actions';
+import { AuthActions } from '../../../modules/actions/auth';
 import cls from'./styles.module.scss';
 import {  useHistory } from 'react-router-dom';
 

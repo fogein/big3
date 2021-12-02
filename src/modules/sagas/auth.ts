@@ -1,6 +1,7 @@
 import { put, call, takeLatest, } from 'redux-saga/effects';
 import { message } from 'antd';
-import { AuthActions, UserActions } from '../actions';
+import { AuthActions } from '../actions/auth';
+import {UserActions} from '../actions/user';
 import { Action } from 'redux-actions';
 import { ISignUp,ILogin, IAuth } from '../../api/dto/auth';
 import { IUser } from '../../api/dto/user';

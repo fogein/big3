@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import {FormSignUp} from '../../../components/auth/signup/signUpForm';
 import { ISignUp } from '../../../api/dto/auth';
-import {AuthActions} from "../../../modules/actions";
+import {AuthActions} from "../../../modules/actions/auth";
 import cls from'./styles.module.scss';
 
 
