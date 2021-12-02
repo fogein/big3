@@ -1,7 +1,15 @@
 
 import cls from './Pagination.module.scss'
 
-export const Pagination = (props:any) => {
+interface IPagination {
+  paginate:any,
+  PerPage: number,
+  totalPages: number,
+  curretPage:any,
+}
+
+
+export const Pagination = (props:IPagination) => {
 
   const pageNumbers = []
 

@@ -6,7 +6,7 @@ import { ITeamData } from '../../../api/dto/teamsAndPlayers'
 import {  deleteTeam } from '../../../api/request/teamAndPlayersApi'
 import { getTeamInfo } from '../../../modules/actions/getTeamInfo'
 import { update } from '../../../modules/actions/teams'
-import { CardTeamInfo } from '../../../UI/Card_team/CardTeam'
+import { CardTeamInfo } from '../../../UI/CardTeamInfo/CardTeam'
 import { Header } from '../../../UI/header/Header'
 import { Navbar } from '../../../UI/Navbar/Navbar'
 

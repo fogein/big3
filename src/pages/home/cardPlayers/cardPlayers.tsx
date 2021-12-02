@@ -88,8 +88,8 @@ export const CardPlayers: React.FC = () => {
           <Navbar/>
           <div>
             <div className={cls.upContainer}>
-              <Search
-            
+              <Search 
+              PageSize={0}            
               />
               <AddButton
               

@@ -3,10 +3,11 @@ import cls from './cardTeam.module.scss'
 import create from '../../assets/images/create.svg';
 import deleteimg from '../../assets/images/delete.svg';
 import { Link } from 'react-router-dom';
+import { ITeamData } from '../../api/dto/teamsAndPlayers';
 
-export const CardTeamInfo = (props:any) => {
+export const CardTeamInfo = (props:ITeamData) => {
 
-
+ 
   return (
     
       <li key={props.id} className={cls.containerCardTeam}>

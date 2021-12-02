@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import cls from './EditTeam.module.scss'
 import create from '../../assets/images/create.svg';
 import deleteimg from '../../assets/images/delete.svg';
@@ -8,10 +8,11 @@ import { updateTeam } from '../../api/request/teamAndPlayersApi';
 import { update } from '../../modules/actions/teams';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveImage, updateImage } from '../../modules/actions/saveImage';
+import { ITeamData } from '../../api/dto/teamsAndPlayers';
 
 
 
-export const EditTeam = (props:any) => {
+export const EditTeam = (props:ITeamData) => {
   const history = useHistory()
   const dispatch = useDispatch()
   const {
@@ -23,7 +24,7 @@ export const EditTeam = (props:any) => {
   });
   
  let  imageProps =props.imageUrl
-  const imageUrl = useSelector<any, any>(state => state.imageUrl)
+  const imageUrl = useSelector<any, string>(state => state.imageUrl)
   
 
   
