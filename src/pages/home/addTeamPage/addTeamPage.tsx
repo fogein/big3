@@ -1,5 +1,6 @@
 
 import { AddTeam } from '../../../UI/addTeam/addTeam'
+import { BurgerMenuSidebar } from '../../../UI/BurgerMenu/burgerMenuSidebar'
 import { Header } from '../../../UI/header/Header'
 import { Navbar } from '../../../UI/Navbar/Navbar'
 
@@ -17,6 +18,7 @@ export const AddTeamPage: React.FC = () => {
         <div className={cls.bg}>
           <Header/>
           <Navbar/>
+          <BurgerMenuSidebar/>
             <div className={cls.mainContainer}>
             <AddTeam />
             </div>

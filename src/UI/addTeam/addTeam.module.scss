@@ -101,3 +101,66 @@ margin-top: 24px;
   opacity: .5;
 }
 
+@media(max-width: 1360px){
+.mainContainer{
+max-width: 375px;
+height: 736px;
+min-width: 375px;
+}
+.addPhotoButton{
+  width: 200px;
+  height: 150px;
+}
+.addTeamInput{
+  width: 300px;
+}
+.saveButton{
+width: 100px;
+}
+.cancelButton{
+  width: 100px;
+}
+
+.contentContainer{
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  margin-top: 10px;
+}
+.inputsContainer{
+  margin: 0;
+}
+
+}
+@media(max-width: 900px){
+  .mainContainer{
+    height: 600px;
+  }
+}
+@media(max-width: 460px){
+  .mainContainer{
+    height: 500px;
+    max-width: 200px;
+    min-width: 200px;
+  }
+  .addPhotoButton{
+    width: 100px;
+    height: 100px;
+  }
+  .addTeamInput{
+    width: 150px;
+  }
+  .saveButton{
+  width: 50px;
+  }
+  .cancelButton{
+    width: 50px;
+  }
+  .contentContainer{
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    margin-top: 10px;
+  }
+}
