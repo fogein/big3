@@ -1,0 +1,22 @@
+.pageNotFoundContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* vertical alignment */
+  align-items: center;      /* horizontal alignment */
+  text-align: center;
+  height: 80vh;
+  width: 100%;
+}
+.red{
+  margin-top: 48px;
+  margin-bottom: 24px;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 49px;
+  color: #FF768E;
+}
+.notRed{
+  font-size: 24px;
+  line-height: 33px;
+  color: #707070;
+}

@@ -1,6 +1,6 @@
 
 
-export const imageUrl = (state=[],action:any) => {
+export const imageUrl = (state={},action:any) => {
   switch (action.type) {
     case "SAVE_IMAGE":
       return   `http://dev.trainee.dex-it.ru${action.data.data}`
@@ -8,7 +8,7 @@ export const imageUrl = (state=[],action:any) => {
 
       case "UPDATE_IMAGE":
         
-      return [...state]
+      return {...state}
 
        default:
         return state;

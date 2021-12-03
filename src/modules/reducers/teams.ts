@@ -9,7 +9,7 @@ export const teams = (state=[],action:any) => {
         return action.data.data.data
         
     case "UPDATE_SEACRH":
-      return action.data.data.data
+      return [action.data.data.data]
 
         case "UPDATE":
         

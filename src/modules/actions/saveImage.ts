@@ -11,6 +11,8 @@ export function updateImage () {
 }
 
 export function saveImageSuccess(data:any) {
+  console.log(data);
+  
   return {
       type: "SAVE_IMAGE",
       data
