@@ -7,7 +7,6 @@ import { useForm } from 'react-hook-form';
 import {  updateTeam } from '../../api/request/teamAndPlayersApi';
 import { update } from '../../modules/actions/teams';
 import { useDispatch } from 'react-redux';
-import { updateImage } from '../../modules/actions/saveImage';
 import { ITeamData } from '../../api/dto/teamsAndPlayers';
 import { SaveImageApi } from '../../api/request/saveImageApi';
 
@@ -58,7 +57,6 @@ console.log(image);
     }
     updateTeam(editTeam);
     dispatch(update())
-    dispatch(updateImage())
     setTimeout(() => {
       history.push('/teams')
     }, 100);

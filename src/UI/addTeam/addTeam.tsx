@@ -1,12 +1,13 @@
 
 
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from 'react-router-dom'
 import { ITeamData } from "../../api/dto/teamsAndPlayers";
+import { SaveImageApi } from "../../api/request/saveImageApi";
 import { addTeam } from "../../api/request/teamAndPlayersApi";
 import addPhotoTeam from '../../assets/images/addPhotoTeam.svg'
-import { saveImage, updateImage } from "../../modules/actions/saveImage";
 import { update } from "../../modules/actions/teams";
 import cls from './addTeam.module.scss'
 
@@ -14,8 +15,8 @@ export const AddTeam = () => {
 
   const history=useHistory()
   const dispatch = useDispatch()
+  const [image,setImage]=useState('')
   const teams  = useSelector<any, Array<ITeamData>>(state => state.teams )
-  const imageUrl = useSelector<any, any>(state => state.imageUrl)
 
   const {
     register,
@@ -27,7 +28,11 @@ export const AddTeam = () => {
   
   const handleChange = (e:any) => {
     const image =(e.target.files[0])
-    dispatch(saveImage(image))
+    let img = SaveImageApi(image);
+      img.then(function(result) {
+        setImage(`http://dev.trainee.dex-it.ru${result}`)
+        
+    });   
   }
   
   
@@ -37,13 +42,12 @@ export const AddTeam = () => {
       foundationYear: data.YearOfFoundation,
       division: data.Division,
       conference: data.Conference,
-      imageUrl: imageUrl
+      imageUrl: image
     }
     let card = await addTeam(testObject)
     teams.push(card)
     dispatch(update())
     history.push('/teams')
-    dispatch(updateImage())
   };  
   return (
       <div className={cls.mainContainer}  >
@@ -53,7 +57,7 @@ export const AddTeam = () => {
       <div className={cls.contentContainer}>
         <div className={cls.addImageContainer}>
         <button className={cls.addPhotoButton}>
-        <img className={cls.imageUploaded} src={imageUrl} alt="" />
+        <img className={cls.imageUploaded} src={image} alt="" />
           <div className={cls.imageUpload}>
             
               <label htmlFor="file-input">
