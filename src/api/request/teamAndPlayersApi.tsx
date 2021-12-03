@@ -42,9 +42,10 @@ export async function getTeamId (id:number){
     return response;
   
   }
+  
   export async function deleteimage (fileName: string){
 
-    let response = await api.delete(`/Team/DeleteImage?${fileName}`);
+    let response = await api.delete(`/image/DeleteImage?${fileName}`);
     
   
     

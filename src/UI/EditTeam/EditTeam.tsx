@@ -1,22 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
 import cls from './EditTeam.module.scss'
 import create from '../../assets/images/create.svg';
 import deleteimg from '../../assets/images/delete.svg';
 import { Link, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { updateTeam } from '../../api/request/teamAndPlayersApi';
-import { teamsFetchData, update, updateSeacrh } from '../../modules/actions/teams';
-import { useDispatch, useSelector } from 'react-redux';
-import { saveImage, updateImage } from '../../modules/actions/saveImage';
+import {  updateTeam } from '../../api/request/teamAndPlayersApi';
+import { update } from '../../modules/actions/teams';
+import { useDispatch } from 'react-redux';
+import { updateImage } from '../../modules/actions/saveImage';
 import { ITeamData } from '../../api/dto/teamsAndPlayers';
-import { GET_TEAM_URL } from '../../modules/constants/TeamsAndPlayers';
+import { SaveImageApi } from '../../api/request/saveImageApi';
 
 
 
 export const EditTeam = (props:ITeamData) => {
   const history = useHistory()
-  const imageUrl = useSelector<any, string>(state => state.imageUrl)
+  const [image,setImage]=useState(props.imageUrl)
   const dispatch = useDispatch()
+console.log(image);
 
 
   const {
@@ -27,16 +28,19 @@ export const EditTeam = (props:ITeamData) => {
     mode: "onChange"
   });
   
+
+
+  
   
 
   const handleChange = async (e:any) => {
     
       const image =(e.target.files[0])
-     
-        dispatch(saveImage(image))
-       
-       
-      
+        let img = SaveImageApi(image);
+      img.then(function(result) {
+        setImage(`http://dev.trainee.dex-it.ru${result}`)
+        
+    });   
   }
 
 
@@ -48,7 +52,7 @@ export const EditTeam = (props:ITeamData) => {
     division: data.Division,
     conference: data.Conference,
     id:props.id,
-    imageUrl:props.imageUrl
+    imageUrl:image
   
     
     }
@@ -86,7 +90,7 @@ export const EditTeam = (props:ITeamData) => {
           <div className={cls.imageUpload}>
             
               <label htmlFor="file-input">
-                <img className={cls.image} src={props.imageUrl}  alt=''/>
+                <img className={cls.image} src={image}  alt=''/>
               </label>
               <input  id="file-input" type="file"  onChange={handleChange} />
             

@@ -9,9 +9,17 @@ export function updateImage () {
 
   }
 }
+export function saveImageUrl(data:any) {
+  console.log(data);
+  
+  return {
+      type: "SAVE_IMAGE_URL",
+      data
+  }
+}
 
 export function saveImageSuccess(data:any) {
-  console.log(data);
+
   
   return {
       type: "SAVE_IMAGE",
