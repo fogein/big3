@@ -5,7 +5,7 @@
   border: none;
   width: 104px;
   height: 40px;
-  background: #E4163A;
+  background: var(--red);
   border-radius: 4px;
 }
 .addButtonText{
@@ -15,16 +15,16 @@
   color: #FFFFFF;
 }
 .addButton:hover{
-  background: #FF5761;
+  background: var(--light-red);
 }
 .addButton:focus{
-  background: #C60E2E;
+  background: var(--dark-red);
 }
 .addButton:disabled{
-  background: #F6F6F6;
+  background: var(--lightest-grey1);
 }
 .addButtonText:disabled{
-  color: #D1D1D1;
+  color: var(--lightest-grey);
 }
 
 @media(max-width: 650px){

@@ -24,7 +24,7 @@
   align-items: center;
   text-align: center;
   height: 100px;
-  background: #303030;
+  background: var(--dark-grey);
   border-radius: 0px 0px 4px 4px;
 }
 .smallCardDeskription > h4{
@@ -39,7 +39,7 @@
   font-size: 14px;
   line-height: 24px;
   text-align: center;
-  color: #9C9C9C;
+  color: var(--light-grey);
 }
 
 @media(max-width: 1420px){

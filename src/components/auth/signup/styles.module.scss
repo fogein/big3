@@ -18,10 +18,10 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
-  color: #707070;
+  color: var(--grey);
 }
 .linkSignIn{
-  color:#E4163A;
+  color:var(--red);
 }
 .signUpBg{
   width: 834px;
@@ -38,7 +38,7 @@
 
 .input{
   min-width: 366px;
-  background: #F6F6F6;
+  background: var(--lightest-grey1);
   border-radius: 4px;
   border:none;
   height: 40px;
@@ -48,16 +48,16 @@
   color: #303030;
 }
 .input:hover{
-  background: #D1D1D1;
+  background: var(--lightest-grey);
 }
 .input:focus{
   box-shadow: 0px 0px 5px #D9D9D9;
 }
 .input:disabled{
-  color: #D1D1D1;
+  color: var(--lightest-grey);
 } 
 .linkSignIn{
-  color:#E4163A;
+  color:var(--red);
 
 }
 @media (max-width:1250px){

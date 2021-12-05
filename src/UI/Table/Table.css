@@ -3,14 +3,14 @@
 }
 .table{
   margin-left: 80px;
-  border: 0.5px solid #9C9C9C;
+  border: 0.5px solid var(--light-grey);
   border-collapse: collapse;
   width: 1140px;
   text-align: center;
 }
 .table__name{
   height: 54px;
-  border: 0.5px solid #9C9C9C;
+  border: 0.5px solid var(--light-grey);
   border-bottom: hidden;
   border-radius: 10px 10px 0px 0px;
 }
@@ -22,7 +22,7 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 25px;
-  color: #707070;
+  color: var(--grey);
 }
 .head__table{
   height: 40px;
@@ -32,7 +32,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
-  color: #707070;
+  color: var(--grey);
   
   border-left: hidden;
   border-right: hidden;
@@ -44,22 +44,22 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
-  color: #707070;
-  border: 0.5px solid #9C9C9C;
+  color: var(--grey);
+  border: 0.5px solid var(--light-grey);
   border-left: hidden;
   border-right: hidden;
 }
 .body__table-item:first-child{
-  border-left: 0.5px solid #9C9C9C;
+  border-left: 0.5px solid var(--light-grey);
 }
 .body__table-item:last-child{
-  border-right: 0.5px solid #9C9C9C;
+  border-right: 0.5px solid var(--light-grey);
 }
 .head__table-item:first-child{
-  border-left: 0.5px solid #9C9C9C;
+  border-left: 0.5px solid var(--light-grey);
 }
 .head__table-item:last-child{
-  border-right: 0.5px solid #9C9C9C;
+  border-right: 0.5px solid var(--light-grey);
 }
 .left{
   text-align: left;

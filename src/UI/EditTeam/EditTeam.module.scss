@@ -20,7 +20,7 @@ button{
   align-items: center;
   height: 69px;
   background: #FFFFFF;
-  border: 0.5px solid #9C9C9C;
+  border: 0.5px solid var(--light-grey);
   border-radius: 10px 10px 0px 0px;
 }
 
@@ -31,10 +31,10 @@ button{
   margin-left: 32px;
 }
 .link {
-  color: #E4163A;
+  color: var(--red);
 }
 .aboutСardTeam > span > span{
-  color: #9C9C9C;
+  color: var(--light-grey);
 }
 .editCardTeam{   
   margin-right: 32px;
@@ -71,7 +71,7 @@ button{
   margin-top: 295px;
   border:none;
   cursor: pointer;
-  background: #E4163A;
+  background: var(--red);
   border-radius: 4px;
   width: 171px;
   height: 40px;
@@ -192,20 +192,20 @@ button{
 .errorMessageName{
   margin-top: -38px;
   margin-bottom: 17px;
-  color: #FF768E;
+  color: var(--lightest-red);
 }
 .errorMessageYear{
   margin-top: -37px;
   margin-bottom: 16px;
-  color: #FF768E;
+  color: var(--lightest-red);
 }
 
 .errorMessageDivision{
   margin-left: 84px;
-  color: #FF768E;
+  color: var(--lightest-red);
 }
 .errorMessageConference{
- color: #FF768E;
+ color: var(--lightest-red);
 }
 
 

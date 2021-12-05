@@ -1,5 +1,5 @@
 .Sign_In_but{
-  background: #E4163A;
+  background: var(--red);
   border-radius: 4px;
   height: 40px;
   width: 365px;
@@ -12,15 +12,15 @@
   color: #fff;
 }
 .Sign_In_but:hover{
-  background: #FF5761
+  background: var(--light-red)
 }
 .Sign_In_but:focus{
-  background: #C60E2E;
+  background: var(--dark-red);
 }
 .Sign_In_but:disabled{
-  background: #F6F6F6;
-  color: #D1D1D1;
+  background: var(--lightest-grey1);
+  color: var(--lightest-grey);
 }
 .Sign_In_but:disabled span{
-  color: #D1D1D1;
+  color: var(--lightest-grey);
 }

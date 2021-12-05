@@ -3,6 +3,16 @@
   flex-wrap: wrap;
   font-family: "Avenir";  
   background: #F6F6F6;
+  --dark-grey: #303030;
+  --grey: #707070;
+  --light-grey: #9c9c9c;
+  --lightest-grey: #d1d1d1;
+  --lightest-grey1: #f6f6f6;
+  --dark-red: #C60E2E;
+  --red: #E4163A;
+  --light-red: #FF5761;
+  --lightest-red: #FF768E;
+  --blue: #344472;
 }
 @font-face {
   font-family: "Avenir";  
@@ -14,6 +24,7 @@
   from {opacity: 0;}
   to {opacity: 1;}
 }
+
 
 
 

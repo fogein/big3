@@ -16,7 +16,7 @@ margin-top: 24px;
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
-  color: #E4163A
+  color: var(--red)
 }
 .contentContainer{
   display: flex;
@@ -54,7 +54,7 @@ margin-top: 24px;
 }
 .cancelButton{
   display: flex;
-  border: 1px solid #9C9C9C;
+  border: 1px solid var(--light-grey);
   width: 171px;
   height: 40px;
   align-items: center;
@@ -70,7 +70,7 @@ margin-top: 24px;
 .saveButton{
   border:none;
   cursor: pointer;
-  background: #E4163A;
+  background: var(--red);
   border-radius: 4px;
   width: 171px;
   height: 40px;
@@ -84,7 +84,7 @@ margin-top: 24px;
 .errorMessage{
   margin-top: -20px;
   margin-bottom: 5px;
-  color: #FF768E;
+  color: var(--lightest-red);
 }
 .imageUpload>input {
   display: none;

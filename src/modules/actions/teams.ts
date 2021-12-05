@@ -27,7 +27,6 @@ export function update () {
 }
 
 export function teamsFetchDataSuccess(data:any) {
-  console.log(data);
   
   return {
       type: "TEAMS_FETCH_DATA_SUCCES",
