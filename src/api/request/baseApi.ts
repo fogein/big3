@@ -6,4 +6,5 @@ api.interceptors.request.use((config) => {
   if(config != undefined && config.headers != undefined)
   config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
   return config;
+  
 });
