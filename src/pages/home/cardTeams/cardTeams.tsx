@@ -26,8 +26,9 @@ import { BurgerMenuSidebar } from '../../../UI/BurgerMenu/burgerMenuSidebar'
     dispatch(teamsFetchData(GET_TEAM_URL));
  }, [dispatch]);
  const teams  = useSelector<any, Array<ITeamData>>(state => state.teams )
+ const auth  = useSelector<any, any>(state => state.auth )
 
-
+ 
 
 
 // Pagination

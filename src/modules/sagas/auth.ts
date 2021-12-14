@@ -13,23 +13,23 @@ import { useHistory } from 'react-router-dom';
 
 
 
-function* SignInWorker(action: Action<ILogin>) {
-    try {
-        const { data } = yield call(signIn, action.payload);
-        const token = data.token;
-        localStorage.setItem('token', token);
+// function* SignInWorker(action: Action<ILogin>) {
+//     try {
+//         const { data } = yield call(signIn, action.payload);
+//         const token = data.token;
+//         localStorage.setItem('token', token);
 
        
         
-        yield put(AuthActions.setAuthInfo(_.pick(data, ['accessToken']) as IAuth));
-        yield put(UserActions.setUser(_.omit(data, 'accessToken') as IUser));
+//         yield put(AuthActions.setAuthInfo(_.pick(data, ['accessToken']) as IAuth));
+//         yield put(UserActions.setUser(_.omit(data, 'accessToken') as IUser));
         
        
-    } catch (error) {
-        message.error('Failed to login!');
-        console.error(error);
-    }
-}
+//     } catch (error) {
+//         message.error('Failed to login!');
+//         console.error(error);
+//     }
+// }
 
 function* SignUpWorker(action: Action<ISignUp>) {
     try {
@@ -44,6 +44,6 @@ function* SignUpWorker(action: Action<ISignUp>) {
 }
 
 export default function* watchAuth() {
-    yield takeLatest(AuthActions.Type.SIGN_IN, SignInWorker);
-    yield takeLatest(AuthActions.Type.SIGN_UP, SignUpWorker);
+    // yield takeLatest(AuthActions.Type.SIGN_IN, SignInWorker);
+    // yield takeLatest(AuthActions.Type.SIGN_UP, SignUpWorker);
 }

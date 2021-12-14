@@ -8,7 +8,7 @@ import cls from'./styles.module.scss';
 
 export const SignUpContainer = (props: any) => {
     const dispatch = useDispatch();
-    const signUp = useCallback((payload: ISignUp) => dispatch(AuthActions.signUp(payload)),[dispatch]);
+    const signUp = useCallback((payload: ISignUp) => dispatch(AuthActions(payload)),[dispatch]);
     return (
         <div className={cls.signupFormContainer}>
             <FormSignUp handleSubmit={signUp} handleError={console.error} />
