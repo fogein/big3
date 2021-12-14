@@ -31,7 +31,7 @@ margin-top: 24px;
   align-items: center;
   width: 336px;
   height: 261px;
-  background: #9C9C9C;
+  background: var(--light-grey);
   opacity: 0.5;
   border-radius: 10px;
 }
@@ -41,7 +41,7 @@ margin-top: 24px;
   flex-direction: column;
 }
 .addTeamInput{
-  background: #F6F6F6;
+  background: var(--lightest-grey1);
   border-radius: 4px;
   border:none;
   width: 366px;

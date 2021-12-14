@@ -31,7 +31,7 @@ export const Search = (props:ISearch) => {
   }
 
 const searchRes  = useSelector<any, any>(state => state.teamsSeacrhRes )
-console.log(searchRes);
+
 
 
   const handleInputChange = (e:any) => {

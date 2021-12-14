@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-array-constructor */
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { AddButton } from '../../../UI/buttons/Add_button/Add_button'
 import { Header } from '../../../UI/header/Header'
 import { Navbar } from '../../../UI/Navbar/Navbar'
@@ -32,11 +32,11 @@ import { BurgerMenuSidebar } from '../../../UI/BurgerMenu/burgerMenuSidebar'
 
 // Pagination
 
-const lastTeamIndex = currentPage*teamPerPage
-const firstTeamIndex = lastTeamIndex-teamPerPage
-const currentTeam = teams.slice(firstTeamIndex, lastTeamIndex)
+const lastTeamIndex = useMemo(() => currentPage*teamPerPage,[currentPage, teamPerPage])
+const firstTeamIndex = useMemo(() => lastTeamIndex-teamPerPage,[lastTeamIndex, teamPerPage])
+const currentTeam = useMemo(() => teams.slice(firstTeamIndex, lastTeamIndex),[firstTeamIndex, lastTeamIndex, teams])
 
-const paginate = (pageNumber:any) => setCurrentPage(pageNumber)
+const paginate = useCallback((pageNumber:any) => setCurrentPage(pageNumber),[])
 
 
 
