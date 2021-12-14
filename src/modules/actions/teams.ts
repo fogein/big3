@@ -1,5 +1,5 @@
 
-import { ContentTypes } from "../../api/request/enumTypes";
+import { ContentTypes } from "../../api/dto/enumTypes";
 
 
 

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { ILogin,ISignUp } from '../dto/auth';
-import { ContentTypes } from './enumTypes';
+import { ContentTypes } from '../dto/enumTypes';
 
 
 
