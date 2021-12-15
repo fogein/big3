@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from 'react-router-dom'
-import { ITeamData } from "../../api/dto/teamsAndPlayers";
 import { SaveImageApi } from "../../api/request/saveImageApi";
 import { addTeam } from "../../api/request/teamAndPlayersApi";
 import addPhotoTeam from '../../assets/images/addPhotoTeam.svg'
