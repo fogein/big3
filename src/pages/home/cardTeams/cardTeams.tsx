@@ -6,7 +6,7 @@ import { Navbar } from '../../../UI/navbar/navbar'
 import { Pagination } from '../../../UI/pagination/pagination'
 import { Search } from '../../../UI/search/search'
 import { TeamSmallCard } from '../../../UI/teamSmallCard/teamSmallCard'
-import { GET_TEAM_URL } from '../../../modules/teamList/teamsAndPlayersConstants'
+import { GET_TEAM_URL, MAIN_URL } from '../../../modules/teamList/teamsAndPlayersConstants'
 import { ITeamData } from '../../../api/dto/teamsAndPlayers'
 import cls from './cardTeam.module.scss'
 import { teamsFetchData } from '../../../modules/teamList/teamsAction'
@@ -17,30 +17,17 @@ import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
 
  export const CardTeams: React.FC = () => {
  
-  const [currentPage,setCurrentPage] = useState(1)
-  const [teamPerPage] = useState(6)
 
 
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(teamsFetchData(GET_TEAM_URL));
+    dispatch(teamsFetchData(`${MAIN_URL}/api/Team/GetTeams?PageSize=${25}&Page=${1}`));
  }, [dispatch]);
  const teams  = useSelector<any, Array<ITeamData>>(state => state.teams )
 
  
 
 
-// Pagination
-
-const lastTeamIndex = useMemo(() => currentPage*teamPerPage,[currentPage, teamPerPage])
-const firstTeamIndex = useMemo(() => lastTeamIndex-teamPerPage,[lastTeamIndex, teamPerPage])
-const currentTeam = useMemo(() => teams.slice(firstTeamIndex, lastTeamIndex),[firstTeamIndex, lastTeamIndex, teams])
-
-const paginate = useCallback((pageNumber:any) => setCurrentPage(pageNumber),[])
-
-
-
-// Pagination
 
 
   return (
@@ -64,7 +51,7 @@ const paginate = useCallback((pageNumber:any) => setCurrentPage(pageNumber),[])
 
 
 
-              {currentTeam.map(({name,foundationYear,imageUrl,id}) =>
+              {teams.map(({name,foundationYear,imageUrl,id}) =>
                 <TeamSmallCard 
                 key={id}
                 name={name}
@@ -81,12 +68,12 @@ const paginate = useCallback((pageNumber:any) => setCurrentPage(pageNumber),[])
               </ul>
               </div>
           </div>
-          <Pagination
+          {/* <Pagination
           curretPage={currentTeam}
           PerPage={teamPerPage}
           totalPages={teams.length}
           paginate={paginate}
-          />
+          /> */}
         </div>
       </div>
   )

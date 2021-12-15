@@ -4,7 +4,7 @@ export const api = axios.create({
 });
 api.interceptors.request.use((config) => {
   if(config !== undefined && config.headers !== undefined)
-  config.headers.Authorization = `Bearer ${localStorage.getItem('toen')}`;
+  config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
   return config;
   
 });
