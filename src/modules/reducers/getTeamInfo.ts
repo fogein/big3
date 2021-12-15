@@ -1,8 +1,9 @@
+import { AnyAction } from "redux";
 
 
 
 
-export const getTeamInfo = (state=[],action:any) => {
+export const getTeamInfo = (state=[],action:AnyAction) => {
   
   switch (action.type) {
     case "GET_TEAM_INFO_SUCCES":

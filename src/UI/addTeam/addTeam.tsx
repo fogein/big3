@@ -1,5 +1,3 @@
-
-
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,6 +6,7 @@ import { ITeamData } from "../../api/dto/teamsAndPlayers";
 import { SaveImageApi } from "../../api/request/saveImageApi";
 import { addTeam } from "../../api/request/teamAndPlayersApi";
 import addPhotoTeam from '../../assets/images/addPhotoTeam.svg'
+import { BASE_URL } from "../../config/env/development";
 import { update } from "../../modules/actions/teams";
 import cls from './addTeam.module.scss'
 
@@ -30,7 +29,7 @@ export const AddTeam = () => {
     const image =(e.target.files[0])
     let img = SaveImageApi(image);
       img.then(function(result) {
-        setImage(`http://dev.trainee.dex-it.ru${result}`)
+        setImage(`${BASE_URL}${result}`)
         
     });   
   }

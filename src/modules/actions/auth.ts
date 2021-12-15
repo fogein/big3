@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { createAction } from 'redux-actions';
-import { IAuth, ILogin, ISignUp } from '../../api/dto/auth';
+
+
 
 
 export function Auth(data:any) {

@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable react/jsx-pascal-case */
+
 import React, { FormEvent } from 'react';
 import { Checkbox, Form, Input } from 'antd';
 import { Link } from 'react-router-dom';

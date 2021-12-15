@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-export  function SaveImageApi  (file: any) {
+export  function SaveImageApi  (file: string) {
   const formData = new FormData(); 
 formData.append("file",file );
 return axios.post('http://dev.trainee.dex-it.ru/api/Image/SaveImage', formData, {

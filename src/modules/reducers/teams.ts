@@ -1,9 +1,10 @@
+import { AnyAction } from "redux"
 
 
-export const teams = (state=[],action:any) => {
+export const teams = (state=[],action:AnyAction) => {
   switch (action.type) {
     case "TEAMS_FETCH_DATA_SUCCES":
-      return   action.data.data
+      return   action.data.data.data
       
       case "TEAMS_SEARCH":
         return action.data.data.data

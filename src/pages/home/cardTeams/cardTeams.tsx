@@ -26,7 +26,6 @@ import { BurgerMenuSidebar } from '../../../UI/BurgerMenu/burgerMenuSidebar'
     dispatch(teamsFetchData(GET_TEAM_URL));
  }, [dispatch]);
  const teams  = useSelector<any, Array<ITeamData>>(state => state.teams )
- const auth  = useSelector<any, any>(state => state.auth )
 
  
 
@@ -67,6 +66,7 @@ const paginate = useCallback((pageNumber:any) => setCurrentPage(pageNumber),[])
 
               {currentTeam.map(({name,foundationYear,imageUrl,id}) =>
                 <TeamSmallCard 
+                key={id}
                 name={name}
                 foundationYear={foundationYear}
                 imageUrl={imageUrl}

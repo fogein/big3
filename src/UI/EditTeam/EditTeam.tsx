@@ -9,6 +9,7 @@ import { update } from '../../modules/actions/teams';
 import { useDispatch } from 'react-redux';
 import { ITeamData } from '../../api/dto/teamsAndPlayers';
 import { SaveImageApi } from '../../api/request/saveImageApi';
+import { BASE_URL } from '../../config/env/development';
 
 
 
@@ -16,7 +17,6 @@ export const EditTeam = (props:ITeamData) => {
   const history = useHistory()
   const [image,setImage]=useState(props.imageUrl)
   const dispatch = useDispatch()
-console.log(image);
 
 
   const {
@@ -26,8 +26,6 @@ console.log(image);
   } = useForm({
     mode: "onChange"
   });
-  
-
 
   
   
@@ -37,7 +35,7 @@ console.log(image);
       const image =(e.target.files[0])
         let img = SaveImageApi(image);
       img.then(function(result) {
-        setImage(`http://dev.trainee.dex-it.ru${result}`)
+        setImage(`${BASE_URL}${result}`)
         
     });   
   }

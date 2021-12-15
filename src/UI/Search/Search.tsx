@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { ITeamData } from '../../api/dto/teamsAndPlayers';
+import { useDispatch } from 'react-redux';
 import { getTeamSearch } from '../../api/request/teamAndPlayersApi';
 import search from '../../assets/images/search.svg'
 import { teamSeacrh, teamsFetchData } from '../../modules/actions/teams';
@@ -17,20 +16,17 @@ interface ISearch{
 export const Search = (props:ISearch) => {
   const [inputSeacrhValue,setInputSeacrhValue]=useState('');
   const dispatch = useDispatch()
-  const teams  = useSelector<any, Array<ITeamData>>(state => state.teams )
   const getResourse = async(param:any) => {
     const res = await getTeamSearch(param,props.PageSize)
     dispatch(teamSeacrh(res))
     if(!param){
       dispatch(teamsFetchData(GET_TEAM_URL))
-      console.log(teams);
       
       
     }
     
   }
 
-const searchRes  = useSelector<any, any>(state => state.teamsSeacrhRes )
 
 
 

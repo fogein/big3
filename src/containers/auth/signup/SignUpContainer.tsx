@@ -5,7 +5,6 @@ import { IRootState } from '../../../modules/reducers/state';
 import { ISignUp } from '../../../api/dto/auth';
 import {AuthSignUp} from "../../../modules/actions/auth";
 import cls from'./styles.module.scss';
-import { useHistory } from 'react-router-dom';
 
 
 export const SignUpContainer = (props: any) => {
@@ -13,7 +12,6 @@ export const SignUpContainer = (props: any) => {
     const signUp = useCallback((payload: ISignUp) => dispatch(AuthSignUp(payload)),[dispatch]);
     const user = useSelector((state: IRootState) => state.user)
     let status = localStorage.getItem('status')
-    const history = useHistory()
     if (status === '200')
    { 
       alert('Успешно')

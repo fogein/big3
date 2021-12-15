@@ -1,5 +1,4 @@
-
-import { ContentTypes } from "../../api/dto/enumTypes";
+import { getTeam } from "../../api/request/teamAndPlayersApi";
 
 
 
@@ -34,21 +33,12 @@ export function teamsFetchDataSuccess(data:any) {
   }
 }
 
+
 export function teamsFetchData(url:any) {
   return (dispatch:any) => {
-      fetch(url,{
-        method: 'GET',
-          headers: new Headers({
-             'Authorization': "Bearer " + localStorage.getItem('token'),
-            'Content-Type': ContentTypes.APPLICATION_JSON, 
-          }),})
-          .then(response => {
-              if(!response.ok) {
-                  throw new Error(response.statusText);
-              }
-              return response;
-          })
-          .then(response => response.json())
+    getTeam(url)
+          
+          .then(response => response)
           .then(data => dispatch(teamsFetchDataSuccess(data)))
           .catch(()=>{});
   }

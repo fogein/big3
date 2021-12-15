@@ -22,6 +22,15 @@ export async function addTeam (data: ITeamData){
 //   return response.data;
 
 // }
+export async function getTeam (url:string){
+
+
+  let response = await api.get(url);
+ 
+
+  
+  return response;
+  }
 
 export async function getTeamId (id:number){
 
