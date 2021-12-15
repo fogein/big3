@@ -26,6 +26,8 @@ export function update () {
 }
 
 export function teamsFetchDataSuccess(data:any) {
+
+
   
   return {
       type: "TEAMS_FETCH_DATA_SUCCES",
@@ -40,7 +42,10 @@ export function teamsFetchData(url:any) {
           
           .then(response => response)
           .then(data => dispatch(teamsFetchDataSuccess(data)))
-          .catch(()=>{});
+          .catch(()=>{
+            localStorage.setItem('401','401')
+            
+          });
   }
 }
 

@@ -9,4 +9,5 @@ export interface IRootState {
     teams:ITeamData,
     getTeamInfo:ITeamData,
 
+
 }

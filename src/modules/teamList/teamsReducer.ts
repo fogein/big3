@@ -8,6 +8,7 @@ export const teams = (state=[],action:AnyAction) => {
       
       case "TEAMS_SEARCH":
         return action.data.data.data
+
         
     case "UPDATE_SEACRH":
       return [action.data.data.data]
