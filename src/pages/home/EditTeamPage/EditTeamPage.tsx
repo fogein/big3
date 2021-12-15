@@ -2,13 +2,13 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ITeamData } from '../../../api/dto/teamsAndPlayers'
-import { getTeamInfo } from '../../../modules/actions/getTeamInfo'
-import { BurgerMenuSidebar } from '../../../UI/BurgerMenu/burgerMenuSidebar'
-import { EditTeam } from '../../../UI/EditTeam/EditTeam'
-import { Header } from '../../../UI/header/Header'
-import { Navbar } from '../../../UI/Navbar/Navbar'
+import { getTeamInfo } from '../../../modules/teamInfo/getTeamInfoAction'
+import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
+import { EditTeam } from '../../../UI/editTeam/editTeam'
+import { Header } from '../../../UI/header/header'
+import { Navbar } from '../../../UI/navbar/navbar'
 
-import cls from './EditTeamPage.module.scss'
+import cls from './editTeamPage.module.scss'
 
  export const EditTeamPage = ({match}:any) => {
 

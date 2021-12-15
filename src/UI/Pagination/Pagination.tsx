@@ -1,5 +1,5 @@
 
-import cls from './Pagination.module.scss'
+import cls from './pagination.module.scss'
 
 interface IPagination {
   paginate:any,

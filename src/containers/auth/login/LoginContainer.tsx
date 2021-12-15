@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {FormLogin} from '../../../components/auth/login/loginForm';
-import { IRootState } from '../../../modules/reducers/state'; 
+import { IRootState } from '../../../modules/rootReducer/state'; 
 import { ILogin } from '../../../api/dto/auth'; 
-import { AuthSignIn } from '../../../modules/actions/auth';
+import { AuthSignIn } from '../../../modules/auth/authAction';
 import cls from'./styles.module.scss';
 import {  useHistory } from 'react-router-dom';
 

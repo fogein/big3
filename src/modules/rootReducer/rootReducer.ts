@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import { UserReducer } from './user';
+import { UserReducer } from '../auth/userReducer';
 import { IRootState } from './state';
-import { AuthReducer } from './auth';
-import { teams } from './teams';
-import { getTeamInfo } from './getTeamInfo';
+import { AuthReducer } from '../auth/authReducer';
+import { teams } from '../teamList/teamsReducer';
+import { getTeamInfo } from '../teamInfo/getTeamInfoReducer';
 
 // NOTE: current type definition of Reducer in 'redux-actions' module
 // doesn't go well with redux@4

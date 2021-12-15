@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 
-import cls from './add_button.module.scss';
+import cls from './addButton.module.scss';
 
 export const AddButton = () => {
 

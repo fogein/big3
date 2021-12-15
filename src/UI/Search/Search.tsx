@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { getTeamSearch } from '../../api/request/teamAndPlayersApi';
 import search from '../../assets/images/search.svg'
-import { teamSeacrh, teamsFetchData } from '../../modules/actions/teams';
-import { GET_TEAM_URL } from '../../modules/constants/TeamsAndPlayers';
+import { teamSeacrh, teamsFetchData } from '../../modules/teamList/teamsAction';
+import { GET_TEAM_URL } from '../../modules/teamList/teamsAndPlayersConstants';
 
 
-import cls from './Search.module.scss'
+import cls from './search.module.scss'
 
 interface ISearch{
   PageSize: number;

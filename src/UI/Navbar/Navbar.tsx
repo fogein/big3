@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import teamsImg  from '../../assets/images/group_person.svg'
 import playersImg  from '../../assets/images/person.svg'
 import outImg  from '../../assets/images/signout.svg'
-import cls from './Navbar.module.scss'
+import cls from './navbar.module.scss'
 
 export const Navbar: React.FC = () => {
   

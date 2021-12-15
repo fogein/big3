@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
 import {FormSignUp} from '../../../components/auth/signup/signUpForm';
-import { IRootState } from '../../../modules/reducers/state';
+import { IRootState } from '../../../modules/rootReducer/state';
 import { ISignUp } from '../../../api/dto/auth';
-import {AuthSignUp} from "../../../modules/actions/auth";
+import {AuthSignUp} from "../../../modules/auth/authAction";
 import cls from'./styles.module.scss';
 
 

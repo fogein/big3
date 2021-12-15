@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-array-constructor */
 import React from 'react'
-import { BurgerMenuSidebar } from '../../../UI/BurgerMenu/burgerMenuSidebar'
-import { AddButton } from '../../../UI/buttons/Add_button/Add_button'
-import { Header } from '../../../UI/header/Header'
-import { Navbar } from '../../../UI/Navbar/Navbar'
-import { Search } from '../../../UI/Search/Search'
+import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
+import { AddButton } from '../../../UI/buttons/addButton/addButton'
+import { Header } from '../../../UI/header/header'
+import { Navbar } from '../../../UI/navbar/navbar'
+import { Search } from '../../../UI/search/search'
 import cls from './cardPlayers.module.scss'
 
 

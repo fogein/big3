@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import cls from './EditTeam.module.scss'
+import cls from './editTeam.module.scss'
 import create from '../../assets/images/create.svg';
 import deleteimg from '../../assets/images/delete.svg';
 import { Link, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import {  updateTeam } from '../../api/request/teamAndPlayersApi';
-import { update } from '../../modules/actions/teams';
+import { update } from '../../modules/teamList/teamsAction';
 import { useDispatch } from 'react-redux';
 import { ITeamData } from '../../api/dto/teamsAndPlayers';
 import { SaveImageApi } from '../../api/request/saveImageApi';

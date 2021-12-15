@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import NotFound from '../../../assets/images/PageNotFound.png'
-import cls from './PageNotFound.module.css'
+import cls from './pageNotFound.module.css'
 
 export const PageNotFound: React.FC = () => {
   let location =useLocation()

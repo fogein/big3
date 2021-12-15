@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-, "src/UI/TeamSmallCard/.tsx"  ]
+, "src/UI/teamSmallCard/.tsx"  ]
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import cls from './sign_in-but.module.css'
+import cls from './signInBut.module.css'
 
 interface IButton {
   htmlType:string,

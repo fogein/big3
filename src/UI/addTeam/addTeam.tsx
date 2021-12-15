@@ -7,7 +7,7 @@ import { SaveImageApi } from "../../api/request/saveImageApi";
 import { addTeam } from "../../api/request/teamAndPlayersApi";
 import addPhotoTeam from '../../assets/images/addPhotoTeam.svg'
 import { BASE_URL } from "../../config/env/development";
-import { update } from "../../modules/actions/teams";
+import { update } from "../../modules/teamList/teamsAction";
 import cls from './addTeam.module.scss'
 
 export const AddTeam = () => {

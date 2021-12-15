@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Fallback } from '../components/common/fallback';
 import 'antd/dist/antd.css';
 import { CardTeams } from '../pages/home/cardTeams/cardTeams'; 
-import { LoginContainer } from '../containers/auth/login/LoginContainer'; 
-import { SignUpContainer } from '../containers/auth/signup/SignUpContainer'; 
+import { LoginContainer } from '../containers/auth/login/loginContainer'; 
+import { SignUpContainer } from '../containers/auth/signup/signUpContainer'; 
 import {PrivateRouter} from './Auth/privateRouter'
 import { CardPlayers } from '../pages/home/cardPlayers/cardPlayers';
 import { AddTeamPage } from '../pages/home/addTeamPage/addTeamPage';
 import { TeamInfo } from '../pages/home/teamInfo/teamInfo';
-import { EditTeamPage } from '../pages/home/EditTeamPage/EditTeamPage';
-import { PageNotFound } from '../pages/home/PageNotFound/PageNotFound';
+import { EditTeamPage } from '../pages/home/editTeamPage/editTeamPage';
+import { PageNotFound } from '../pages/home/pageNotFound/pageNotFound';
 
 
 

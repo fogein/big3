@@ -4,7 +4,7 @@ import { Checkbox, Form, Input } from 'antd';
 import { Link } from 'react-router-dom';
 import { FormComponentProps } from 'antd/lib/form';
 import { ISignUp } from '../../../api/dto/auth';
-import { SignInbut } from '../../../UI/buttons/SignIn/Sign_In-but';
+import { SignInbut } from '../../../UI/buttons/signIn/signInBut';
 import signUpBg from '../../../assets/images/signUp.png'
 import cls from  './styles.module.scss';
 
