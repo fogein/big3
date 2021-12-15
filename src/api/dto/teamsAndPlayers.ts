@@ -2,7 +2,6 @@
 
 export interface ITeamData{
   deleteHandler?:any,
-  data?:any,
   name?: string,
   foundationYear?: number,
   division?: string,

@@ -15,7 +15,7 @@ export const AddTeam = () => {
   const history=useHistory()
   const dispatch = useDispatch()
   const [image,setImage]=useState('')
-  const teams  = useSelector<any, Array<ITeamData>>(state => state.teams )
+  const teams  = useSelector<any, any>(state => state.teams )
 
   const {
     register,
@@ -44,7 +44,7 @@ export const AddTeam = () => {
       imageUrl: image
     }
     let card = await addTeam(testObject)
-    teams.push(card)
+    teams.data?.push(card)
     dispatch(update())
     history.push('/teams')
   };  
