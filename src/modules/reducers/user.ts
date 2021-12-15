@@ -1,9 +1,14 @@
-import { handleActions } from 'redux-actions';
-import { IUser } from '../../api/dto/user';
-import { UserActions } from '../actions/user';
 
-const initialState = null;
+export const UserReducer = (state=null,action:any) => {
+  
+    switch (action.type) {
+      case "SIGN_UP":
+        return action.data
+      
+        default:
+          return state; 
+        }
+          
+    
+  }
 
-export const UserReducer = handleActions<IUser | null, IUser>({
-    [UserActions.Type.SET_USER]: (state, action) => action.payload,
-}, initialState);   

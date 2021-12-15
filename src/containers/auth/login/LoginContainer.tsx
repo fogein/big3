@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {FormLogin} from '../../../components/auth/login/loginForm';
 import { IRootState } from '../../../modules/reducers/state'; 
 import { ILogin } from '../../../api/dto/auth'; 
-import { AuthActions } from '../../../modules/actions/auth';
+import { AuthSignIn } from '../../../modules/actions/auth';
 import cls from'./styles.module.scss';
 import {  useHistory } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ export const LoginContainer = (props: any) => {
     let isAuthenticated = localStorage.getItem('token')
     const auth = useSelector((state: IRootState) => state.auth)
     const dispatch = useDispatch();
-    const signIn = useCallback((payload: ILogin) => dispatch(AuthActions(payload)),[dispatch]);
+    const signIn = useCallback((payload: ILogin) => dispatch(AuthSignIn(payload)),[dispatch]);
 
     if(isAuthenticated)
     history.push('/teams')

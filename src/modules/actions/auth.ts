@@ -2,25 +2,6 @@ import axios from 'axios';
 import { createAction } from 'redux-actions';
 import { IAuth, ILogin, ISignUp } from '../../api/dto/auth';
 
-enum Type {
-    SIGN_IN = 'SIGN_IN',
-    SET_AUTH = 'SET_AUTH',
-    SIGN_UP = 'SIGN_UP',
-}
-
-const setAuthInfo = createAction<IAuth>(Type.SET_AUTH);
-const signIn = createAction<ILogin>(Type.SIGN_IN);
-const signUp = createAction<ISignUp>(Type.SIGN_UP);
-
-
-
-// export const AuthActions = {
-//     Type,
-    
-//     setAuthInfo,
-//     signIn,
-//     signUp,
-// }
 
 export function Auth(data:any) {
     localStorage.setItem('token',data.data.token)
@@ -32,7 +13,7 @@ export function Auth(data:any) {
     }
   }
 
-  export function AuthActions(data:any) {
+  export function AuthSignIn(data:any) {
       let login = data.Login
       let password= data.password
     return (dispatch:any) => {
@@ -45,5 +26,32 @@ export function Auth(data:any) {
         .then(data => dispatch(Auth(data)))
        
         
+    }
+  }
+
+export function SignUp(data:any) {
+  localStorage.setItem('status',data.status)
+
+    
+    return {
+        type:"SIGN_UP",
+        data
+    }
+  }
+
+    export function AuthSignUp(data:any) {
+
+      let userName = data.UserName
+      let login = data.Login
+      let password= data.password
+    return (dispatch:any) => {
+        axios
+        .post('http://dev.trainee.dex-it.ru/api/Auth/SignUp', {
+          login,
+          password,
+          userName
+        })
+        .then(response => response)
+        .then(data => dispatch(SignUp(data)))
     }
   }

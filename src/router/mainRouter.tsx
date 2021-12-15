@@ -5,13 +5,13 @@ import 'antd/dist/antd.css';
 import { CardTeams } from '../pages/home/cardTeams/cardTeams'; 
 import { LoginContainer } from '../containers/auth/login/LoginContainer'; 
 import { SignUpContainer } from '../containers/auth/signup/SignUpContainer'; 
-import { SignUpSuccess } from '../pages/auth/signUpSuccess';
 import {PrivateRouter} from './Auth/privateRouter'
 import { CardPlayers } from '../pages/home/cardPlayers/cardPlayers';
 import { AddTeamPage } from '../pages/home/addTeamPage/addTeamPage';
 import { TeamInfo } from '../pages/home/teamInfo/teamInfo';
 import { EditTeamPage } from '../pages/home/EditTeamPage/EditTeamPage';
 import { PageNotFound } from '../pages/home/PageNotFound/PageNotFound';
+
 
 
 
@@ -25,7 +25,6 @@ export function MainRouter() {
           <PrivateRouter exact path="/teams/addTeam" component={AddTeamPage} />
           <Route exact path="/" component={LoginContainer} />
           <Route exact path="/signup" component={SignUpContainer} />
-          <Route path="/signup/success" component={SignUpSuccess} />
           <PrivateRouter exact path="/players" component={CardPlayers} />
           <PrivateRouter exact={true} path="/team/:id" component={TeamInfo} />
           <PrivateRouter exact={true} path="/team/edit/:id" component={EditTeamPage} />
