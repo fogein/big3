@@ -12,6 +12,7 @@ import { teamsFetchData } from '../../../modules/teamList/teamsAction'
 import { useDispatch, useSelector } from 'react-redux'
 import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
 import { Pagination} from '@mui/material'
+import PaginationItem from '@mui/material/PaginationItem';
 
 
  export const CardTeams: React.FC = () => {
@@ -72,11 +73,20 @@ useEffect(()=>{
               </ul>
               </div>
           </div>
+          <div className={cls.paginationContainer}>
           <Pagination
           count={pagesQty}
           page={page}
+          color='primary'
           onChange={(_,num:number)=> setPage(num)}
+          renderItem={(item) => (
+            <PaginationItem
+            
+              {...item}
+            />
+          )}
           />
+          </div>
         </div>
       </div>
   )
