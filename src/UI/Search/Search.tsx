@@ -2,14 +2,15 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { getTeamSearch } from '../../api/request/teamAndPlayersApi';
 import search from '../../assets/images/search.svg'
-import { teamSeacrh, teamsFetchData } from '../../modules/teamList/teamsAction';
-import { GET_TEAM_URL } from '../../modules/teamList/teamsAndPlayersConstants';
+import { teamSeacrh } from '../../modules/teamList/teamsSlicer';
+import { teamsFetchData } from '../../modules/teamList/teamsSlicer';
+import { MAIN_URL } from '../../modules/teamList/teamsAndPlayersConstants';
 
 
 import cls from './search.module.scss'
 
 interface ISearch{
-  PageSize: number;
+  page?:any
   
 }
 
@@ -17,10 +18,10 @@ export const Search = (props:ISearch) => {
   const [inputSeacrhValue,setInputSeacrhValue]=useState('');
   const dispatch = useDispatch()
   const getResourse = async(param:any) => {
-    const res = await getTeamSearch(param,props.PageSize)
+    const res = await getTeamSearch(param,6)
     dispatch(teamSeacrh(res))
     if(!param){
-      dispatch(teamsFetchData(GET_TEAM_URL))
+      dispatch(teamsFetchData(`${MAIN_URL}/api/Team/GetTeams?PageSize=${6}&Page=${props.page}`))
       
       
     }

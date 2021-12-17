@@ -5,8 +5,6 @@ import deleteimg from '../../assets/images/delete.svg';
 import { Link, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import {  updateTeam } from '../../api/request/teamAndPlayersApi';
-import { update } from '../../modules/teamList/teamsAction';
-import { useDispatch } from 'react-redux';
 import { ITeamData } from '../../api/dto/teamsAndPlayers';
 import { SaveImageApi } from '../../api/request/saveImageApi';
 import { BASE_URL } from '../../config/env/development';
@@ -16,7 +14,6 @@ import { BASE_URL } from '../../config/env/development';
 export const EditTeam = (props:ITeamData) => {
   const history = useHistory()
   const [image,setImage]=useState(props.imageUrl)
-  const dispatch = useDispatch()
 
 
   const {
@@ -54,7 +51,6 @@ export const EditTeam = (props:ITeamData) => {
     
     }
     updateTeam(editTeam);
-    dispatch(update())
     setTimeout(() => {
       history.push('/teams')
     }, 100);

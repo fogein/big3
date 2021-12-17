@@ -3,8 +3,8 @@ import { routerReducer } from 'react-router-redux';
 import { UserReducer } from '../auth/userReducer';
 import { IRootState } from './state';
 import { AuthReducer } from '../auth/authReducer';
-import { teams } from '../teamList/teamsReducer';
-import { getTeamInfo } from '../teamInfo/getTeamInfoReducer';
+import { teamsReducer } from '../teamList/teamsSlicer';
+import { getTeamInfoReducer } from '../teamInfo/getTeamInfoReducer';
 
 
 // NOTE: current type definition of Reducer in 'redux-actions' module
@@ -13,8 +13,8 @@ export const rootReducer = combineReducers<IRootState>({
     router: routerReducer,
     user: UserReducer as any,
     auth: AuthReducer as any,
-    teams:teams as any,
-    getTeamInfo:getTeamInfo as any,
+    teams:teamsReducer as any,
+    getTeamInfo:getTeamInfoReducer as any,
 
 });
 

@@ -2,7 +2,7 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ITeamData } from '../../../api/dto/teamsAndPlayers'
-import { getTeamInfo } from '../../../modules/teamInfo/getTeamInfoAction'
+import { getTeamInfoFetch } from '../../../modules/teamInfo/getTeamInfoReducer'
 import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
 import { EditTeam } from '../../../UI/editTeam/editTeam'
 import { Header } from '../../../UI/header/header'
@@ -17,12 +17,12 @@ import cls from './editTeamPage.module.scss'
 
   useEffect( () => {
    
-      dispatch(getTeamInfo(id));
+      dispatch(getTeamInfoFetch(id));
    
  }, [dispatch,id]);
 
     
- const teamInfo  = useSelector<any, Array<ITeamData>>(state => state.getTeamInfo )
+ const teamInfo  = useSelector<any, any>(state => state.getTeamInfo )
 
 
 
@@ -36,7 +36,7 @@ import cls from './editTeamPage.module.scss'
          
           <div className={cls.mainContainer}>
             <ul>
-              {teamInfo.map(({name,conference,division,foundationYear,imageUrl,id}) =>
+              {teamInfo.teamInfo?.map(({name,conference,division,foundationYear,imageUrl,id}:ITeamData) =>
               
               <EditTeam
               name={name}

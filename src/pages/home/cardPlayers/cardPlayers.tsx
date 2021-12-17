@@ -90,8 +90,7 @@ export const CardPlayers: React.FC = () => {
           <BurgerMenuSidebar/>
           <div>
             <div className={cls.upContainer}>
-              <Search 
-              PageSize={0}            
+              <Search           
               />
               <AddButton
               

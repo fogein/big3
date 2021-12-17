@@ -8,7 +8,7 @@ import { TeamSmallCard } from '../../../UI/teamSmallCard/teamSmallCard'
 import {  MAIN_URL } from '../../../modules/teamList/teamsAndPlayersConstants'
 import { ITeamData } from '../../../api/dto/teamsAndPlayers'
 import cls from './cardTeam.module.scss'
-import { teamsFetchData } from '../../../modules/teamList/teamsAction'
+import { teamsFetchData } from '../../../modules/teamList/teamsSlicer'
 import { useDispatch, useSelector } from 'react-redux'
 import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
 import { Pagination} from '@mui/material'
@@ -25,12 +25,13 @@ const [page,setPage]=useState(1)
     dispatch(teamsFetchData(`${MAIN_URL}/api/Team/GetTeams?PageSize=${6}&Page=${page}`));
  }, [dispatch,page]);
  const teams  = useSelector<any, any>(state => state.teams )
+ console.log(teams);
  
  const [pagesQty,setPageQty]=useState(0)
 
  
 useEffect(()=>{
-  setPageQty(Math.ceil(teams.count/teams.size))
+  setPageQty(Math.ceil(teams.teams.count/teams.teams.size))
 },[teams])
 
 
@@ -46,7 +47,7 @@ useEffect(()=>{
         
           <div className={cls.upContainer}>
             <Search
-            PageSize={teams.length}
+            page={page}
             />
             <AddButton/>
           </div>
@@ -56,7 +57,7 @@ useEffect(()=>{
 
 
 
-              {teams.data?.map(({name,foundationYear,imageUrl,id}:ITeamData) =>
+              {teams.teams.data?.map(({name,foundationYear,imageUrl,id}:ITeamData) =>
                 <TeamSmallCard 
                 key={id}
                 name={name}

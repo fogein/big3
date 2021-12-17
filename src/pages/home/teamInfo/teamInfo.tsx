@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { ITeamData } from '../../../api/dto/teamsAndPlayers'
 import {  deleteTeam } from '../../../api/request/teamAndPlayersApi'
-import { getTeamInfo } from '../../../modules/teamInfo/getTeamInfoAction'
-import { update } from '../../../modules/teamList/teamsAction'
+import { getTeamInfoFetch } from '../../../modules/teamInfo/getTeamInfoReducer'
 import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
 import { CardTeamInfo } from '../../../UI/cardTeamInfo/cardTeam'
 import { Header } from '../../../UI/header/header'
@@ -21,21 +20,17 @@ import cls from './teamInfo.module.scss'
 
   useEffect( () => {
    
-      dispatch(getTeamInfo(id));
+      dispatch(getTeamInfoFetch(id));
    
  }, [dispatch,id]);
 
     
- const teamInfo  = useSelector<any, Array<ITeamData>>(state => state.getTeamInfo )
-
-
-
-
-
+ const teamInfo  = useSelector<any, any>(state => state.getTeamInfo )
+ console.log(teamInfo);
+ 
 
  const deleteHamdler = () => {
   deleteTeam(match.params.id);
-  dispatch(update())
 
    setTimeout(() => {
     history.push('/teams')
@@ -50,10 +45,9 @@ import cls from './teamInfo.module.scss'
         <BurgerMenuSidebar/>
         <div>
           <div className={cls.mainContainer}>
-{teamInfo &&
-          (
+
             <ul>
-              {teamInfo.map(({name,conference,division,foundationYear,imageUrl,id}) =>
+              {teamInfo.teamInfo?.map(({name,conference,division,foundationYear,imageUrl,id}:ITeamData) =>
               
                <CardTeamInfo
                deleteHandler={deleteHamdler}
@@ -68,8 +62,8 @@ import cls from './teamInfo.module.scss'
               )}
 
             </ul>
-          )
-}
+          
+
           </div>
         </div> 
       </div>
