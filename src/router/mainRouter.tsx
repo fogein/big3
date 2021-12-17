@@ -9,7 +9,7 @@ import {PrivateRouter} from './Auth/privateRouter'
 import { CardPlayers } from '../pages/home/cardPlayers/cardPlayers';
 import { AddTeamPage } from '../pages/home/addTeamPage/addTeamPage';
 import { TeamInfo } from '../pages/home/teamInfo/teamInfo';
-import { EditTeamPage } from '../pages/home/editTeamPage/editTeamPage';
+import { EditTeamPage } from '../pages/home/editTeamPage/EditTeamPage';
 import { PageNotFound } from '../pages/home/pageNotFound/pageNotFound';
 
 

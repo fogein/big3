@@ -26,7 +26,7 @@ import cls from './teamInfo.module.scss'
 
     
  const teamInfo  = useSelector<any, any>(state => state.getTeamInfo )
- console.log(teamInfo);
+ console.log(teamInfo.status);
  
 
  const deleteHamdler = () => {
@@ -45,8 +45,10 @@ import cls from './teamInfo.module.scss'
         <BurgerMenuSidebar/>
         <div>
           <div className={cls.mainContainer}>
-
-            <ul>
+      
+            { teamInfo.status ==='resolved' &&
+              (
+                <ul>
               {teamInfo.teamInfo?.map(({name,conference,division,foundationYear,imageUrl,id}:ITeamData) =>
               
                <CardTeamInfo
@@ -62,7 +64,9 @@ import cls from './teamInfo.module.scss'
               )}
 
             </ul>
-          
+              )
+            }
+        
 
           </div>
         </div> 
