@@ -4,7 +4,7 @@ import { UserReducer } from '../auth/userReducer';
 import { IRootState } from './state';
 import { AuthReducer } from '../auth/authReducer';
 import { teamsReducer } from '../teamList/teamsSlicer';
-import { getTeamInfoReducer } from '../teamInfo/getTeamInfoReducer';
+import { getTeamInfoReducer } from '../teamInfo/getTeamInfoSlicer';
 
 
 // NOTE: current type definition of Reducer in 'redux-actions' module

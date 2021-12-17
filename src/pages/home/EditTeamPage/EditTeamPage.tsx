@@ -2,7 +2,7 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { ITeamData } from '../../../api/dto/teamsAndPlayers'
-import { getTeamInfoFetch } from '../../../modules/teamInfo/getTeamInfoReducer'
+import { getTeamInfoFetch } from '../../../modules/teamInfo/getTeamInfoSlicer'
 import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
 import { EditTeam } from '../../../UI/editTeam/editTeam'
 import { Header } from '../../../UI/header/header'

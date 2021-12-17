@@ -35,7 +35,7 @@ const getTeamInfo = createSlice({
   name: 'getTeamInfo',
   initialState: {
     teamInfo:{},
-    status:'',
+    status:'', 
     error:null,
   },
   reducers: {},
