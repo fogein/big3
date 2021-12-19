@@ -7,7 +7,7 @@ export const teamSeacrh:any = createAsyncThunk('teams/teamSeacrh',(data:any) => 
   return data
   
 })
-export const teamsFetchData:any = createAsyncThunk('teams/teamsFetchData',async(url:string) => {
+export const teamsFetchData:any = createAsyncThunk('teams/teamsFetchData',async(url:string,{rejectedWithValue}:any) => {
   
   try {
     const response = await getTeam(url)
@@ -15,7 +15,7 @@ export const teamsFetchData:any = createAsyncThunk('teams/teamsFetchData',async(
     return data
     
   } catch (error) {
-
+    return rejectedWithValue(error);
   }
 }
 )
@@ -25,19 +25,21 @@ export const teamsFetchData:any = createAsyncThunk('teams/teamsFetchData',async(
   initialState: {
     teams:{},
     status:'',
-    error:null,
+    error:'',
   },
   reducers: {},
   extraReducers:{
     [teamsFetchData.pending]: (state)=>{
       state.status = 'loading';
-      state.error = null;
     },
     [teamsFetchData.fulfilled]: (state,action)=>{
       state.status = 'resolved';
       state.teams = action.payload;
     },
-    [teamsFetchData.rejected]: (state,action)=>{},
+    [teamsFetchData.rejected]: (state)=>{
+      state.status = 'rejected';
+      state.error = 'Ошибка авторизации'
+    },
 
     [teamSeacrh.fulfilled]: (state,action) => {
       state.teams = action.payload.data

@@ -22,19 +22,21 @@ const [page,setPage]=useState(1)
 
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(teamsFetchData(`${MAIN_URL}/api/Team/GetTeams?PageSize=${6}&Page=${page}`));
+    dispatch(teamsFetchData(`${MAIN_URL}/api/Team/GeTeams?PageSize=${6}&Page=${page}`));
  }, [dispatch,page]);
  const teams  = useSelector<any, any>(state => state.teams )
- console.log(teams);
+const{error}:any = useSelector<any, any>(state => state.teams )
  
  const [pagesQty,setPageQty]=useState(0)
 
  
 useEffect(()=>{
   setPageQty(Math.ceil(teams.teams.count/teams.teams.size))
-},[teams])
+},[teams,error])
 
-
+if(error)
+{localStorage.clear()
+  window.location.reload()}
 
   return (
 

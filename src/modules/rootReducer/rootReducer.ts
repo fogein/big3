@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import { UserReducer } from '../auth/userReducer';
+import { UserReducer } from '../auth/userSlicer';
 import { IRootState } from './state';
-import { AuthReducer } from '../auth/authReducer';
+import { AuthReducer } from '../auth/authSlicer';
 import { teamsReducer } from '../teamList/teamsSlicer';
 import { getTeamInfoReducer } from '../teamInfo/getTeamInfoSlicer';
 
