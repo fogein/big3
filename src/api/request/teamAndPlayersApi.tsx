@@ -27,10 +27,15 @@ export async function getTeam (url:string){
 
   let response = await api.get(url);
  
-
-  
   return response;
   }
+  export async function getPlayers (url:string){
+
+
+    let response = await api.get(url);
+    
+    return response;
+    }
 
 export async function getTeamId (id:number){
 

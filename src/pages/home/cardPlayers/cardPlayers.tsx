@@ -1,108 +1,97 @@
-/* eslint-disable @typescript-eslint/no-array-constructor */
-import React from 'react'
-import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
+import React, { useEffect, useState } from 'react'
 import { AddButton } from '../../../UI/buttons/addButton/addButton'
 import { Header } from '../../../UI/header/header'
 import { Navbar } from '../../../UI/navbar/navbar'
-import { Search } from '../../../UI/search/Search'
+import {  MAIN_URL } from '../../../modules/teamList/teamsAndPlayersConstants'
+import { IPlayerData } from '../../../api/dto/teamsAndPlayers'
 import cls from './cardPlayers.module.scss'
+import { useDispatch, useSelector } from 'react-redux'
+import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
+import { Pagination} from '@mui/material'
+import PaginationItem from '@mui/material/PaginationItem';
+import { Search } from '../../../UI/search/Search'
+import { PlayerSmallCard } from '../../../UI/playerSmallCard/playerSmallCard'
+import { playersFetchData } from '../../../modules/playersList/playersSlicer'
 
 
-
-export const CardPlayers: React.FC = () => {
+ export const CardPlayers: React.FC = () => {
  
-//     const [player,setPlayer] = useState(Array());
-//     const [currentPage,setCurrentPage] = useState(1)
-//     const [playerPerPage] = useState(6)
-  
-//     // const getResource = async (url:any) => {
-//     //   const res = await getApiResource(url);
-  
-  
-//     //   const playerList = res.data.map(({name,position,birthday,height,weight,avatarUrl,team,number,id}:IPlayerData) => { 
-//     //     return {
-//     //       name,
-//     //       team,
-//     //       number,
-//     //       avatarUrl,
-//     //       id,
-//     //       position,
-//     //       birthday,
-//     //       height,
-//     //       weight
-  
-//     //     }
-//     //   })
-  
-//     //   setPlayer(playerList)
-//     // }
-    
-  
-//     // useEffect(() => {
-//     //   getResource(GET_PLAYER_URL)
-//     // }, [])
-    
+const [page,setPage]=useState(1)
 
-  
-//   // Search
-//     const [value, setValue]=useState("");
-//     const filteredPlayers = player.filter((e:any) => e.name.toLowerCase().includes(value.toLowerCase()))
-   
-  
-//   // Search
 
-//     // Add player
-// const addPlayerHandler = async () =>{
-//   let testObject = {
-//     name: "player",
-//     team: "navi",
-//     number: "3",
-//     imageUrl: "https://cdn1.dotesports.com/wp-content/uploads/2019/07/24154332/navi.jpg",
-//     position:"forward",
-//     birthday:"10-10-2010",
-//     height:220,
-//     weight:100
-//   }
-//   let card = await addPlayer(testObject)
-//   filteredPlayers.push(card)
-//   let newPlayer = filteredPlayers
-//   setPlayer(newPlayer)
-// }
-// // Add player
-  
-//   // Pagination
-  
-//   const lastPlayerIndex = currentPage*playerPerPage
-//   const firstPlayerIndex = lastPlayerIndex-playerPerPage
-//   const currentPlayers = filteredPlayers.slice(firstPlayerIndex, lastPlayerIndex)
-  
-//   const paginate = (pageNumber:any) => setCurrentPage(pageNumber)
-  
-  
-//   // Pagination
-  
-  
-    return (
-  
-        <div className={cls.bg}>
-          <Header/>
-          <Navbar/>
-          <BurgerMenuSidebar/>
-          <div>
-            <div className={cls.upContainer}>
-              <Search           
-              />
-              <AddButton
-              
-              />
-            </div>
-            <div className={cls.mainContainer}>
-           PlayerPage
-            </div>
-           
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(playersFetchData(`${MAIN_URL}/api/Player/GetPlayers?PageSize=${6}&Page=${page}`));
+ }, [dispatch,page]);
+ const players  = useSelector<any, any>(state => state.players )
+const{error}:any = useSelector<any, any>(state => state.players )
+ 
+ const [pagesQty,setPageQty]=useState(0)
+
+ 
+useEffect(()=>{
+  setPageQty(Math.ceil(players.players.count/players.players.size))
+},[players,error])
+
+// if(error)
+// {localStorage.clear()
+//   window.location.reload()}
+
+  return (
+
+      <div className={cls.bg}>
+        <Header/>
+        <BurgerMenuSidebar pageWrapId={"page-wrap"}/>
+        <Navbar/>
+        
+        <div  className={cls.container}>
+        
+          <div className={cls.upContainer}>
+            <Search
+            page={page}
+            />
+            <AddButton/>
           </div>
-          
+          <div className={cls.mainContainer} >
+              <div >
+              <ul className={cls.smallCardContainer}>
+
+
+
+              {players.players.data?.map(({team,name,number,avatarUrl,id}:IPlayerData) =>
+                <PlayerSmallCard 
+                key={id}
+                name={name}
+                number={number}
+                avatarUrl={avatarUrl}
+                team={team}
+                id={id}
+                />
+              )}
+
+
+
+
+              
+              </ul>
+              </div>
+          </div>
+          <div className={cls.paginationContainer}>
+          <Pagination
+          count={pagesQty}
+          page={page}
+          color='primary'
+          onChange={(_,num:number)=> setPage(num)}
+          renderItem={(item) => (
+            <PaginationItem
+            
+              {...item}
+            />
+          )}
+          />
+          </div>
         </div>
-    )
-  
-    }
+      </div>
+  )
+}
+
