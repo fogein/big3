@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import search from '../../assets/images/search.svg'
 import { teamSeacrh } from '../../modules/teamList/teamsSlicer';
-import { teamsFetchData } from '../../modules/teamList/teamsSlicer';
-import { MAIN_URL } from '../../modules/teamList/teamsAndPlayersConstants';
 
 
 import cls from './search.module.scss'
@@ -17,7 +15,7 @@ export const Search = (props:ISearch) => {
   const [inputSeacrhValue,setInputSeacrhValue]=useState('');
   const dispatch = useDispatch()
 
-  const handleInputChange = (e:any) => {
+  const handleInputChange = (e:any) => { 
     const value = e.target.value;
     setInputSeacrhValue(value)
     dispatch(teamSeacrh(value))

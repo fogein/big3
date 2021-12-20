@@ -4,7 +4,7 @@ import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
 import { AddButton } from '../../../UI/buttons/addButton/addButton'
 import { Header } from '../../../UI/header/header'
 import { Navbar } from '../../../UI/navbar/navbar'
-import { Search } from '../../../UI/search/search'
+import { Search } from '../../../UI/search/Search'
 import cls from './cardPlayers.module.scss'
 
 

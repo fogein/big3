@@ -5,7 +5,7 @@ import 'antd/dist/antd.css';
 import { CardTeams } from '../pages/home/cardTeams/cardTeams'; 
 import { LoginContainer } from '../containers/auth/login/loginContainer'; 
 import { SignUpContainer } from '../containers/auth/signup/signUpContainer'; 
-import {PrivateRouter} from './Auth/privateRouter'
+import {PrivateRouter} from './auth/privateRouter'
 import { CardPlayers } from '../pages/home/cardPlayers/cardPlayers';
 import { AddTeamPage } from '../pages/home/addTeamPage/addTeamPage';
 import { TeamInfo } from '../pages/home/teamInfo/teamInfo';

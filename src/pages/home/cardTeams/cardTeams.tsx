@@ -1,9 +1,7 @@
-/* eslint-disable @typescript-eslint/no-array-constructor */
 import React, { useEffect, useState } from 'react'
 import { AddButton } from '../../../UI/buttons/addButton/addButton'
 import { Header } from '../../../UI/header/header'
 import { Navbar } from '../../../UI/navbar/navbar'
-import { Search } from '../../../UI/search/search'
 import { TeamSmallCard } from '../../../UI/teamSmallCard/teamSmallCard'
 import {  MAIN_URL } from '../../../modules/teamList/teamsAndPlayersConstants'
 import { ITeamData } from '../../../api/dto/teamsAndPlayers'
@@ -13,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
 import { Pagination} from '@mui/material'
 import PaginationItem from '@mui/material/PaginationItem';
+import { Search } from '../../../UI/search/Search'
 
 
  export const CardTeams: React.FC = () => {
