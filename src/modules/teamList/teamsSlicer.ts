@@ -3,10 +3,10 @@ import { getTeam, getTeamSearch } from "../../api/request/teamAndPlayersApi"
 
 
 export const teamSeacrh:any = createAsyncThunk('teams/teamSeacrh',async(param:any) => {
-   const response = await getTeamSearch(param,6)
+   const response = await getTeamSearch(param)
     return response
   
-})
+}) 
 
 export const teamsFetchData:any = createAsyncThunk('teams/teamsFetchData',async(url:string,{rejectedWithValue}:any) => {
  

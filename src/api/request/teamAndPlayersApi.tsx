@@ -72,10 +72,10 @@ export async function getTeamId (id:number){
     return response.data;
   
   }
-  export async function getTeamSearch (name:string,PageSize:number){
+  export async function getTeamSearch (name:string){
 
 
-    let response = await api.get(`/Team/GetTeams?Name=${name}&Page=${1}&PageSize=${PageSize}`);
+    let response = await api.get(`/Team/GetTeams?Name=${name}&Page=${1}&PageSize=${6}`);
    
   
     
