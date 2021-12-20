@@ -22,7 +22,7 @@ const [page,setPage]=useState(1)
 
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(teamsFetchData(`${MAIN_URL}/api/Team/GeTeams?PageSize=${6}&Page=${page}`));
+    dispatch(teamsFetchData(`${MAIN_URL}/api/Team/GetTeams?PageSize=${6}&Page=${page}`));
  }, [dispatch,page]);
  const teams  = useSelector<any, any>(state => state.teams )
 const{error}:any = useSelector<any, any>(state => state.teams )
