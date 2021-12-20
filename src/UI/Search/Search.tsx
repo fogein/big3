@@ -16,21 +16,11 @@ interface ISearch{
 export const Search = (props:ISearch) => {
   const [inputSeacrhValue,setInputSeacrhValue]=useState('');
   const dispatch = useDispatch()
-  const getResourse = (param:any) => {
-    dispatch(teamSeacrh(param))
-    if(!param){
-      dispatch(teamsFetchData(`${MAIN_URL}/api/Team/GetTeams?PageSize=${6}&Page=${props.page}`))  
-    }
-  }
-
-
-
 
   const handleInputChange = (e:any) => {
     const value = e.target.value;
     setInputSeacrhValue(value)
-    getResourse(value)
-    
+    dispatch(teamSeacrh(value))
   }
 
   return (<>
