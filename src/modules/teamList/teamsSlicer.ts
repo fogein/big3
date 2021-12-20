@@ -1,14 +1,15 @@
 import {  createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import { getTeam } from "../../api/request/teamAndPlayersApi"
+import { getTeam, getTeamSearch } from "../../api/request/teamAndPlayersApi"
 
 
-export const teamSeacrh:any = createAsyncThunk('teams/teamSeacrh',(data:any) => {
-  
-  return data
+export const teamSeacrh:any = createAsyncThunk('teams/teamSeacrh',async(param:any) => {
+   const response = await getTeamSearch(param,6)
+    return response
   
 })
+
 export const teamsFetchData:any = createAsyncThunk('teams/teamsFetchData',async(url:string,{rejectedWithValue}:any) => {
-  
+ 
   try {
     const response = await getTeam(url)
     const data = response.data

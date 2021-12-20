@@ -34,9 +34,9 @@ useEffect(()=>{
   setPageQty(Math.ceil(teams.teams.count/teams.teams.size))
 },[teams,error])
 
-if(error)
-{localStorage.clear()
-  window.location.reload()}
+// if(error)
+// {localStorage.clear()
+//   window.location.reload()}
 
   return (
 

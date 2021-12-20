@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { getTeamSearch } from '../../api/request/teamAndPlayersApi';
 import search from '../../assets/images/search.svg'
 import { teamSeacrh } from '../../modules/teamList/teamsSlicer';
 import { teamsFetchData } from '../../modules/teamList/teamsSlicer';
@@ -18,8 +17,7 @@ export const Search = (props:ISearch) => {
   const [inputSeacrhValue,setInputSeacrhValue]=useState('');
   const dispatch = useDispatch()
   const getResourse = (param:any) => {
-    const res =  getTeamSearch(param,6)
-    dispatch(teamSeacrh(res))
+    dispatch(teamSeacrh(param))
     if(!param){
       dispatch(teamsFetchData(`${MAIN_URL}/api/Team/GetTeams?PageSize=${6}&Page=${props.page}`))  
     }
