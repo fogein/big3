@@ -17,15 +17,12 @@ interface ISearch{
 export const Search = (props:ISearch) => {
   const [inputSeacrhValue,setInputSeacrhValue]=useState('');
   const dispatch = useDispatch()
-  const getResourse = async(param:any) => {
-    const res = await getTeamSearch(param,6)
+  const getResourse = (param:any) => {
+    const res =  getTeamSearch(param,6)
     dispatch(teamSeacrh(res))
     if(!param){
-      dispatch(teamsFetchData(`${MAIN_URL}/api/Team/GetTeams?PageSize=${6}&Page=${props.page}`))
-      
-      
+      dispatch(teamsFetchData(`${MAIN_URL}/api/Team/GetTeams?PageSize=${6}&Page=${props.page}`))  
     }
-    
   }
 
 

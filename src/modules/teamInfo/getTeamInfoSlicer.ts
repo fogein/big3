@@ -2,22 +2,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getTeamId } from "../../api/request/teamAndPlayersApi";
 
 
-
-
-
-// export const getTeamInfo = (state=[],action:AnyAction) => {
-  
-//   switch (action.type) {
-//     case "GET_TEAM_INFO_SUCCES":
-      
-//       return [action.data.data]
-    
-//       default:
-//         return state;
-//       }
-        
-  
-// }
 export const getTeamInfoFetch:any = createAsyncThunk('getTeamInfo/getTeamInfoFetch',async(id:number) => {
 
     try {
