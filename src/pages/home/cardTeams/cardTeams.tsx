@@ -50,7 +50,9 @@ if(error)
             <Search
             page={page}
             />
-            <AddButton/>
+            <AddButton
+            link='/teams/addTeam'
+            />
           </div>
           <div className={cls.mainContainer} >
               <div >

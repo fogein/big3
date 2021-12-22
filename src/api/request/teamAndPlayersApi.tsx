@@ -12,16 +12,16 @@ export async function addTeam (data: ITeamData){
   return response.data;
 
 }
+export async function addPlayer (data: ITeamData){
 
-// export async function addPlayer (data: any){
-
-//   let response = await api.post('/Player/Add',data);
+  let response = await api.post('/Player/Add',data);
 
 
   
-//   return response.data;
+  return response.data;
 
-// }
+}
+
 export async function getTeam (url:string){
 
 

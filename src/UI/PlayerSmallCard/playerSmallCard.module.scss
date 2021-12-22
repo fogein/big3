@@ -1,21 +1,28 @@
 
-.smallCardContainer{
+.smallCardItem{
+  list-style: none;
   margin: 32px 24px -8px 0;
-  width: 364px;
-  height: 100%;
 }
-.smallCardPayersTop{
+.cardImg{
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 200px;
+  max-height: 200px;
+}
+.smallCardTop{
   width: 364px;
   height: 280px;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   background: linear-gradient(276.45deg, #707070 0%, #393939 100.28%);
   }
 .smallCardBot{
+  width: 364px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   height: 100px;
   background: var(--dark-grey);
   border-radius: 0px 0px 4px 4px;
@@ -33,4 +40,153 @@
   line-height: 24px;
   text-align: center;
   color: var(--light-grey);
+}
+
+@media(max-width: 1420px){
+  .smallCardBot{
+    width: 300px;
+  }
+  .smallCardTop{
+    width: 300px;
+  }
+}
+@media(max-width: 1200px){
+  .smallCardBot{
+    width: 200px;
+    height: 80px;
+  }
+  .smallCardTop{
+    width: 200px;
+    height: 180px;
+  }
+  .cardImg{
+    min-width: 120px;
+    min-height: 120px;
+    max-width: 120px;
+    max-height: 120px;
+  }
+}
+@media(max-width: 900px){
+  .link{
+    height: 200px;
+  }
+  .smallCardItem{
+    margin: 16px 12px -4px 0;
+  }
+  .smallCardDeskription > h4{
+    font-size: 14px;
+  }
+  .smallCardP{
+    font-size: 10px;
+  }
+  .smallCardBot{
+    width: 160px;
+    height: 80px;
+  }
+  .smallCardTop{
+    width: 160px;
+    height: 120px;
+  }
+  .cardImg{
+    min-width: 70px;
+    min-height: 70px;
+    max-width: 70px;
+    max-height: 70px;
+  }
+
+}
+@media(max-width: 740px){
+  .link{
+    height: 100px;
+  }
+  .smallCardItem{
+    margin: 12px 12px 0px 0;
+  }
+  .smallCardDeskription > h4{
+    font-size: 10px;
+  }
+  .smallCardP{
+    font-size: 8px;
+  }
+  .smallCardBot{
+    width: 130px;
+    height: 60px;
+  }
+  .smallCardTop{
+    width: 130px;
+    height: 90px;
+  }
+  .cardImg{
+    min-width: 70px;
+    min-height: 70px;
+    max-width: 70px;
+    max-height: 70px;
+  }
+
+}
+@media(max-width: 650px){
+  .link{
+    height: 190px;
+  }
+  .smallCardBot{
+    width: 170px;
+    height: 78px;
+  }
+  .smallCardTop{
+    width: 170px;
+    height: 102px;
+  }
+  .smallCardItem{
+    margin: 16px 13px 40px 12px;
+  }
+  .smallCardDeskription > h4{
+    font-size: 10px;
+    margin-bottom: 0;
+  }
+}
+@media(max-width: 490px){
+  .link{
+    height: 170px;
+  }
+  .smallCardBot{
+    width: 140px;
+    height: 58px;
+  }
+  .smallCardTop{
+    width: 140px;
+    height: 90px;
+  }
+  .smallCardItem{
+    margin: 16px 13px 40px 12px;
+  }
+  .smallCardDeskription > h4{
+    font-size: 10px;
+    margin-bottom: 0;
+  }
+}
+@media(max-width: 430px){
+  .link{
+    height: 140px;
+  }
+  .smallCardBot{
+    width: 120px;
+    height: 48px;
+  }
+  .smallCardTop{
+    width: 120px;
+    height: 70px;
+  }
+  .smallCardItem{
+    margin: 16px 13px 40px 12px;
+  }
+  .smallCardDeskription > h4{
+    font-size: 10px;
+    margin-bottom: 0;
+  }
+  .cardImg{
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 50px;
+    max-height: 50px;
+  }
 }

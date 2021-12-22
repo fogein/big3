@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import {  useSelector } from "react-redux";
 import { Link, useHistory } from 'react-router-dom'
 import { SaveImageApi } from "../../api/request/saveImageApi";
 import { addTeam } from "../../api/request/teamAndPlayersApi";
@@ -12,7 +11,6 @@ export const AddTeam = () => {
 
   const history=useHistory()
   const [image,setImage]=useState('')
-  const teams  = useSelector<any, any>(state => state.teams )
 
   const {
     register,
@@ -40,8 +38,7 @@ export const AddTeam = () => {
       conference: data.Conference,
       imageUrl: image
     }
-    let card = await addTeam(testObject)
-    teams.data?.push(card)
+    await addTeam(testObject)
     history.push('/teams')
   };  
   return (

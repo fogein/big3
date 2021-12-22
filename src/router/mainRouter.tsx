@@ -11,6 +11,7 @@ import { AddTeamPage } from '../pages/home/addTeamPage/addTeamPage';
 import { TeamInfo } from '../pages/home/teamInfo/teamInfo';
 import { EditTeamPage } from '../pages/home/editTeamPage/EditTeamPage';
 import { PageNotFound } from '../pages/home/pageNotFound/pageNotFound';
+import { AddPlayerPage } from '../pages/home/addPlayerPage/addPlayerPage';
 
 
 
@@ -23,6 +24,7 @@ export function MainRouter() {
         <Switch>
           <PrivateRouter exact path="/teams" component={CardTeams} />
           <PrivateRouter exact path="/teams/addTeam" component={AddTeamPage} />
+          <PrivateRouter exact path="/players/addPlayer" component={AddPlayerPage} />
           <Route exact path="/" component={LoginContainer} />
           <Route exact path="/signup" component={SignUpContainer} />
           <PrivateRouter exact path="/players" component={CardPlayers} />

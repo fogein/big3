@@ -50,7 +50,9 @@ useEffect(()=>{
             <Search
             page={page}
             />
-            <AddButton/>
+            <AddButton
+            link='/players/addPlayer'
+            />
           </div>
           <div className={cls.mainContainer} >
               <div >

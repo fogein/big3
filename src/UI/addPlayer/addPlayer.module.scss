@@ -1,0 +1,193 @@
+.mainContainer{
+  display: flex;
+  flex-direction: column;
+  height: 655px;
+  max-width: 1140px;
+  min-width: 1140px;
+  background: #fff;
+}
+.twoInputs{
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+height: 190px;
+
+}
+.topConttainer{
+margin-left: 32px;
+margin-top: 24px;
+}
+.tabs{
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--red)
+}
+.contentContainer{
+  display: flex;
+  margin-top: 72px;
+  margin-left: 73px;
+
+}
+
+.addPhotoButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 336px;
+  height: 261px;
+  background: var(--light-grey);
+  opacity: 0.5;
+  border-radius: 10px;
+}
+.inputsContainer{
+  margin-left: 136px;
+  display: flex;
+  flex-direction: column;
+}
+.addTeamInput{
+  background: var(--lightest-grey1);
+  border-radius: 4px;
+  border:none;
+  width: 366px;
+  height: 40px;
+  margin-bottom: 24px;
+}
+.addTeamInputWH{
+  background: var(--lightest-grey1);
+  border-radius: 4px;
+  border:none;
+  width: 171px;
+  height: 40px;
+  margin-bottom: 24px;
+}
+.addTeamInputWHML{
+  background: var(--lightest-grey1);
+  border-radius: 4px;
+  border:none;
+  width: 171px;
+  height: 40px;
+  margin-bottom: 24px;
+  margin-left: 22px;
+}
+.labelML{
+  margin-left: 22px;
+}
+.buttons{
+  display: flex;
+  justify-content: space-between;
+}
+.cancelButton{
+  display: flex;
+  border: 1px solid var(--light-grey);
+  width: 171px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: #9C9C9C;
+}
+.saveButton{
+  border:none;
+  cursor: pointer;
+  background: var(--red);
+  border-radius: 4px;
+  width: 171px;
+  height: 40px;
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+.errorMessage{
+  margin-top: -20px;
+  margin-bottom: 5px;
+  color: var(--lightest-red);
+}
+.imageUpload>input {
+  display: none;
+}
+.imageUpload>label>img{
+  cursor: pointer;
+}
+.imageUpload{
+  position: absolute;
+}
+.imageUploaded{
+  height: 100%;
+  width: 100%;
+  opacity: .5;
+}
+
+@media(max-width: 1360px){
+.mainContainer{
+max-width: 375px;
+height: 736px;
+min-width: 375px;
+}
+.addPhotoButton{
+  width: 200px;
+  height: 150px;
+}
+.addTeamInput{
+  width: 300px;
+}
+.saveButton{
+width: 100px;
+}
+.cancelButton{
+  width: 100px;
+}
+
+.contentContainer{
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  margin-top: 10px;
+}
+.inputsContainer{
+  margin: 0;
+}
+
+}
+@media(max-width: 900px){
+  .mainContainer{
+    height: 600px;
+  }
+}
+@media(max-width: 460px){
+  .mainContainer{
+    height: 500px;
+    max-width: 200px;
+    min-width: 200px;
+  }
+  .addPhotoButton{
+    width: 100px;
+    height: 100px;
+  }
+  .addTeamInput{
+    width: 150px;
+  }
+  .saveButton{
+  width: 50px;
+  }
+  .cancelButton{
+    width: 50px;
+  }
+  .contentContainer{
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    margin-top: 10px;
+  }
+}
