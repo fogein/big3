@@ -4,16 +4,17 @@
   margin: 32px 24px -8px 0;
 }
 .cardImg{
-  min-width: 200px;
-  min-height: 200px;
-  max-width: 200px;
-  max-height: 200px;
+  min-width: 274px;
+  min-height: 207px;
+  max-width: 274px;
+  max-height: 207px;
 }
 .smallCardTop{
   width: 364px;
   height: 280px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
   background: linear-gradient(276.45deg, #707070 0%, #393939 100.28%);
   }
@@ -27,12 +28,15 @@
   background: var(--dark-grey);
   border-radius: 0px 0px 4px 4px;
 }
-.smallCardDeskription > h4{
+.namePlayer{
   margin-bottom: 12px;
   font-weight: 500;
   font-size: 18px;
   line-height: 25px;;
   color: #fff;
+}
+.namePlayer >span{
+  color: var(--light-red);
 }
 .smallCardP{
   font-weight: 500;

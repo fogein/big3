@@ -17,7 +17,7 @@ export const PlayerSmallCard = (props:IPlayerData) => {
         </div>
         <div className={cls.smallCardBot}>
           <div className={cls.smallCardDescription}>
-            <h4>{props.name} <span>{props.number}</span></h4>
+            <h4 className={cls.namePlayer}>{props.name} <span>#{props.number}</span></h4>
             <p className={cls.smallCardP}>{props.team}</p>
           </div>
         </div>
