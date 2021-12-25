@@ -46,7 +46,24 @@ export async function getTeamId (id:number){
   
   return response;
   }
+  
+  export async function getPlayerId (id:number){
 
+
+    let response = await api.get(`/Player/Get?id=${id}`);
+    
+    return response;
+    }
+
+    export async function deletePlayer (id: number){
+
+      let response = await api.delete(`/Player/Delete?id=${id}`);
+    
+    
+      
+      return response;
+    
+    }
   export async function deleteTeam (id: number){
 
     let response = await api.delete(`/Team/Delete?id=${id}`);

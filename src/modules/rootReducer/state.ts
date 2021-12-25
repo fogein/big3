@@ -9,6 +9,7 @@ export interface IRootState {
     teams:ITeamData,
     players:IPlayerData,
     getTeamInfo:ITeamData,
+    getPlayerInfo:IPlayerData,
 
 
 }

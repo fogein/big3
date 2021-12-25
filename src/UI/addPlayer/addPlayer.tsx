@@ -57,6 +57,7 @@ export const AddPlayer = () => {
       height:data.height,
       weight:data.weight,
       avatarUrl: image,
+      teamName:data.team,
     }
     await addPlayer(testObject)
     history.push('/players')

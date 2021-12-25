@@ -12,6 +12,7 @@ import { TeamInfo } from '../pages/home/teamInfo/teamInfo';
 import { EditTeamPage } from '../pages/home/editTeamPage/EditTeamPage';
 import { PageNotFound } from '../pages/home/pageNotFound/pageNotFound';
 import { AddPlayerPage } from '../pages/home/addPlayerPage/addPlayerPage';
+import { PlayerInfo } from '../pages/home/playerInfo/playerInfo';
 
 
 
@@ -29,6 +30,7 @@ export function MainRouter() {
           <Route exact path="/signup" component={SignUpContainer} />
           <PrivateRouter exact path="/players" component={CardPlayers} />
           <PrivateRouter exact={true} path="/team/:id" component={TeamInfo} />
+          <PrivateRouter exact={true} path="/player/:id" component={PlayerInfo} />
           <PrivateRouter exact={true} path="/team/edit/:id" component={EditTeamPage} />
           <Route exact={false} path="*" component={PageNotFound} />
         </Switch>

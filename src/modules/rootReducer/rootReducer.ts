@@ -6,6 +6,7 @@ import { AuthReducer } from '../auth/authSlicer';
 import { teamsReducer } from '../teamList/teamsSlicer';
 import { getTeamInfoReducer } from '../teamInfo/getTeamInfoSlicer';
 import { playersReducer } from '../playersList/playersSlicer';
+import { getPlayerInfoReducer } from '../playerInfo/getPlayerInfoSlicer';
 
 
 // NOTE: current type definition of Reducer in 'redux-actions' module
@@ -17,6 +18,7 @@ export const rootReducer = combineReducers<IRootState>({
     teams:teamsReducer as any,
     players:playersReducer as any,
     getTeamInfo:getTeamInfoReducer as any,
+    getPlayerInfo:getPlayerInfoReducer as any,
 
 });
 

@@ -1,5 +1,6 @@
 
 
+
 export interface ITeamData{
   deleteHandler?:any,
   name?: string,
@@ -11,6 +12,8 @@ export interface ITeamData{
 
 }
 export interface IPlayerData{
+  teamName?:string,
+  deleteHandler?:any,
   name?: string,
   number?: number, 
   position?: string,

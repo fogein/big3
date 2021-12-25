@@ -37,6 +37,7 @@ useEffect(()=>{
 // {localStorage.clear()
 //   window.location.reload()}
 
+
   return (
 
       <div className={cls.bg}>
@@ -60,14 +61,15 @@ useEffect(()=>{
 
 
 
-              {players.players.data?.map(({team,name,number,avatarUrl,id}:IPlayerData) =>
+              {players.players.data?.map(({team,teamName,name,number,avatarUrl,id}:IPlayerData) =>
                 <PlayerSmallCard 
+                teamName={teamName}
                 key={id}
                 name={name}
                 number={number}
                 avatarUrl={avatarUrl}
                 team={team}
-                id={id}
+                id={id} 
                 />
               )}
 
