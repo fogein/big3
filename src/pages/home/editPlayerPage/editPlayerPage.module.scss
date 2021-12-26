@@ -1,0 +1,56 @@
+
+  .bg{
+    background: var(--lightest-grey1);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+  }
+
+  .upContainer{
+    flex-wrap: wrap;
+    height: 40px;
+    width: 1140px;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 32px;
+    justify-content: space-between;
+  }
+  
+  .mainContainer{
+    justify-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    
+    width: 1300px;
+  }
+  .smallCardContainer{
+ 
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    height: 100%;
+  }
+  @media(max-width: 1450px){
+    .mainContainer{
+      width: 1100px;
+    }
+  }
+  @media(max-width: 1280px){
+    .mainContainer{
+      width: 630px;
+    }
+    .upContainer{
+      width: 630px;
+    }
+  }
+  @media(max-width: 900px){
+    .mainContainer{
+      width: 300px;
+      padding: 0;
+    }
+    .upContainer{
+      width: 0px;
+    }
+  }
+  

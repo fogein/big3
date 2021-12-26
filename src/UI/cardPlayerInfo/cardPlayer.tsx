@@ -17,7 +17,7 @@ export const CardPlayerInfo = (props:IPlayerData) => {
               <Link className={cls.link} to='/players'>Players </Link>/<span className={cls.link} > {props.name}</span>
             </div> 
             <div className={cls.editCardTeam}>
-              <Link to={`/team/edit/${props.id}`}  className={cls.createBut}><img src={create} alt="create" /></Link>
+              <Link to={`/player/edit/${props.id}`}  className={cls.createBut}><img src={create} alt="create" /></Link>
               <button onClick={props.deleteHandler}><img src={deleteimg} alt="delete"  /></button>
             </div>
         </div>

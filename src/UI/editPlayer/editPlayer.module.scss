@@ -1,0 +1,476 @@
+.containerCardTeam{
+  margin: 32px 0 24px 0px;
+  width: 1140px;
+  height: 594px;
+  list-style: none;
+  display: flex;
+  flex-direction:column ;
+  flex-wrap:wrap ;
+  padding-left: 80px;
+  width: 100%;
+}
+.nameContainer{
+  text-align: center;
+  width: 100%!important;
+  margin-top: 65px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+  }
+  .infoPlayerContainer{
+width: 100%;
+  display: flex;
+  align-items: flex-start;
+  text-align: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 350px;
+  }
+  
+button{
+  padding: 0;
+  margin: 0;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+}
+.topCardTeam{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 69px;
+  background: #FFFFFF;
+  border: 0.5px solid var(--light-grey);
+  border-radius: 10px 10px 0px 0px;
+}
+
+.aboutCardTeam{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  margin-left: 32px;
+}
+.link {
+  color: var(--red);
+}
+.aboutСardTeam > span > span{
+  color: var(--light-grey);
+}
+.editCardTeam{   
+  margin-right: 32px;
+  display: flex;
+}
+.createBut{
+  margin-right: 16px;
+}
+.mainCardTeam{
+  color: #fff;
+  align-items: flex-start;
+  justify-content: space-between;
+  display: flex;
+  background: linear-gradient(276.45deg, #707070 0%, #393939 100.28%);
+  border-radius: 0px 0px 10px 10px;
+  height: 525px;
+}
+.text{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.logoCardTeam{
+  display: flex;
+  margin-top: 35px;
+
+}
+.image{
+  display: flex;
+  width: 531px;
+  height: 490px;
+}
+.saveButton{
+
+  border:none;
+  cursor: pointer;
+  background: var(--red);
+  border-radius: 4px;
+  width: 171px;
+  height: 40px;
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+.descriptionCardTeam{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: 56px;
+  width: 600px;
+}
+
+.nameCardTeam{
+  height: 35px;
+  background:transparent ;
+  border: 1px solid rgb(117, 116, 116);
+  color: #fff;
+  width: 150px;
+}
+.numberCardTeam{
+  height: 35px;
+  background:transparent ;
+  border: 1px solid rgb(117, 116, 116);
+  color: #fff;
+  width: 150px;
+}
+.positionCardTeam{
+  margin-bottom: 54px;
+  height: 35px;
+  background:transparent ;
+  border: 1px solid rgb(117, 116, 116);
+  color: #fff;
+  width: 150px;
+}
+.heightCardTeam{
+  margin-bottom: 54px;
+  height: 35px;
+  background:transparent ;
+  border: 1px solid rgb(117, 116, 116);
+  color: #fff;
+  width: 150px;
+}
+.ageCardTeam{
+  height: 35px;
+  background:transparent ;
+  border: 1px solid rgb(117, 116, 116);
+  color: #fff;
+  width: 150px;
+}
+.teamCardTeam{
+  margin-bottom: 54px;
+  height: 35px;
+  background:transparent ;
+  border: 1px solid rgb(117, 116, 116);
+  color: #fff;
+  width: 150px;
+}
+.weightCardTeam{
+  margin-bottom: 89px;
+  height: 35px;
+  background:transparent ;
+  border: 1px solid rgb(117, 116, 116);
+  color: #fff;
+  width: 150px;
+}
+
+.numberTitle{
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  color: #FFFFFF;
+  margin-bottom: 5px;
+}
+.nameTitle{
+  margin-bottom: 5px;
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 49px;
+  color: #FFFFFF;
+}
+.weightTitle{
+  margin-bottom: 5px;
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  color: #FFFFFF;
+}
+.teamTitle{
+  margin-bottom: 5px;
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  color: #FFFFFF;
+}.positionTitle{
+  margin-bottom: 5px;
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  color: #FFFFFF;
+}.heightTitle{
+  margin-bottom: 5px;
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  color: #FFFFFF;
+}.ageTitle{
+  margin-bottom: 5px;
+  font-family: Avenir;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  color: #FFFFFF;
+}
+
+
+
+
+.imageUpload>input {
+  display: none;
+}
+.imageUpload>label>img{
+  cursor: pointer;
+}
+
+
+.addPhotoButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border-radius: 10px;
+}
+.errorMessageName{
+  margin-top: -38px;
+  margin-bottom: 17px;
+  color: var(--lightest-red);
+}
+.errorMessageYear{
+  margin-top: -37px;
+  margin-bottom: 16px;
+  color: var(--lightest-red);
+}
+
+.errorMessageDivision{
+  margin-left: 84px;
+  color: var(--lightest-red);
+}
+.errorMessageConference{
+ color: var(--lightest-red);
+}
+
+
+@media(max-width: 1450px){
+  .containerCardTeam{
+    margin: 32px 0 24px 0px;
+    width: 1050px;
+    height: 473px;
+    list-style: none;
+    display: flex;
+    flex-direction:column ;
+    flex-wrap:wrap ;
+  }
+
+}
+@media(max-width: 1280px){
+.saveButton{
+  margin: 0;
+  width: 100px;
+  margin-top: 10px;
+}
+  .containerCardTeam{
+
+    width: 500px;
+    height: 703px;
+    list-style: none;
+    display: flex;
+
+  }
+  .topCardTeam{
+    width: 300px;
+  }
+.mainCardTeam{
+  flex-direction: column;
+  height: 500px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+}
+.logoCardTeam{
+  margin: 0;
+ 
+}
+.descriptionCardTeam{
+  display: flex;
+  flex-direction: column;
+  height: 650px;
+  margin: 0;
+  width: 250px;
+}
+.conferenceCardTeam{
+  margin: 0;
+  height: 35px;
+  background:transparent ;
+  border: 1px solid rgb(117, 116, 116);
+  color: #fff;
+  width: 150px;
+
+}
+.nameCardTeam{
+  margin: 0;
+  height: 35px;
+  background:transparent ;
+  border: 1px solid rgb(117, 116, 116);
+  color: #fff;
+  width: 150px;
+}
+.divisionCardTeam{
+  margin: 0;
+  height: 35px;
+  background:transparent ;
+  border: 1px solid rgb(117, 116, 116);
+  color: #fff;
+  width: 150px;
+
+}
+.foundationCardTeam{
+  margin: 0;
+  height: 35px;
+  background:transparent ;
+  border: 1px solid rgb(117, 116, 116);
+  color: #fff;
+  width: 150px;
+
+}
+.conferenceTitle{
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 33px
+}
+.nameTitle{
+  color: #fff;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 49px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.divisionTitle{
+  margin: 0;
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 33px;
+  margin-top: 0px;
+}
+.foundationYearTitle{
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 33px
+}
+.imageUpload>input {
+  display: none;
+}
+.imageUpload>label>img{
+  cursor: pointer;
+}
+.imageUpload{
+
+  position: absolute;
+}
+.imageUploaded{
+  width: 100px;
+  height: 100px;
+
+}
+.image{
+  width: 100px!important;
+  height: 100px!important;
+}
+}
+@media(max-width: 900px){
+
+  .containerCardTeam{
+
+    width: 380px;
+    height: 703px;
+    list-style: none;
+    display: flex;
+
+  }
+.mainCardTeam{
+  flex-direction: column;
+  height: 500px;
+  width: 300px;
+}
+.topCardTeam{
+  width: 300px;
+}
+.logoCardTeam{
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.descriptionCardTeam{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  height: 376px;
+  width: 250px;
+}
+.nameCardTeam > h2{
+  color: #fff;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 49px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.foundationCardTeam > h3{
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 33px
+}
+.text{
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 25px;
+
+}
+.conferenceCardTeam{
+  margin-top: 0px;
+}
+.conferenceCardTeam > h3{
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 33px
+}
+
+.divisionCardTeam > h3{
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 33px;
+  margin-top: 0px;
+}
+}
+
+

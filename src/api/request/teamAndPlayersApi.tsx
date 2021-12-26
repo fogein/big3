@@ -1,4 +1,4 @@
-import { ITeamData } from '../dto/teamsAndPlayers';
+import { IPlayerData, ITeamData } from '../dto/teamsAndPlayers';
 import {api} from './baseApi';
 
 
@@ -12,7 +12,7 @@ export async function addTeam (data: ITeamData){
   return response.data;
 
 }
-export async function addPlayer (data: ITeamData){
+export async function addPlayer (data:IPlayerData){
 
   let response = await api.post('/Player/Add',data);
 
@@ -88,6 +88,15 @@ export async function getTeamId (id:number){
   export async function updateTeam (data: ITeamData){
 
     let response = await api.put('/Team/Update',data);
+  
+  
+    
+    return response.data;
+  
+  }
+  export async function updatePlayer (data:IPlayerData){
+
+    let response = await api.put('/Player/Update',data);
   
   
     

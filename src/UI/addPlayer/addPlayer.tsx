@@ -47,17 +47,17 @@ export const AddPlayer = () => {
     });   
   }
   
-  const onSubmit = async (data:IPlayerData) => {
+  const onSubmit = async (data:any) => {
     let testObject = {
-      name: data.name,
-      number:data.number,
-      position:data.position,
-      team:data.team,
-      birthday:data.birthday,
-      height:data.height,
-      weight:data.weight,
+      name: data?.name,
+      number:data?.number,
+      position:data?.position,
+      team:data?.team,
+      birthday:data?.birthday,
+      height:data?.height,
+      weight:data?.weight,
       avatarUrl: image,
-      teamName:data.team,
+      teamName:data?.team,
     }
     await addPlayer(testObject)
     history.push('/players')

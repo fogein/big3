@@ -13,6 +13,7 @@ import { EditTeamPage } from '../pages/home/editTeamPage/EditTeamPage';
 import { PageNotFound } from '../pages/home/pageNotFound/pageNotFound';
 import { AddPlayerPage } from '../pages/home/addPlayerPage/addPlayerPage';
 import { PlayerInfo } from '../pages/home/playerInfo/playerInfo';
+import { EditPlayerPage } from '../pages/home/editPlayerPage/EditPlayerPage';
 
 
 
@@ -32,6 +33,7 @@ export function MainRouter() {
           <PrivateRouter exact={true} path="/team/:id" component={TeamInfo} />
           <PrivateRouter exact={true} path="/player/:id" component={PlayerInfo} />
           <PrivateRouter exact={true} path="/team/edit/:id" component={EditTeamPage} />
+          <PrivateRouter exact={true} path="/player/edit/:id" component={EditPlayerPage} />
           <Route exact={false} path="*" component={PageNotFound} />
         </Switch>
       </Suspense>
