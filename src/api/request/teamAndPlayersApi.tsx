@@ -3,6 +3,16 @@ import {api} from './baseApi';
 
 
   
+export async function getPosition (){
+
+  let response = await api.get('Player/GetPositions');
+
+
+  
+  return response.data;
+
+}
+
 export async function addTeam (data: ITeamData){
 
   let response = await api.post('/Team/Add',data);

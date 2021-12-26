@@ -4,7 +4,7 @@ import {  useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from 'react-router-dom'
 import { IPlayerData, ITeamData } from "../../api/dto/teamsAndPlayers";
 import { SaveImageApi } from "../../api/request/saveImageApi";
-import { addPlayer } from "../../api/request/teamAndPlayersApi";
+import { addPlayer, getPosition } from "../../api/request/teamAndPlayersApi";
 import addPhotoTeam from '../../assets/images/addPhotoTeam.svg'
 import { BASE_URL } from "../../config/env/development";
 import { MAIN_URL } from "../../modules/teamList/teamsAndPlayersConstants";
@@ -18,15 +18,25 @@ export const AddPlayer = () => {
   const history=useHistory()
 
   const [image,setImage]=useState('')
+  const [position,setPosition]=useState('')
 
   useEffect(() => {
     dispatch(teamsFetchData(`${MAIN_URL}/api/Team/GetTeams?PageSize=${25}&Page=${1}`));
-  
+    const position:any =  getPosition()
+    position.then(function(res:any){
+      setPosition(res)
+    })
+    
   }, [dispatch]);
+  console.log(position);
+  
+
+
+
 
   const teams  = useSelector<any, any>(state => state.teams )
 
-  console.log(teams.teams.data);
+
 
 
   const {
@@ -47,7 +57,7 @@ export const AddPlayer = () => {
     });   
   }
   
-  const onSubmit = async (data:any) => {
+  const onSubmit = async (data:IPlayerData) => {
     let testObject = {
       name: data?.name,
       number:data?.number,
@@ -57,7 +67,6 @@ export const AddPlayer = () => {
       height:data?.height,
       weight:data?.weight,
       avatarUrl: image,
-      teamName:data?.team,
     }
     await addPlayer(testObject)
     history.push('/players')
@@ -96,13 +105,20 @@ export const AddPlayer = () => {
             {errors.Name && <p className={cls.errorMessage}>{errors.Name.message}</p>}
 
             <label htmlFor="Position">Position</label>
-            <input className={cls.addTeamInput}
+            <select className={cls.addTeamInput}
               
               {...register("position", {
                 required: "Please write Position",
                
               })}
-            />
+            >
+              <option >{position[0]}</option>
+              <option >{position[1]}</option>
+              <option >{position[2]}</option>
+              <option >{position[3]}</option>
+              <option >{position[4]}</option>
+
+            </select>
             {errors.Position && <p className={cls.errorMessage}>{errors.Position.message}</p>}
 
             <label htmlFor="Team">Team</label>

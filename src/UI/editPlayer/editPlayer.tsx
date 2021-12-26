@@ -4,7 +4,7 @@ import create from '../../assets/images/create.svg';
 import deleteimg from '../../assets/images/delete.svg';
 import { Link, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import {  updatePlayer, updateTeam } from '../../api/request/teamAndPlayersApi';
+import {  updatePlayer } from '../../api/request/teamAndPlayersApi';
 import { IPlayerData } from '../../api/dto/teamsAndPlayers';
 import { SaveImageApi } from '../../api/request/saveImageApi';
 import { BASE_URL } from '../../config/env/development';
@@ -39,7 +39,7 @@ export const EditPlayer = (props:IPlayerData) => {
 
 
 
-  const onSubmit = async (data:any) => {
+  const onSubmit = async (data:IPlayerData) => {
     console.log(data);
     
     let testObject = {
