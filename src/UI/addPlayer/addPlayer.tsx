@@ -28,7 +28,7 @@ export const AddPlayer = () => {
     })
     
   }, [dispatch]);
-  console.log(position);
+
   
 
 
