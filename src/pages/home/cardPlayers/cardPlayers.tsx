@@ -14,6 +14,7 @@ import { PlayerSmallCard } from '../../../UI/playerSmallCard/playerSmallCard'
 import { playersFetchData } from '../../../modules/playersList/playersSlicer'
 
 
+
  export const CardPlayers: React.FC = () => {
  
 const [page,setPage]=useState(1)
@@ -36,6 +37,9 @@ useEffect(()=>{
 // if(error)
 // {localStorage.clear()
 //   window.location.reload()}
+
+
+
 
 
   return (
@@ -61,9 +65,9 @@ useEffect(()=>{
 
 
 
-              {players.players.data?.map(({team,teamName,name,number,avatarUrl,id}:IPlayerData) =>
+              {players.players.data?.map(({team,name,number,avatarUrl,id}:IPlayerData) =>
+                
                 <PlayerSmallCard 
-                teamName={teamName}
                 key={id}
                 name={name}
                 number={number}
@@ -71,6 +75,7 @@ useEffect(()=>{
                 team={team}
                 id={id} 
                 />
+                
               )}
 
 

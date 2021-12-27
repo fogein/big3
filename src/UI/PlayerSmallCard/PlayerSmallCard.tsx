@@ -6,7 +6,7 @@ import cls from './playerSmallCard.module.scss'
 
 
 export const PlayerSmallCard = (props:IPlayerData) => {
-  
+
 
   return (
     // Player card
@@ -17,8 +17,8 @@ export const PlayerSmallCard = (props:IPlayerData) => {
         </div>
         <div className={cls.smallCardBot}>
           <div className={cls.smallCardDescription}>
-            <h4 className={cls.namePlayer}>{props.name} <span>#{props.number}</span></h4>
-            <p className={cls.smallCardP}>{props.team}</p>
+            <h4 className={cls.namePlayer}>{props.name} <span>#{props.number}</span></h4> 
+              <p className={cls.smallCardP}>{props.team}</p>    
           </div>
         </div>
       </li>

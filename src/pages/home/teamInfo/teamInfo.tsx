@@ -4,7 +4,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { ITeamData } from '../../../api/dto/teamsAndPlayers'
 import {  deleteTeam } from '../../../api/request/teamAndPlayersApi'
+import { playersFetchData } from '../../../modules/playersList/playersSlicer'
 import { getTeamInfoFetch } from '../../../modules/teamInfo/getTeamInfoSlicer'
+import { MAIN_URL } from '../../../modules/teamList/teamsAndPlayersConstants'
 import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
 import { CardTeamInfo } from '../../../UI/cardTeamInfo/cardTeam'
 import { Header } from '../../../UI/header/header'
@@ -21,13 +23,14 @@ import cls from './teamInfo.module.scss'
   useEffect( () => {
    
       dispatch(getTeamInfoFetch(id));
+      dispatch(playersFetchData(`${MAIN_URL}/api/Player/GetPlayers?TeamIds=${id}`));
    
  }, [dispatch,id]);
 
     
  const teamInfo  = useSelector<any, any>(state => state.getTeamInfo )
- console.log(teamInfo.status);
- 
+ const players  = useSelector<any, any>(state => state.players ) 
+console.log(players);
 
  const deleteHamdler = () => {
   deleteTeam(match.params.id);
