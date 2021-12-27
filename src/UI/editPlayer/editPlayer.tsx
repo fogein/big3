@@ -1,20 +1,35 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import cls from './editPlayer.module.scss'
 import create from '../../assets/images/create.svg';
 import deleteimg from '../../assets/images/delete.svg';
 import { Link, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import {  updatePlayer } from '../../api/request/teamAndPlayersApi';
-import { IPlayerData } from '../../api/dto/teamsAndPlayers';
+import {  getPosition, updatePlayer } from '../../api/request/teamAndPlayersApi';
+import { IPlayerData, ITeamData } from '../../api/dto/teamsAndPlayers';
 import { SaveImageApi } from '../../api/request/saveImageApi';
 import { BASE_URL } from '../../config/env/development';
+import { useDispatch, useSelector } from 'react-redux';
+import { teamsFetchData } from '../../modules/teamList/teamsSlicer';
+import { MAIN_URL } from '../../modules/teamList/teamsAndPlayersConstants';
 
 
 
 export const EditPlayer = (props:IPlayerData) => {
   const history = useHistory()
   const [image,setImage]=useState(props.avatarUrl)
+  const [position,setPosition]=useState([])
 
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(teamsFetchData(`${MAIN_URL}/api/Team/GetTeams?PageSize=${25}&Page=${1}`));
+    const position:any =  getPosition()
+    position.then(function(res:any){
+      setPosition(res)
+    })
+    
+  }, [dispatch]);
+
+  const teams  = useSelector<any, any>(state => state.teams )
 
   const {
     register,
@@ -43,13 +58,13 @@ export const EditPlayer = (props:IPlayerData) => {
     console.log(data);
     
     let testObject = {
-      name: data.name,
-      number:data.number,
-      position:data.position,
-      team:data.team,
-      birthday:data.birthday,
-      height:data.height,
-      weight:data.weight,
+      name: data?.name,
+      number:data?.number,
+      position:data?.position,
+      team:data?.team,
+      birthday:data?.birthday,
+      height:data?.height,
+      weight:data?.weight,
       avatarUrl: image,
       id:props.id
     }
@@ -113,13 +128,20 @@ export const EditPlayer = (props:IPlayerData) => {
 
             </div>
                     <div className={cls.infoPlayerContainer}>
-                      <label className={cls.positionTitle} htmlFor="Position">Position</label>
-              <input defaultValue={props.position} className={cls.positionCardTeam}
+              <label className={cls.positionTitle} htmlFor="Position">Position</label>
+              <select  className={cls.positionCardTeam}
                 
                 {...register("position", {
                  
                 })}
-              />
+              >
+                <option value={props.position} selected disabled hidden>{props.position}</option>
+                {position.map(n => (
+            
+               <option value={n}  className={cls.option} >{n}</option>
+            
+          ))}        
+              </select>
               {errors.Position && <p className={cls.errorMessagePosition}>{errors.Position.message}</p>}
 
               <label className={cls.heightTitle} htmlFor="Height">Height</label>
@@ -141,12 +163,18 @@ export const EditPlayer = (props:IPlayerData) => {
               {errors.Age && <p className={cls.errorMessageAge}>{errors.Age.message}</p>}
 
               <label className={cls.teamTitle} htmlFor="Team">Team</label>
-              <input defaultValue={props.team} className={cls.teamCardTeam}
+              <select defaultValue={props.team} className={cls.teamCardTeam}
                 
                 {...register("team", {
                   
                 })}
-              />
+              >
+                <option value={props.team} selected disabled hidden>{props.teamName}</option>
+                 {teams.teams.data?.map(({name,id}:ITeamData) =>
+              
+              <option className={cls.option} value={id}>{name}</option>
+            )}
+              </select>
               {errors.Team && <p className={cls.errorMessageTeam}>{errors.Team.message}</p>}
 
               <label className={cls.weightTitle} htmlFor="Weight">Weight</label>

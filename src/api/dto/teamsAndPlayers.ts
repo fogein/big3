@@ -17,7 +17,7 @@ export interface IPlayerData{
   name?: string ,
   number?: number, 
   position?: string,
-  team?: number,
+  team?: any,
   birthday?: string, 
   height?: number,
   weight?: number,
