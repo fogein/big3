@@ -35,6 +35,14 @@
   .container{
     height: 100%;
   }
+  .paginationContainer{
+    justify-content: flex-start;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin-top: 35px;
+    margin-left: 80px;
+  }
   @media(max-width: 1420px){
     .smallCardContainer{
       width: 980px;
