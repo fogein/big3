@@ -2,7 +2,7 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { ITeamData } from '../../../api/dto/teamsAndPlayers'
+import { IPlayerData, ITeamData } from '../../../api/dto/teamsAndPlayers'
 import {  deleteTeam } from '../../../api/request/teamAndPlayersApi'
 import { playersFetchData } from '../../../modules/playersList/playersSlicer'
 import { getTeamInfoFetch } from '../../../modules/teamInfo/getTeamInfoSlicer'
@@ -11,6 +11,7 @@ import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
 import { CardTeamInfo } from '../../../UI/cardTeamInfo/cardTeam'
 import { Header } from '../../../UI/header/header'
 import { Navbar } from '../../../UI/navbar/navbar'
+import { TableItem } from '../../../UI/table/table'
 
 import cls from './teamInfo.module.scss'
 
@@ -69,7 +70,39 @@ console.log(players);
             </ul>
               )
             }
+
+
+      <table className={cls.table}>
+        <caption className={cls.tableNameText}><span>Roster</span></caption>
+        <tr className={cls.headTable}>
+          <th className={cls.headTableItem}>#</th>
+          <th className={cls.headTableItem}>Player</th>
+          <th className={cls.headTableItem}>Height</th>
+          <th className={cls.headTableItem}>Weight</th>
+          <th className={cls.headTableItem}>Age</th>
+        </tr>
         
+        {players.players.data?.map(({name,number,avatarUrl,id,position,height,weight}:IPlayerData) =>
+              
+               <TableItem
+               name={name}
+               number={number}
+               avatarUrl={avatarUrl}
+               id={id}
+               height={height}
+               position={position}
+               weight={weight}
+               />
+             
+              )}
+
+
+
+
+      </table>
+
+
+
 
           </div>
         </div> 
