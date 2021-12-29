@@ -18,6 +18,7 @@ export const EditPlayer = (props:IPlayerData) => {
   const history = useHistory()
   const [image,setImage]=useState(props.avatarUrl)
   const [position,setPosition]=useState([])
+  const[date,setDate]=useState('')
 
   const dispatch = useDispatch()
   useEffect(() => {
@@ -26,10 +27,17 @@ export const EditPlayer = (props:IPlayerData) => {
     position.then(function(res:any){
       setPosition(res)
     })
+
+    let curr = new Date(props.birthday);
+    curr.setDate(curr.getDate() + 1);
+    setDate(curr.toISOString().substr(0,10))
     
-  }, [dispatch]);
+  }, [dispatch, props.birthday]);
+
+
 
   const teams  = useSelector<any, any>(state => state.teams )
+console.log(date);
 
   const {
     register,
@@ -55,8 +63,7 @@ export const EditPlayer = (props:IPlayerData) => {
 
 
   const onSubmit = async (data:IPlayerData) => {
-    console.log(data);
-    
+    setDate(new Date(data?.birthday).toISOString())
     let testObject = {
       name: data?.name,
       number:data?.number,
@@ -154,13 +161,14 @@ export const EditPlayer = (props:IPlayerData) => {
               {errors.Height && <p className={cls.errorMessageHeight}>{errors.Height.message}</p>}
 
               <label className={cls.ageTitle} htmlFor="Age">Age</label>
-              <input defaultValue={props.birthday} className={cls.ageCardTeam}
+              <input type='date'  defaultValue={date} className={cls.ageCardTeam}
                 
-                {...register("age", {
+                {...register("birthday", {
                   
                 })}
               />
               {errors.Age && <p className={cls.errorMessageAge}>{errors.Age.message}</p>}
+              
 
               <label className={cls.teamTitle} htmlFor="Team">Team</label>
               <select defaultValue={props.team} className={cls.teamCardTeam}

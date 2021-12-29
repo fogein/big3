@@ -56,14 +56,16 @@ export const AddPlayer = () => {
         
     });   
   }
+
   
   const onSubmit = async (data:IPlayerData) => {
+  
     let testObject = {
       name: data?.name,
       number:data?.number,
       position:data?.position,
       team:data?.team,
-      birthday:data?.birthday,
+      birthday: new Date(data?.birthday).toISOString(),
       height:data?.height,
       weight:data?.weight,
       avatarUrl: image,

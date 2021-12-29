@@ -1,4 +1,3 @@
-import React from 'react'
 import cls from './cardPlayer.module.scss'
 import create from '../../assets/images/create.svg';
 import deleteimg from '../../assets/images/delete.svg';
@@ -6,6 +5,19 @@ import { Link } from 'react-router-dom';
 import { IPlayerData } from '../../api/dto/teamsAndPlayers';
 
 export const CardPlayerInfo = (props:IPlayerData) => {
+  function calculateAge () {
+   let birthDate = new Date(props.birthday)
+   let otherDate = new Date()
+
+    var years = (otherDate.getFullYear() - birthDate.getFullYear());
+
+    if (otherDate.getMonth() < birthDate.getMonth() || 
+        otherDate.getMonth() === birthDate.getMonth() && otherDate.getDate() < birthDate.getDate()) {
+        years--;
+    }
+
+    return years;
+}
 
  
   return (
@@ -45,7 +57,7 @@ export const CardPlayerInfo = (props:IPlayerData) => {
                         </div>
                       <div className={cls.age}>
                         <h3>Age</h3>
-                        <span className={cls.text}>{props.birthday}</span>
+                        <span className={cls.text}>{calculateAge()}</span>
                     </div>
                     <div className={cls.team}>
                         <h3>Team</h3>
