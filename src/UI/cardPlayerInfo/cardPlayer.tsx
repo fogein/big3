@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-operators */
 import cls from './cardPlayer.module.scss'
 import create from '../../assets/images/create.svg';
 import deleteimg from '../../assets/images/delete.svg';

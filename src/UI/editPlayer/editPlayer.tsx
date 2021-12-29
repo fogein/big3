@@ -35,9 +35,7 @@ export const EditPlayer = (props:IPlayerData) => {
   }, [dispatch, props.birthday]);
 
 
-
   const teams  = useSelector<any, any>(state => state.teams )
-console.log(date);
 
   const {
     register,
@@ -63,13 +61,12 @@ console.log(date);
 
 
   const onSubmit = async (data:IPlayerData) => {
-    setDate(new Date(data?.birthday).toISOString())
     let testObject = {
       name: data?.name,
       number:data?.number,
       position:data?.position,
       team:data?.team,
-      birthday:data?.birthday,
+      birthday:new Date(date).toISOString(),
       height:data?.height,
       weight:data?.weight,
       avatarUrl: image,
@@ -78,7 +75,10 @@ console.log(date);
     await updatePlayer(testObject)
     history.push('/players')
   }; 
-  
+  const onChangeData = (date:any) => {
+setDate(date)
+
+  }
 
   return (
     
@@ -161,11 +161,11 @@ console.log(date);
               {errors.Height && <p className={cls.errorMessageHeight}>{errors.Height.message}</p>}
 
               <label className={cls.ageTitle} htmlFor="Age">Age</label>
-              <input type='date'  defaultValue={date} className={cls.ageCardTeam}
-                
-                {...register("birthday", {
-                  
-                })}
+              <input type='date' value={date}  className={cls.ageCardTeam}
+                onChange={(data)=>{
+                  let date = data.target.value
+                  onChangeData(date)
+                }}
               />
               {errors.Age && <p className={cls.errorMessageAge}>{errors.Age.message}</p>}
               
