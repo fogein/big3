@@ -33,8 +33,8 @@ name.then(function(result:any) {
         <div className={cls.smallCardBot}>
           <div className={cls.smallCardDescription}>
             <h4 className={cls.namePlayer}>{props.name} <span>#{props.number}</span></h4> 
-            {name.map(({teamName}:IPlayerData) =>
-                <p className={cls.smallCardP}>{teamName}</p>
+            {name.map(({teamName,id}:IPlayerData) =>
+                <p key={id} className={cls.smallCardP}>{teamName}</p>
               )}
               
           </div>
