@@ -12,6 +12,8 @@ export interface ITeamData{
 
 }
 export interface IPlayerData{
+  data?: never,
+  then?: any,
   teamName?:string,
   deleteHandler?:any,
   name?: string ,

@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import { IPlayerData } from '../../api/dto/teamsAndPlayers';
 
 export const CardPlayerInfo = (props:IPlayerData) => {
+
+  
   function calculateAge () {
    let birthDate = new Date(props.birthday)
    let otherDate = new Date()
@@ -19,6 +21,9 @@ export const CardPlayerInfo = (props:IPlayerData) => {
 
     return years;
 }
+
+
+
 
  
   return (

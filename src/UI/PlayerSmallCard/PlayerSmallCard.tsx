@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { IPlayerData } from '../../api/dto/teamsAndPlayers'
+import { getPlayerId } from '../../api/request/teamAndPlayersApi'
 import cls from './playerSmallCard.module.scss'
 
 
@@ -7,6 +9,19 @@ import cls from './playerSmallCard.module.scss'
 
 export const PlayerSmallCard = (props:IPlayerData) => {
 
+// eslint-disable-next-line @typescript-eslint/no-array-constructor
+const[name,setName]=useState(Array())
+
+
+  
+
+useEffect(() => {
+
+const name:IPlayerData = getPlayerId(props.id)
+name.then(function(result:any) {
+  return setName([result.data])
+})
+}, [props.id])
 
   return (
     // Player card
@@ -18,7 +33,10 @@ export const PlayerSmallCard = (props:IPlayerData) => {
         <div className={cls.smallCardBot}>
           <div className={cls.smallCardDescription}>
             <h4 className={cls.namePlayer}>{props.name} <span>#{props.number}</span></h4> 
-              <p className={cls.smallCardP}>{props.team}</p>    
+            {name.map(({teamName}:IPlayerData) =>
+                <p className={cls.smallCardP}>{teamName}</p>
+              )}
+              
           </div>
         </div>
       </li>

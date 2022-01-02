@@ -57,7 +57,7 @@ export async function getTeamId (id:number){
   return response;
   }
   
-  export async function getPlayerId (id:number){
+  export async function getPlayerId (id:any){
 
 
     let response = await api.get(`/Player/Get?id=${id}`);
