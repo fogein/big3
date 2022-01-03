@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-array-constructor */
 import React, { useEffect, useState } from 'react'
 import { AddButton } from '../../../UI/buttons/addButton/addButton'
 import { Header } from '../../../UI/header/header'
@@ -13,7 +14,7 @@ import { Search } from '../../../UI/search/Search'
 import { PlayerSmallCard } from '../../../UI/playerSmallCard/playerSmallCard'
 import { playersFetchData } from '../../../modules/playersList/playersSlicer'
 import { teamsFetchData } from '../../../modules/teamList/teamsSlicer'
-import { values } from 'lodash'
+
 
 
 
@@ -57,18 +58,18 @@ const handleChange = async(event:any) => {
     target: {value},
   } = event;
   setId(value)
-  
 };
+
 const setId = async(data:any) => {
  let team:any=[]
-  setPersonName(data)
 
   data?.map((value:any) => (
     team=[...team,'TeamIds='+value]
   ))
+
+  setPersonName(data)
   setTeamId(team)
 }
-
 
 
 
@@ -84,33 +85,44 @@ const setId = async(data:any) => {
         <div  className={cls.container}>
         
           <div className={cls.upContainer}>
+            <div className={cls.upFirstContainer}>
             <Search
             page={page}
             />
-                          <Select
+            <Select
                           className={cls.selectTeam}
                         multiple
+                        
                         value={personName}
                         onChange={handleChange}
                         input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
                         renderValue={(selected:any) => (
-                          <Box sx={{ display: 'flex', gap: 0.5 }}>
+                      
+                          
+                          <Box sx={{ display: 'flex', gap: 0.6, }}>
+             
+                          
                             {selected?.map((value:any) => (
-                              <Chip key={value} label={value} />
+                              
+                              <Chip className={cls.selectChip} key={value} label={value} />
                             ))}
                           </Box>
                         )}
                        
                       >
-                        {teams.teams.data?.map(({name,id}:ITeamData) => (
+                       {teams.teams.data?.map(({name,id}:ITeamData) => (
                           <MenuItem
+                          className={cls.selectMenuItem}
                             key={id}
                             value={id}
+                            
                           >
                             {name}
                           </MenuItem>
-                        ))}
+                       ))}
                       </Select>
+                      
+            </div>
             <AddButton
             link='/players/addPlayer'
             />

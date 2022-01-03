@@ -19,6 +19,30 @@
   src: url("./assets/fonts/Avenir-Medium.ttf") format("truetype"); 
    }
 
+
+
+
+   .MuiButtonBase-root{
+    font-weight: 500!important;
+    font-size: 14px!important;
+    line-height: 24px!important;
+    color: #9c9c9c !important;
+   }
+   .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root{
+     background: #fff!important;
+   }
+   .css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+    border: 0.5px solid #D1D1D1!important;
+    box-sizing: border-box!important;
+    border-radius: 4px!important;
+   }
+   .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon{
+    color: #D1D1D1!important;
+
+   }
+   .css-1z7n62>span{
+     display: none!important;
+   }
 // animations
 @keyframes appear {
   from {opacity: 0;}

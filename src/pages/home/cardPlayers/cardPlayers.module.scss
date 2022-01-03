@@ -7,8 +7,25 @@
     height: 100%;
   }
   .selectTeam{
-    width: 300px;
+    margin-left: 24px;
+    width: 364px;
+    height: 40px;
 
+  }
+  .selectChip{
+    font-style: normal!important;
+  font-weight: normal!important;
+  font-size: 14px!important;
+  line-height: 19px!important;
+  color: #FFFFFF!important;
+    color: #fff!important;
+    background: var(--red)!important;
+    border-radius: 4px!important;
+  }
+  .upFirstContainer{
+    display: flex;
+    align-items: center;
+    text-align: center;
   }
 
   .upContainer{
