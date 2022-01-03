@@ -13,13 +13,15 @@ import { Search } from '../../../UI/search/Search'
 import { PlayerSmallCard } from '../../../UI/playerSmallCard/playerSmallCard'
 import { playersFetchData } from '../../../modules/playersList/playersSlicer'
 import { teamsFetchData } from '../../../modules/teamList/teamsSlicer'
+import { values } from 'lodash'
 
 
 
  export const CardPlayers: React.FC = () => {
  
 const [page,setPage]=useState(1)
-
+const [personName, setPersonName] = React.useState([])
+const [teamId, setTeamId] = useState([]);
 
 
 
@@ -30,8 +32,8 @@ const [page,setPage]=useState(1)
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(teamsFetchData(`${MAIN_URL}/api/Team/GetTeams`));
-    dispatch(playersFetchData(`${MAIN_URL}/api/Player/GetPlayers?PageSize=${6}&Page=${page}&`));
- }, [dispatch,page]);
+    dispatch(playersFetchData(`${MAIN_URL}/api/Player/GetPlayers?PageSize=${6}&Page=${page}&${teamId.join('&')}`));
+ }, [dispatch, page, teamId]);
  const players  = useSelector<any, any>(state => state.players )
 const{error}:any = useSelector<any, any>(state => state.players )
  
@@ -57,15 +59,16 @@ const handleChange = async(event:any) => {
   setId(value)
   
 };
-const setId = async(e:any) => {
-  setPersonName(e);
+const setId = async(data:any) => {
+ let team:any=[]
+  setPersonName(data)
 
+  data?.map((value:any) => (
+    team=[...team,'TeamIds='+value]
+  ))
+  setTeamId(team)
 }
 
-const [personName, setPersonName] = useState([]);
-
-
-console.log('person',personName);
 
 
 
