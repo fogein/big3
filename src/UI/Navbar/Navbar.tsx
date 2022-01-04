@@ -1,11 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import teamsImg  from '../../assets/images/group_person.svg'
-import playersImg  from '../../assets/images/person.svg'
 import outImg  from '../../assets/images/signout.svg'
 import cls from './navbar.module.scss'
 
-export const Navbar: React.FC = () => {
+interface INavbarProps{
+  playersImage?: string | undefined
+  teamImage?: string | undefined
+  
+}
+
+export const Navbar = (props:INavbarProps) => {
   
 
   return (
@@ -13,11 +17,11 @@ export const Navbar: React.FC = () => {
       <nav className={cls.nav}>
         <ul className={cls.navItems}>
         <Link to="/teams" className={cls.item1}>
-            <img src={teamsImg} alt="" />
+            <img src={props.teamImage} alt="" />
             <label className={cls.navItemText}>Teams</label>
           </Link>
           <Link to="/players" className={cls.item2}>
-            <img src={playersImg} alt="" />
+            <img src={props.playersImage} alt="" />
             <label className={cls.navItemText}>Players</label>
           </Link>
           <li className={cls.item3}>

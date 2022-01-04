@@ -14,6 +14,8 @@ import { Search } from '../../../UI/search/Search'
 import { PlayerSmallCard } from '../../../UI/playerSmallCard/playerSmallCard'
 import { playerSeacrh, playersFetchData } from '../../../modules/playersList/playersSlicer'
 import { teamsFetchData } from '../../../modules/teamList/teamsSlicer'
+import teamsImg  from '../../../assets/images/group_person.svg'
+import playersImg  from '../../../assets/images/activePlayers.svg'
 
 
 
@@ -85,7 +87,11 @@ const valueFunc = (name:any) => {
       <div className={cls.bg}>
         <Header/>
         <BurgerMenuSidebar pageWrapId={"page-wrap"}/>
-        <Navbar/>
+        <Navbar
+        teamImage={teamsImg}
+        playersImage={playersImg}
+        />
+
         
         <div  className={cls.container}>
         

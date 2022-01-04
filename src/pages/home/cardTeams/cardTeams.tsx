@@ -12,6 +12,8 @@ import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
 import { Pagination} from '@mui/material'
 import PaginationItem from '@mui/material/PaginationItem';
 import { Search } from '../../../UI/search/Search'
+import playersImg  from '../../../assets/images/person.svg'
+import teamImg  from '../../../assets/images/activeTeam.svg'
 
 
  export const CardTeams: React.FC = () => {
@@ -42,7 +44,10 @@ if(error)
       <div className={cls.bg}>
         <Header/>
         <BurgerMenuSidebar pageWrapId={"page-wrap"}/>
-        <Navbar/>
+        <Navbar
+        playersImage={playersImg}
+        teamImage={teamImg}
+        />
         
         <div  className={cls.container}>
         
