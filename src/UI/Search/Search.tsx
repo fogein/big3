@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import search from '../../assets/images/search.svg'
-import { teamSeacrh } from '../../modules/teamList/teamsSlicer';
+
 
 
 import cls from './search.module.scss'
@@ -18,7 +18,7 @@ export const Search = (props:ISearch) => {
   const handleInputChange = (e:any) => { 
     const value = e.target.value;
     setInputSeacrhValue(value)
-    dispatch(teamSeacrh(value))
+    dispatch(props.page(value))
   }
 
   return (<>

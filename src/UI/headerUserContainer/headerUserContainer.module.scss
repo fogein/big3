@@ -1,0 +1,90 @@
+/* Headder  */
+.logo{
+  margin-left: 51px;
+}
+header{
+  display: flex;
+  background: #FFFFFF;
+  box-shadow: 0px 1px 10px rgba(209, 209, 209, 0.5);
+  position: relative;
+  width: 100%;
+}
+.headerContainer{
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.userProfile{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.linkUser{
+  display: flex;
+  align-items: center;
+  margin-right: 51px;
+  text-decoration: none;
+}
+.addPhotoButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius:50%!important;
+  background: var(--light-grey);
+  opacity: 0.5;
+margin-right: 10px;
+}
+.imageUpload>input {
+  display: none;
+}
+.imageUpload>label>img{
+  cursor: pointer;
+  
+}
+.imageUpload{
+  position: absolute;
+}
+.imageUpload{
+  height: 100px;
+  width: 100px;
+  opacity: .9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.saveButton{
+  background: #E4163A;
+  height: 30px;
+  margin-top: 10px;
+  color: #fff;
+  width: 100%;
+}
+.userName{
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--dark-grey);
+  width: 100%;
+  margin-right: 16px;
+}
+@media(max-width: 650px){
+  .logo{
+    margin: 0;
+    width: 137px;
+    height: 34px;
+  }
+  .headerContainer{
+    justify-content: center;
+  }
+  .linkUser{
+    display: none;
+  }
+
+}
+/* Header end */

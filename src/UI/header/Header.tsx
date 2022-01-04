@@ -1,8 +1,8 @@
 import React from 'react'
-import userImg from'../../assets/images/profile.svg';
 import myLogo  from '../../assets/images/logo.svg'
 import { Link } from 'react-router-dom';
 import cls from  './header.module.scss'
+import { HeaderUserContainer } from '../headerUserContainer/headerUserContainer';
 
 
 export const Header: React.FC = () => {
@@ -14,10 +14,9 @@ export const Header: React.FC = () => {
             <img src={myLogo} alt="logo" />
           </Link>
           <div className={cls.userContainer}>
-            <a href="/" className={cls.linkUser}>
-            <span className={cls.userName}>John Smith</span>
-            <img src={userImg} alt="" className={cls.userProfile} />
-            </a>
+
+           <HeaderUserContainer/>
+            
           </div>
         </div>
       </header> 

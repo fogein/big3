@@ -40,6 +40,8 @@ const AuthSlice = createSlice({
       state.status = 'resolved';
       state.auth = action.payload;
       localStorage.setItem('token',action.payload.token);
+      localStorage.setItem('name',action.payload.name);
+      localStorage.setItem('avatarUrl',action.payload.avatarUrl);
     },
     [AuthSignIn.rejected]: (state,action)=>{
       state.status = 'rejected';

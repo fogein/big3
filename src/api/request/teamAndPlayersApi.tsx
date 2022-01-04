@@ -31,6 +31,15 @@ export async function addPlayer (data:IPlayerData){
   return response.data;
 
 }
+export async function changeProfile (data:any){
+
+  let response = await api.post('/Auth/Change',data);
+
+
+  
+  return response.data;
+
+}
 
 export async function getTeam (url:string){
 
@@ -122,3 +131,12 @@ export async function getTeamId (id:number){
     
     return response;
     }
+    export async function getPlayerSearch (name:string){
+
+
+      let response = await api.get(`/Player/GetPlayers?Name=${name}&Page=${1}&PageSize=${6}`);
+     
+    
+      
+      return response;
+      }

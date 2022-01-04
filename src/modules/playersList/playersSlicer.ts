@@ -1,12 +1,12 @@
 import {  createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import {  getPlayers } from "../../api/request/teamAndPlayersApi"
+import {  getPlayers, getPlayerSearch } from "../../api/request/teamAndPlayersApi"
 
 
-// export const playerseacrh:any = createAsyncThunk('players/playerseacrh',async(param:any) => {
-//    const response = await getplayersearch(param)
-//     return response
+export const playerSeacrh:any = createAsyncThunk('players/playerseacrh',async(param:any) => {
+   const response = await getPlayerSearch(param)
+    return response
   
-// }) 
+}) 
 
 export const playersFetchData:any = createAsyncThunk('players/playersFetchData',async(url:string,{rejectedWithValue}:any) => {
  
@@ -42,11 +42,12 @@ export const playersFetchData:any = createAsyncThunk('players/playersFetchData',
       state.error = 'Ошибка авторизации'
     },
 
-    // [playerseacrh.fulfilled]: (state,action) => {
-    //   state.players = action.payload.data
-    // },
+    [playerSeacrh.fulfilled]: (state,action) => {
+      state.players = action.payload.data
+    },
     
   },
 })
 
 export const playersReducer = players.reducer 
+

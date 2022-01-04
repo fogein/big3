@@ -6,7 +6,7 @@ import { TeamSmallCard } from '../../../UI/teamSmallCard/teamSmallCard'
 import {  MAIN_URL } from '../../../modules/teamList/teamsAndPlayersConstants'
 import { ITeamData } from '../../../api/dto/teamsAndPlayers'
 import cls from './cardTeam.module.scss'
-import { teamsFetchData } from '../../../modules/teamList/teamsSlicer'
+import { teamSeacrh, teamsFetchData } from '../../../modules/teamList/teamsSlicer'
 import { useDispatch, useSelector } from 'react-redux'
 import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
 import { Pagination} from '@mui/material'
@@ -48,7 +48,7 @@ if(error)
         
           <div className={cls.upContainer}>
             <Search
-            page={page}
+            page={teamSeacrh}
             />
             <AddButton
             link='/teams/addTeam'

@@ -12,7 +12,7 @@ import { Box, Chip, MenuItem, OutlinedInput, Pagination, Select} from '@mui/mate
 import PaginationItem from '@mui/material/PaginationItem';
 import { Search } from '../../../UI/search/Search'
 import { PlayerSmallCard } from '../../../UI/playerSmallCard/playerSmallCard'
-import { playersFetchData } from '../../../modules/playersList/playersSlicer'
+import { playerSeacrh, playersFetchData } from '../../../modules/playersList/playersSlicer'
 import { teamsFetchData } from '../../../modules/teamList/teamsSlicer'
 
 
@@ -54,6 +54,8 @@ useEffect(()=>{
 
 
 const handleChange = async(event:any) => {
+  console.log(event);
+  
   const {
     target: {value},
   } = event;
@@ -72,7 +74,10 @@ const setId = async(data:any) => {
 }
 
 
+const valueFunc = (name:any) => {
 
+
+}
 
 
   return (
@@ -87,12 +92,11 @@ const setId = async(data:any) => {
           <div className={cls.upContainer}>
             <div className={cls.upFirstContainer}>
             <Search
-            page={page}
+            page={playerSeacrh}
             />
             <Select
                           className={cls.selectTeam}
                         multiple
-                        
                         value={personName}
                         onChange={handleChange}
                         input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
@@ -103,6 +107,7 @@ const setId = async(data:any) => {
              
                           
                             {selected?.map((value:any) => (
+                             
                               
                               <Chip className={cls.selectChip} key={value} label={value} />
                             ))}
@@ -112,9 +117,11 @@ const setId = async(data:any) => {
                       >
                        {teams.teams.data?.map(({name,id}:ITeamData) => (
                           <MenuItem
+                          
                           className={cls.selectMenuItem}
                             key={id}
                             value={id}
+                            onClick={() => valueFunc(name)}
                             
                           >
                             {name}
