@@ -9,6 +9,8 @@ import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
 import { CardPlayerInfo } from '../../../UI/cardPlayerInfo/cardPlayer'
 import { Header } from '../../../UI/header/header'
 import { Navbar } from '../../../UI/navbar/navbar'
+import teamsImg  from '../../../assets/images/group_person.svg'
+import playersImg  from '../../../assets/images/activePlayers.svg'
 
 import cls from './playerInfo.module.scss'
 
@@ -41,7 +43,10 @@ import cls from './playerInfo.module.scss'
 
       <div className={cls.bg}>
         <Header/>
-        <Navbar/>
+        <Navbar
+        teamImage={teamsImg}
+        playersImage={playersImg}
+        />
         <BurgerMenuSidebar/>
         <div>
           <div className={cls.mainContainer}>

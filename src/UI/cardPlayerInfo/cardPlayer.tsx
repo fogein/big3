@@ -59,7 +59,7 @@ export const CardPlayerInfo = (props:IPlayerData) => {
                         </div>
                         <div className={cls.height}>
                           <h3>Height</h3>
-                          <span className='text'>{props.height}</span>
+                          <span className={cls.text}>{props.height}</span>
                         </div>
                       <div className={cls.age}>
                         <h3>Age</h3>

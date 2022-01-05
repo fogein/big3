@@ -7,7 +7,8 @@ import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
 import { EditTeam } from '../../../UI/editTeam/editTeam'
 import { Header } from '../../../UI/header/header'
 import { Navbar } from '../../../UI/navbar/navbar'
-
+import playersImg  from '../../../assets/images/person.svg'
+import teamImg  from '../../../assets/images/activeTeam.svg'
 import cls from './editTeamPage.module.scss'
 
  export const EditTeamPage = ({match}:any) => {
@@ -30,7 +31,10 @@ import cls from './editTeamPage.module.scss'
 
       <div className={cls.bg}>
         <Header/>
-        <Navbar/>
+        <Navbar
+                playersImage={playersImg}
+                teamImage={teamImg}
+        />
         <BurgerMenuSidebar/>
         <div>
          

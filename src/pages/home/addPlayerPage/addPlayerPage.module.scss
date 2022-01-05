@@ -17,4 +17,11 @@ margin-left: 80px;
 @media(max-width: 1360px){
 
 }
-
+@media(max-width: 500px){
+  .mainContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+  }
+}

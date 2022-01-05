@@ -12,6 +12,8 @@ import { CardTeamInfo } from '../../../UI/cardTeamInfo/cardTeam'
 import { Header } from '../../../UI/header/header'
 import { Navbar } from '../../../UI/navbar/navbar'
 import { TableItem } from '../../../UI/table/table'
+import playersImg  from '../../../assets/images/person.svg'
+import teamImg  from '../../../assets/images/activeTeam.svg'
 
 import cls from './teamInfo.module.scss'
 
@@ -45,7 +47,10 @@ console.log(players);
 
       <div className={cls.bg}>
         <Header/>
-        <Navbar/>
+        <Navbar
+          playersImage={playersImg}
+          teamImage={teamImg}
+        />
         <BurgerMenuSidebar/>
         <div>
           <div className={cls.mainContainer}>

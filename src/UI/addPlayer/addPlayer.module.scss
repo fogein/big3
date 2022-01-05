@@ -130,16 +130,28 @@ margin-top: 24px;
 
 @media(max-width: 1360px){
 .mainContainer{
-max-width: 375px;
+max-width: 420px;
 height: 736px;
-min-width: 375px;
+min-width: 420px;
 }
 .addPhotoButton{
   width: 200px;
   height: 150px;
 }
 .addTeamInput{
-  width: 300px;
+  margin-bottom: 5px;
+  width: 250px;
+}
+.twoInputs{
+  height: 150px;
+}
+.addTeamInputWH{
+width: 130px;
+margin-bottom: 5px;
+}
+.addTeamInputWHML{
+width: 130px;
+margin-bottom: 5px;
 }
 .saveButton{
 width: 100px;
@@ -163,13 +175,87 @@ width: 100px;
 @media(max-width: 900px){
   .mainContainer{
     height: 600px;
+
+  }
+  .addPhotoButton{
+    width: 150px;
+    height: 120px;
   }
 }
-@media(max-width: 460px){
+@media(max-width: 744px){
+  .buttons{
+justify-content: space-around; 
+ }
+.mainContainer{
+  display: flex;
+margin-left: 0;
+height: 100%;
+  max-width: 410px;
+  min-width: 410px;
+}
+.contentContainer{
+ height: 100%;
+}
+.addPhotoButton{
+  width: 150px;
+  height: 100px;
+}
+.inputsContainer{
+  padding-left: 10px;
+  max-height: 340px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.addTeamInput{
+  margin-bottom: 5px;
+  width: 120px;
+}
+.twoInputs{
+  height: 150px;
+}
+.addTeamInputWH{
+width: 100px;
+margin-bottom: 5px;
+}
+.addTeamInputWHML{
+width: 100px;
+margin-bottom: 5px;
+}
+.saveButton{
+width: 100px;
+}
+.cancelButton{
+  width: 100px;
+}
+}
+@media(max-width: 500px){
+  .inputsContainer{
+    justify-content: center;
+    align-items: center;
+    max-height: 340px;
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+  .addTeamInputWH{
+    width: 75px;
+    height: 30px;
+    margin-bottom: 5px;
+    }
+    .addTeamInputWHML{
+      height: 30px;
+    width: 75px;
+    margin-bottom: 5px;
+    }
+  .twoInputs{
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 80px;
+  }
   .mainContainer{
     height: 500px;
-    max-width: 200px;
-    min-width: 200px;
+    max-width: 300px;
+    min-width: 300px;
   }
   .addPhotoButton{
     width: 100px;

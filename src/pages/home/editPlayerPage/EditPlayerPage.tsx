@@ -7,6 +7,8 @@ import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
 import { EditPlayer } from '../../../UI/editPlayer/editPlayer'
 import { Header } from '../../../UI/header/header'
 import { Navbar } from '../../../UI/navbar/navbar'
+import teamsImg  from '../../../assets/images/group_person.svg'
+import playersImg  from '../../../assets/images/activePlayers.svg'
 
 import cls from './editPlayerPage.module.scss'
 
@@ -30,7 +32,10 @@ const playerInfo  = useSelector<any, any>(state => state.getPlayerInfo )
 
       <div className={cls.bg}>
         <Header/>
-        <Navbar/>
+        <Navbar
+                teamImage={teamsImg}
+                playersImage={playersImg}
+        />
         <BurgerMenuSidebar/>
         <div>
          
