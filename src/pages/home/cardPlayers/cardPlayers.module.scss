@@ -73,6 +73,14 @@
     }
   }
   @media(max-width: 1200px){
+    .paginationContainer{
+      margin-top: 0;
+    }
+    .selectTeam{
+      margin-left: 0;
+      margin-right: 10px;
+      width: 200px;
+    }
     .smallCardContainer{
       width: 680px;
     }
@@ -80,20 +88,41 @@
       height: 650px;
     }
     .upContainer{
-      justify-content:center;
-      width: 500px;
+      justify-content:space-around;
+      width: 700px;
     }
+    
   }
   @media(max-width: 900px){
     .smallCardContainer{
       width: 520px;
     }
+    .paginationContainer{
+margin-left: 35px;
+    }
+    .selectTeam{ 
+      padding: 0;
+      width: 250px;
+    }
     .upContainer{
-      justify-content:center;
-      width: 500px;
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;  
+      text-align: center;
+      height: 120px;
+    }
+    .upFirstContainer{
+      display: flex;
+      flex-direction: column;
+ text-align: center;
+ align-items: center;
+      width: 300px;
+      justify-content: center;
     }
    .mainContainer{
-     height: 500px;
+     height: 450px;
      margin-left: 40px;
    }
   }
@@ -103,14 +132,12 @@
       height: 340px;
     }
     .upContainer{
-      flex-direction:column;
-      justify-content: center;
-      align-items: center;
-      height: 80px;
-      width: 500px;
+     
+      height: 120px;
+      
     }
    .mainContainer{
-     height: 350px;
+     height: 310px;
    }
   }
   @media(max-width: 650px){
@@ -123,7 +150,7 @@
       flex-direction:column;
       justify-content: center;
       align-items: center;
-      height: 80px;
+      height: 120px;
       margin: 0;
       
       width: 351px;
@@ -149,7 +176,7 @@
       flex-direction:column;
       justify-content: center;
       align-items: center;
-      height: 80px;
+      height: 120px;
       margin: 0;
       margin-left: 78px;
       width: 330px;
@@ -176,7 +203,7 @@
       flex-direction:column;
       justify-content: center;
       align-items: center;
-      height: 80px;
+      height: 120px;
       margin: 0;
    margin-left: 20px;
       width: 330px;

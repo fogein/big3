@@ -1,21 +1,33 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import cls from './burgerMenu.module.scss'
 import teamsImg  from '../../assets/images/group_person.svg'
 import playersImg  from '../../assets/images/person.svg'
 import outImg  from '../../assets/images/signout.svg'
-import userImg from'../../assets/images/profile.svg';
 import { slide as Menu } from "react-burger-menu";
 import { Link } from 'react-router-dom';
+import { BASE_URL } from '../../config/env/development'
 
 export const BurgerMenuSidebar = (props:any) => {
+
+  const  [profileImage,setProfileImage]=React.useState<string | any>(`${BASE_URL}/images/4mniosha.jpg`)
+  const  [name,setName]=React.useState<string | any>('')
+
+
+  useEffect(() => {
+
+    setName(localStorage.getItem('name'))
+    setProfileImage(localStorage.getItem('avatarUrl'))
+      
+     }, [])
+
   return (
     <div className={cls.containerBurgerMenu}>
       <Menu {...props}>
       <div className={cls.userContainer}>
-            <a href="/" className={cls.linkUser}>
-            <span className={cls.userName}>John Smith</span>
-            <img src={userImg} alt="" className={cls.userProfile} />
-            </a>
+          <button  className={cls.linkUser}>
+          <span className={cls.userName}>{name}</span>
+          <img src={profileImage} alt="Добавьте аватар" className={cls.userProfile} />
+          </button>
           </div>
       <Link to="/teams" className={cls.item1}>
             <img src={teamsImg} alt="" />
