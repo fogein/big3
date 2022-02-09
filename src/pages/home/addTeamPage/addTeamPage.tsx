@@ -1,8 +1,8 @@
 
 import { AddTeam } from '../../../UI/addTeam/addTeam'
-import { BurgerMenuSidebar } from '../../../UI/burgerMenu/burgerMenuSidebar'
-import { Header } from '../../../UI/header/header'
-import { Navbar } from '../../../UI/navbar/navbar'
+import { BurgerMenuSidebar } from '../../../UI/BurgerMenu/burgerMenuSidebar'
+import { Header } from '../../../UI/header/Header'
+import { Navbar } from '../../../UI/navbar/Navbar'
 import playersImg  from '../../../assets/images/person.svg'
 import teamImg  from '../../../assets/images/activeTeam.svg'
 import cls from './addTeamPage.module.scss'

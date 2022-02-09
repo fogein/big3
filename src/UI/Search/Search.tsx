@@ -4,7 +4,7 @@ import search from '../../assets/images/search.svg'
 
 
 
-import cls from './search.module.scss'
+import cls from './Search.module.scss'
 
 interface ISearch{
   page?:any

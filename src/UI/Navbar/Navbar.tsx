@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import outImg  from '../../assets/images/signout.svg'
-import cls from './navbar.module.scss'
+import cls from './Navbar.module.scss'
 
 interface INavbarProps{
   playersImage?: string | undefined
